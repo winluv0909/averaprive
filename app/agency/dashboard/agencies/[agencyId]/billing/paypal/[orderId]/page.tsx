@@ -4,7 +4,7 @@ import { requireAgencyRole } from "@/lib/auth/authorization";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { localPayPalOrder } from "@/lib/billing/paypal/service";
 import { AgencyWorkspaceShell } from "@/app/dashboard/_components/portal-shells";
-import { confirmPayPalPayment } from "./actions";
+import { confirmPayPalPayment, resumePayPalPayment } from "./actions";
 import AutoConfirm from "./AutoConfirm";
 import "@/app/dashboard/agencies/[agencyId]/billing/invoices/[invoiceId]/invoice-premium.css";
 const labels: Record<string, string> = { created: "Awaiting PayPal approval", pending: "Payment pending — not confirmed", completed: "Payment confirmed", test_completed: "Sandbox payment verified", denied: "Payment declined", refunded: "Payment refunded", partially_refunded: "Partial refund — billing review", reversed: "Payment reversed", verification_error: "Verification requires retry" };
@@ -24,8 +24,9 @@ export default async function PayPalPaymentPage({ params, searchParams }: { para
     {query.cancelled && <div className="ap-payment-alert" role="status">You left PayPal checkout. If you already paid, verify the payment below before trying again.</div>}
     <div className="ap-payment-grid"><section className="ap-payment-card"><span className="ap-payment-state">{labels[order.paypal_state] || order.paypal_state}</span><p className="ap-billing-eyebrow">YOUR SELECTED PLAN</p><h2>{order.plan_code === "prive" ? "Privé" : order.plan_code === "select" ? "Select" : "Elite"}</h2><p className="ap-payment-plan">{order.billing_cycle === "annual" ? "One year" : "One month"} of agency workspace access</p>
       <strong className="ap-payment-amount">{order.currency} {Number(order.total_amount).toFixed(2)}</strong><p>One-time purchase. No automatic renewal.</p>
+      {["created", "pending"].includes(order.status) && !order.provider_reference && !order.checkout_url && !order.paypal_capture_id && <form action={resumePayPalPayment.bind(null, agencyId, orderId)}><button className="ap-billing-primary">Start PayPal{sandbox ? " Sandbox" : ""} checkout →</button></form>}
       {returned && <AutoConfirm agencyId={agencyId} orderId={orderId} />}
-      {order.status === "pending" && <form action={confirmPayPalPayment.bind(null, agencyId, orderId)}><button className="ap-billing-primary">Verify payment status →</button></form>}
+      {order.status === "pending" && order.provider_reference && <form action={confirmPayPalPayment.bind(null, agencyId, orderId)}><button className="ap-billing-primary">Verify payment status →</button></form>}
       {order.status === "pending" && order.paypal_state === "created" && order.checkout_url && !returned && !query.checked && !query.error && <a className="ap-billing-outline" href={order.checkout_url}>Continue to PayPal{sandbox ? " Sandbox" : ""}</a>}
       <p className="ap-payment-caption">Already paid? Verify your payment or contact support. Please do not pay again while verification is pending.</p>
     </section><section className="ap-payment-card"><p className="ap-billing-eyebrow">SECURE PAYMENT RECORD</p><h2>Payment information</h2><p>Your payment is matched to this invoice and checked with PayPal.</p><dl>

@@ -29,10 +29,36 @@ beforeAll(async () => {
     create table ap_security_audit(actor_user_id uuid,agency_id uuid,action text,target_type text,target_id text,metadata jsonb);
     insert into auth.users values('${user}');insert into ap_agencies values('${agency}');insert into ap_plans values('prive','Prive',true,49,490);
     insert into ap_agency_memberships values('${agency}','${user}','owner','active');`);
-  for (const file of ["202610080017_crypto_billing.sql", "202610110021_reliable_crypto_payments.sql", "202610110022_binance_credit_verification.sql", "202610110023_shared_binance_checkout.sql", "202610110024_paypal_checkout.sql"]) await db.exec(readFileSync(`supabase/migrations/${file}`, "utf8"));
+  for (const file of ["202610080017_crypto_billing.sql", "202610110021_reliable_crypto_payments.sql", "202610110022_binance_credit_verification.sql", "202610110023_shared_binance_checkout.sql", "202610110024_paypal_checkout.sql", "202610120028_paypal_checkout_state.sql"]) await db.exec(readFileSync(`supabase/migrations/${file}`, "utf8"));
+  // Match the observed live schema, which permits a legacy created state.
+  await db.exec("alter table public.ap_payment_orders drop constraint ap_payment_orders_status_check; alter table public.ap_payment_orders add constraint ap_payment_orders_status_check check(status in ('created','pending','paid','failed','cancelled','refunded'))");
 }, 30000);
 afterAll(async () => { await db?.close(); });
 describe("PayPal atomic payment records", () => {
+  it("sets pending explicitly even when the live table defaults to created", async () => {
+    await db.exec("alter table public.ap_payment_orders alter column status set default 'created'");
+    try {
+      const p = await create();
+      const row = await db.query<{status:string}>("select status from ap_payment_orders where id=$1", [p.id]);
+      expect(row.rows[0].status).toBe("pending");
+    } finally { await db.exec("alter table public.ap_payment_orders alter column status set default 'pending'"); }
+  });
+  it("recovers only an authorized unbound created order and keeps its invoice", async () => {
+    const p = await create();
+    await db.query("update ap_payment_orders set status='created' where id=$1", [p.id]);
+    await expect(db.query("select ap_prepare_paypal_checkout($1,$2,$3)", [p.id,agency,randomUUID()])).rejects.toThrow("billing access");
+    await db.query("select ap_prepare_paypal_checkout($1,$2,$3)", [p.id,agency,user]);
+    const row=await db.query<{status:string,reference:string|null}>("select status,provider_reference as reference from ap_payment_orders where id=$1",[p.id]);
+    expect(row.rows[0]).toEqual({status:"pending",reference:null});
+    expect((await db.query<{n:number}>("select count(*)::int as n from ap_invoices where order_id=$1",[p.id])).rows[0].n).toBe(1);
+  });
+  it("refuses recovery of cancelled expired or remotely bound created orders", async () => {
+    for (const change of ["status='cancelled'", "status='created',payment_expires_at=now()-interval '1 minute'", "status='created',provider_reference='ALREADYBOUND'"]) {
+      const p=await create(); await db.query(`update ap_payment_orders set ${change} where id=$1`,[p.id]);
+      await expect(db.query("select ap_prepare_paypal_checkout($1,$2,$3)",[p.id,agency,user])).rejects.toThrow();
+    }
+  });
+
   it("uses database plan prices, ignoring a client-submitted amount", async () => {
     const p = await create("sandbox", { total_amount: 1 });
     const row = await db.query<{ total_amount: string }>("select total_amount from ap_payment_orders where id=$1", [p.id]);

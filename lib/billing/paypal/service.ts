@@ -12,12 +12,26 @@ export async function localPayPalOrder(id: string, agencyId?: string) {
   return data as LocalPayPalOrder;
 }
 export async function preparePayPalCheckout(input: Record<string, string>) {
-  const config = paypalConfig(), base = paypalReturnBase(), db = createAdminClient();
+  const config = paypalConfig(), db = createAdminClient();
   const created = await db.rpc("ap_create_paypal_invoice", { input: { ...input, environment: config.environment }, seller: billingSeller });
   if (created.error || !created.data) throw new Error("Unable to create the PayPal invoice. Check the billing migration and information.");
-  const local = await localPayPalOrder(created.data);
-  if (local.status !== "pending") return { id: local.id, url: null };
-  if (new Date(local.payment_expires_at).getTime() < Date.now()) throw new Error("This checkout expired. Reload the billing page to start again.");
+  return resumePayPalCheckout(created.data, input.agency_id, input.created_by);
+}
+// The server action verifies current billing membership before calling this.
+// Reuse the invoice and PayPal idempotency key; never create a second invoice.
+export async function resumePayPalCheckout(id: string, agencyId: string, actorUserId: string) {
+  const config = paypalConfig(), base = paypalReturnBase(), db = createAdminClient();
+  let local = await localPayPalOrder(id, agencyId);
+  if (local.paypal_environment !== config.environment) throw new Error("Payment belongs to another PayPal environment");
+  if (!["created", "pending"].includes(local.status)) throw new Error("This payment cannot restart checkout");
+  const expires = new Date(local.payment_expires_at).getTime();
+  if (!Number.isFinite(expires) || expires <= Date.now()) throw new Error("This checkout expired. Contact billing support before starting another payment.");
+  if (local.status === "created") {
+    const prepared = await db.rpc("ap_prepare_paypal_checkout", {target_order: id, target_agency: agencyId, actor_user: actorUserId});
+    if (prepared.error) throw new Error("Checkout state could not be prepared. Contact billing support.");
+    local = await localPayPalOrder(id, agencyId);
+    if (local.status !== "pending") throw new Error("Checkout state requires review");
+  }
   if (local.provider_reference && local.checkout_url) return { id: local.id, url: local.checkout_url };
   const destination = `${base}/agency/dashboard/agencies/${local.agency_id}/billing/paypal/${local.id}`;
   const remote = await paypalRequest<PayPalOrder>("/v2/checkout/orders", "POST", {
