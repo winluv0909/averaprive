@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (value !== undefined) item.textContent = format(value);
     return item;
   };
-  const label = agency => agency.name + (agency.country ? ` Â· ${agency.country}` : '');
   const agencyKey = agency => agency.slug;
 
   function syncUrl() {
@@ -41,7 +40,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       const button = node('button', 'compare-option');
       const logo = node('span', 'compare-agency-logo');
       window.AveraAgencyLogo.render(logo, agency);
-      button.append(logo, node('span', 'compare-option-name', label(agency)));
+      const identity = node('span', 'compare-option-identity');
+      identity.append(node('span', 'compare-option-name', agency.name.trim()));
+      if (agency.country) identity.append(node('span', 'compare-option-country', agency.country));
+      button.append(logo, identity);
       button.type = 'button';
       button.disabled = chosen || selected.length === 3;
       button.setAttribute('aria-label', chosen ? `${agency.name} already selected` : `Add ${agency.name} to comparison`);

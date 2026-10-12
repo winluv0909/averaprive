@@ -5,3 +5,15 @@
 .compare-hero{padding:88px 0}
 .compare-section{padding:80px 0}
 @media(max-width:760px){.compare-hero{padding:64px 0}.compare-section{padding:58px 0}}
+
+/* Readable agency identities in the comparison picker. */
+.compare-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.compare-results .compare-option{display:flex;align-items:center;justify-content:flex-start;gap:16px;min-height:96px;min-width:0;padding:18px;text-align:left;border:1px solid #ded7ca;border-radius:12px;background:#fff;box-sizing:border-box;font-family:Inter,Arial,sans-serif;transition:border-color .18s ease,background .18s ease}
+.compare-results .compare-option:hover:not(:disabled){border-color:#a88b56;background:#fcf8f0}
+.compare-results .compare-agency-logo{width:48px;height:48px;flex:0 0 48px;border-radius:10px}
+.compare-option-identity{display:flex;flex:1;flex-direction:column;gap:5px;min-width:0}
+.compare-results .compare-option-name{display:block;color:#24231f;font-size:16px;font-weight:600;line-height:1.4;text-align:left;overflow-wrap:break-word;word-break:normal}
+.compare-option-country{display:block;color:#756e62;font-size:13px;font-weight:400;line-height:1.5}
+.compare-results .compare-option-chosen{color:#725b38;font-size:12px;font-weight:600;flex-shrink:0}
+.compare-results .compare-option:disabled{opacity:1;background:#f5f1e9;border-color:#e4dccf;cursor:default}
+@media(max-width:540px){.compare-results{grid-template-columns:minmax(0,1fr)}.compare-results .compare-option{padding:16px;min-height:88px}}
