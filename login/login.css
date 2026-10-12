@@ -1,0 +1,1250 @@
+.access-page {
+  --black: #0b0b0a;
+  --ivory: #f5f2eb;
+  --gold: #bda170;
+  --muted: #77736b;
+  --line: #d9d3c8;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(430px, 1.02fr) minmax(540px, 0.98fr);
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden !important;
+  background: var(--ivory);
+  color: var(--black);
+  font-family: Inter, Arial, sans-serif;
+}
+
+.access-page * {
+  box-sizing: border-box;
+}
+
+.access-skip {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 20;
+  padding: 10px 14px;
+  background: #fff;
+  color: #111;
+  transform: translateY(-160%);
+}
+
+.access-skip:focus {
+  transform: none;
+}
+
+.access-brand {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 2;
+  width: 51%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  overflow: hidden;
+  background: var(--black);
+  color: #fff;
+}
+
+.access-brand::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#ffffff08 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+  background-size: 96px 96px;
+}
+
+.access-brand::after {
+  content: "AP";
+  position: absolute;
+  right: -70px;
+  bottom: -150px;
+  color: #ffffff08;
+  font: 500 32rem/1 "Cormorant Garamond", Georgia, serif;
+}
+
+.access-brand-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 56px clamp(44px, 6vw, 96px);
+}
+
+.access-logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: max-content;
+  color: #fff;
+  text-decoration: none;
+}
+
+.access-logo > span:last-child {
+  display: grid;
+}
+
+.access-logo strong {
+  font: 500 clamp(1.35rem, 2vw, 2rem) / 1 "Cormorant Garamond",
+    Georgia, serif;
+  letter-spacing: 0.16em;
+}
+
+.access-logo small {
+  margin-top: 8px;
+  color: #9d9b94;
+  font-size: 0.42rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+}
+
+.access-monogram {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid #ffffff26;
+  color: #fff;
+  font: 500 1.85rem "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -0.12em;
+}
+
+.access-monogram i {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: var(--gold);
+  font: normal 0.55rem Arial;
+}
+
+.access-message {
+  max-width: 610px;
+  margin: 80px 0;
+}
+
+.access-kicker {
+  margin: 0 0 24px !important;
+  color: var(--gold) !important;
+  font-size: 0.68rem !important;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+.access-message h1 {
+  margin: 0;
+  color: #fff;
+  font: 400 clamp(4rem, 6.2vw, 7rem) / 0.84 "Cormorant Garamond",
+    Georgia, serif;
+  letter-spacing: -0.045em;
+}
+
+.access-message h1 em {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.access-message > p:last-child {
+  max-width: 520px;
+  margin: 38px 0 0;
+  color: #aaa79f;
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+.access-role-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: #aaa79f;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.access-role-list i {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.access-main {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  margin: 0;
+  padding: 52px clamp(42px, 6vw, 110px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--ivory);
+  scrollbar-gutter: stable;
+}
+
+.access-form-wrap {
+  width: min(100%, 560px);
+  margin: auto;
+}
+
+.access-back {
+  display: inline-block;
+  margin-bottom: 48px;
+  color: #615d56;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+}
+
+.access-heading > p {
+  margin: 0 0 12px;
+  color: #8b6e3e;
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+}
+
+.access-heading h2 {
+  margin: 0;
+  color: var(--black);
+  font: 500 clamp(3.4rem, 5vw, 5rem) / 0.92 "Cormorant Garamond",
+    Georgia, serif;
+  letter-spacing: -0.035em;
+}
+
+.access-heading > span {
+  display: block;
+  max-width: 500px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.access-context {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin: 28px 0;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.access-context div {
+  padding: 15px 17px;
+  background: #faf8f3;
+}
+
+.access-context b,
+.access-context small {
+  display: block;
+}
+
+.access-context b {
+  font: 600 1rem "Cormorant Garamond", Georgia, serif;
+}
+
+.access-context small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
+.access-form label {
+  display: block;
+  margin: 18px 0;
+}
+
+.access-form label > span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.access-form input:not([type="hidden"]) {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 17px;
+  border: 1px solid #bdb5a9;
+  outline: none;
+  background: #fff;
+  font-size: 0.9rem;
+}
+
+.access-form input:focus {
+  border-color: #151513;
+  box-shadow: 0 0 0 1px #151513;
+}
+
+.access-form label > small {
+  display: block;
+  margin-top: 6px;
+  color: #89857d;
+  font-size: 0.66rem;
+}
+
+.access-alert {
+  padding: 13px 15px;
+  border-left: 3px solid;
+  background: #fff;
+  font-size: 0.82rem;
+}
+
+.access-alert.error {
+  border-color: #9d2929;
+  color: #861f1f;
+}
+
+.access-alert.success {
+  border-color: #3b7453;
+  color: #2e6446;
+}
+
+.access-submit {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 58px;
+  margin-top: 24px;
+  padding: 0 20px;
+  border: 1px solid var(--black);
+  background: var(--black);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+.access-submit:hover {
+  background: #24231f;
+}
+
+.access-submit span {
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+/* Google and Apple authentication */
+
+.social-access {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 26px 0 0;
+}
+
+.social-access form {
+  margin: 0;
+}
+
+.social-access-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 54px;
+  padding: 0 13px;
+  border: 1px solid #bbb3a7;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  font: inherit;
+}
+
+.social-access-button:hover {
+  border-color: #111;
+  background: #faf8f3;
+}
+
+.social-access-button > span {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.social-access-button b {
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+}
+
+.social-google {
+  border: 1px solid #d9d4cc;
+  color: #4285f4;
+}
+
+.social-apple {
+  background: #111;
+  color: #fff;
+  font-size: 0.55rem;
+}
+
+.access-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: #88837b;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.access-divider::before,
+.access-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+.social-registration-intro {
+  margin-top: 28px;
+}
+
+.social-registration-intro p {
+  margin: 0;
+  color: #8b6e3e;
+  font-size: 0.57rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.social-registration-intro span {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.registration-social-access {
+  margin-top: 15px;
+}
+
+.social-connected,
+.social-password-note {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid #cdbfaa;
+  background: #f1eadf;
+}
+
+.social-connected {
+  margin: 26px 0 0;
+  padding: 15px;
+}
+
+.social-password-note {
+  align-self: end;
+  min-height: 78px;
+  margin: 17px 0;
+  padding: 12px;
+}
+
+.social-connected > span,
+.social-password-note > span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #111;
+  color: #c6ab78;
+  font-weight: 800;
+}
+
+.social-connected p,
+.social-connected b,
+.social-connected small,
+.social-password-note p,
+.social-password-note b,
+.social-password-note small {
+  display: block;
+  margin: 0;
+}
+
+.social-connected b,
+.social-password-note b {
+  font-size: 0.72rem;
+}
+
+.social-connected small,
+.social-password-note small {
+  margin-top: 4px;
+  color: #716b62;
+  font-size: 0.61rem;
+  line-height: 1.45;
+}
+
+.access-switch {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.access-switch p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.access-switch a {
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.access-switch > small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.65rem;
+}
+
+.access-security {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.access-security > span {
+  color: #8b6e3e;
+  font-size: 0.7rem;
+}
+
+.access-security p,
+.access-security b {
+  margin: 0;
+}
+
+.access-security p {
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
+.access-security b {
+  display: block;
+  color: var(--black);
+  font-size: 0.72rem;
+}
+
+/* Registration */
+
+.registration-main {
+  align-items: flex-start;
+  padding-top: 46px;
+  padding-bottom: 70px;
+}
+
+.registration-main .access-back {
+  margin-bottom: 34px;
+}
+
+.registration-message {
+  margin: 54px 0;
+}
+
+.registration-benefits {
+  display: grid;
+  gap: 1px;
+  margin-top: 30px;
+  border: 1px solid #ffffff1a;
+  background: #ffffff1a;
+}
+
+.registration-benefits > div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #10100f;
+}
+
+.registration-benefits > div > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  height: 38px;
+  border: 1px solid #ffffff26;
+  color: var(--gold);
+  font: 500 0.85rem "Cormorant Garamond", Georgia, serif;
+}
+
+.registration-benefits p,
+.registration-benefits b,
+.registration-benefits small {
+  display: block;
+  margin: 0;
+}
+
+.registration-benefits b {
+  color: #fff;
+  font: 600 1rem "Cormorant Garamond", Georgia, serif;
+}
+
+.registration-benefits small {
+  margin-top: 3px;
+  color: #96938c;
+  font-size: 0.66rem;
+}
+
+.registration-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.registration-grid label {
+  margin-bottom: 0;
+}
+
+.registration-form select {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 17px;
+  border: 1px solid #bdb5a9;
+  background: #fff;
+  font: inherit;
+}
+
+.registration-consent {
+  display: grid !important;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 10px;
+  margin: 22px 0 !important;
+}
+
+.registration-consent input {
+  width: 17px !important;
+  min-height: 17px !important;
+  margin: 2px 0 0;
+  padding: 0;
+}
+
+.registration-consent > span {
+  margin: 0 !important;
+  font-size: 0.7rem !important;
+  line-height: 1.5;
+  letter-spacing: 0 !important;
+  text-transform: none;
+}
+
+.registration-form .access-submit {
+  margin-top: 8px;
+}
+
+/* Structured agency registration and claim flow */
+
+.registration-main .access-form-wrap {
+  width: min(100%, 760px);
+}
+
+.registration-wizard {
+  margin-top: 32px;
+}
+
+.registration-stepper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  margin-bottom: 24px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.registration-stepper button {
+  display: flex;
+  min-width: 0;
+  min-height: 72px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  padding: 11px;
+  border: 0;
+  background: #f8f5ef;
+  color: #9a968e;
+  text-align: left;
+}
+
+.registration-stepper button span {
+  font: 600 0.67rem "Cormorant Garamond", Georgia, serif;
+}
+
+.registration-stepper button b {
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.registration-stepper button.active {
+  background: #11110f;
+  color: #fff;
+}
+
+.registration-stepper button.active span {
+  color: var(--gold);
+}
+
+.registration-stepper button.complete {
+  background: #ebe5da;
+  color: #2e2d29;
+  cursor: pointer;
+}
+
+.wizard-panel {
+  display: none;
+  padding: clamp(22px, 4vw, 38px);
+  border: 1px solid var(--line);
+  background: #faf8f4;
+}
+
+.wizard-panel.active {
+  display: block;
+}
+
+.wizard-panel > header {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 17px;
+  align-items: start;
+  margin-bottom: 28px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--line);
+}
+
+.wizard-panel > header > span {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #c9bda9;
+  color: #8b6e3e;
+  font: 600 1rem "Cormorant Garamond", Georgia, serif;
+}
+
+.wizard-panel header p {
+  margin: 0;
+  color: #92703b;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.wizard-panel header h2 {
+  margin: 5px 0 7px;
+  font: 600 clamp(1.8rem, 4vw, 2.5rem) / 1 "Cormorant Garamond",
+    Georgia, serif;
+}
+
+.wizard-panel header small {
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.registration-wizard label {
+  display: block;
+  margin: 17px 0;
+}
+
+.registration-wizard label > span,
+.wizard-field-title {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.registration-wizard label > span b {
+  color: #99948b;
+  font-size: 0.48rem;
+}
+
+.registration-wizard input:not([type="hidden"]):not([type="checkbox"]),
+.registration-wizard select,
+.registration-wizard textarea {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 15px;
+  border: 1px solid #beb6aa;
+  border-radius: 0;
+  outline: 0;
+  background: #fff;
+  color: #111;
+  font: inherit;
+  font-size: 0.82rem;
+}
+
+.registration-wizard textarea {
+  min-height: 145px;
+  padding: 14px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.registration-wizard input:focus,
+.registration-wizard select:focus,
+.registration-wizard textarea:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 1px #111;
+}
+
+.registration-wizard label > small {
+  display: block;
+  margin-top: 6px;
+  color: #88847d;
+  font-size: 0.62rem;
+  line-height: 1.45;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.choice-grid label {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  margin: 0;
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+}
+
+.choice-grid label input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.choice-grid label > span {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  border: 1px solid #ccc5b9;
+  color: transparent;
+  font-size: 0.65rem;
+}
+
+.choice-grid label b {
+  font-size: 0.7rem;
+}
+
+.choice-grid label.selected {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.choice-grid label.selected > span {
+  border-color: #bda170;
+  color: #bda170;
+}
+
+.choice-grid.compact {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 22px;
+}
+
+.choice-grid.compact label {
+  grid-template-columns: 21px 1fr;
+  min-height: 48px;
+  padding: 8px;
+}
+
+.choice-grid.compact label > span {
+  width: 21px;
+  height: 21px;
+}
+
+.verification-readiness {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 14px;
+  margin: 24px 0;
+  padding: 18px;
+  border: 1px solid #d3c6b1;
+  background: #f1eadf;
+}
+
+.verification-readiness > span {
+  display: grid;
+  place-items: center;
+  height: 38px;
+  border: 1px solid #c5ad87;
+  color: #866836;
+}
+
+.verification-readiness b,
+.verification-readiness p {
+  margin: 0;
+}
+
+.verification-readiness b {
+  font: 600 1.05rem "Cormorant Garamond", Georgia, serif;
+}
+
+.verification-readiness p {
+  margin-top: 5px;
+  color: #68635b;
+  font-size: 0.68rem;
+  line-height: 1.55;
+}
+
+.registration-review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.registration-review div {
+  padding: 15px;
+  background: #fff;
+}
+
+.registration-review .wide {
+  grid-column: 1 / -1;
+}
+
+.registration-review dt {
+  color: #8d7146;
+  font-size: 0.51rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.registration-review dd {
+  margin: 6px 0 0;
+  font-size: 0.73rem;
+  line-height: 1.5;
+}
+
+.submission-outcome {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 18px;
+  background: var(--line);
+}
+
+.submission-outcome > div {
+  display: grid;
+  grid-template-columns: 27px 1fr;
+  gap: 9px;
+  padding: 14px;
+  background: #f0ece4;
+}
+
+.submission-outcome > div > span {
+  display: grid;
+  place-items: center;
+  height: 27px;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  font-size: 0.55rem;
+}
+
+.submission-outcome p,
+.submission-outcome b,
+.submission-outcome small {
+  display: block;
+  margin: 0;
+}
+
+.submission-outcome b {
+  font-size: 0.65rem;
+}
+
+.submission-outcome small {
+  margin-top: 4px;
+  color: #77736c;
+  font-size: 0.56rem;
+  line-height: 1.4;
+}
+
+.review-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 0 12px;
+}
+
+.review-section-heading.private {
+  margin-top: 28px;
+}
+
+.review-section-heading p,
+.review-section-heading h3 {
+  margin: 0;
+}
+
+.review-section-heading p {
+  color: #8d7146;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.review-section-heading h3 {
+  margin-top: 5px;
+  font: 600 1.25rem "Cormorant Garamond", Georgia, serif;
+}
+
+.review-section-heading > span {
+  padding: 7px 9px;
+  border: 1px solid #cfc4b3;
+  color: #756650;
+  font-size: 0.48rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.review-section-heading.private > span {
+  border-color: #b9afa1;
+  background: #22211e;
+  color: #fff;
+}
+
+.private-review div {
+  background: #f3efe7;
+}
+
+.wizard-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.wizard-actions > button {
+  min-height: 50px;
+  padding: 0 18px;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.wizard-actions .wizard-back {
+  background: transparent;
+  color: #111;
+}
+
+.wizard-next span {
+  margin-left: 20px;
+  color: var(--gold);
+}
+
+.wizard-next.submit {
+  min-width: 210px;
+  background: #111;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 980px) {
+  .access-page {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible !important;
+  }
+
+  .access-brand {
+    position: relative;
+    inset: auto;
+    width: auto;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+  }
+
+  .access-brand-inner {
+    min-height: auto;
+    padding: 34px 28px;
+  }
+
+  .access-message {
+    margin: 70px 0 46px;
+  }
+
+  .access-message h1 {
+    font-size: clamp(3.7rem, 12vw, 6rem);
+  }
+
+  .access-main {
+    grid-column: 1;
+    height: auto;
+    min-height: auto;
+    padding: 58px 24px 80px;
+    overflow: visible;
+    scrollbar-gutter: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .registration-stepper {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .registration-stepper button {
+    flex: 0 0 110px;
+  }
+
+  .choice-grid,
+  .choice-grid.compact,
+  .registration-review,
+  .submission-outcome {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-review .wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .access-logo small {
+    white-space: normal;
+  }
+
+  .access-role-list {
+    gap: 10px;
+  }
+
+  .access-context {
+    grid-template-columns: 1fr;
+  }
+
+  .access-back {
+    margin-bottom: 38px;
+  }
+
+  .access-heading h2 {
+    font-size: 3.35rem;
+  }
+
+  .social-access {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-message {
+    margin: 48px 0 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wizard-panel {
+    padding: 20px 15px;
+  }
+
+  .wizard-panel > header {
+    grid-template-columns: 38px 1fr;
+    gap: 12px;
+  }
+
+  .wizard-panel > header > span {
+    width: 38px;
+    height: 38px;
+  }
+
+  .wizard-actions > button {
+    padding: 0 13px;
+  }
+
+  .wizard-next.submit {
+    min-width: 0;
+  }
+}
+
+/* Desktop split-screen lock: only the right panel scrolls. */
+
+@media (min-width: 981px) {
+  .access-page {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  .access-page > .access-brand {
+    position: absolute !important;
+    inset: 0 auto 0 0 !important;
+    width: 51% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  .access-page > .access-main {
+    position: absolute !important;
+    inset: 0 0 0 51% !important;
+    width: 49% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+  }
+}
+.social-access.google-only {
+  grid-template-columns: 1fr;
+}

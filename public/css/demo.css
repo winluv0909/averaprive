@@ -1,0 +1,721 @@
+/* =========================================================
+   Avera Privé — DEMO PAGE
+========================================================= */
+
+.demo-page {
+    padding-top: var(--header-height);
+}
+
+/* =========================================================
+   DEMO HERO
+========================================================= */
+
+.demo-hero {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--stone);
+    background: var(--ivory);
+    padding: 72px 0 88px;
+}
+
+.demo-grid-background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(
+            rgba(10, 10, 10, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(10, 10, 10, 0.035) 1px,
+            transparent 1px
+        );
+    background-size: 90px 90px;
+}
+
+.demo-grid-background::after {
+    position: absolute;
+    top: -250px;
+    left: -200px;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: rgba(200, 185, 154, 0.09);
+    content: "";
+    filter: blur(90px);
+}
+
+.demo-hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(520px, 1.1fr);
+    align-items: start;
+    gap: clamp(60px, 8vw, 130px);
+}
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.demo-introduction {
+    position: sticky;
+    top: calc(var(--header-height) + 45px);
+    padding-top: 40px;
+}
+
+.demo-introduction > .eyebrow {
+    color: #736c60;
+}
+
+.demo-introduction h1 {
+    max-width: 670px;
+    margin-top: 25px;
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 7vw, 7.6rem);
+    font-weight: 500;
+    line-height: 0.87;
+    letter-spacing: -0.055em;
+}
+
+.demo-introduction h1 em {
+    display: block;
+    color: #74716b;
+    font-weight: 400;
+}
+
+.demo-lead {
+    max-width: 600px;
+    margin-top: 35px;
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.85;
+}
+
+/* =========================================================
+   BENEFIT LIST
+========================================================= */
+
+.demo-benefit-list {
+    margin-top: 48px;
+    border-top: 1px solid var(--stone);
+}
+
+.demo-benefit-list article {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 22px;
+    border-bottom: 1px solid var(--stone);
+    padding: 23px 0;
+}
+
+.demo-benefit-list article > span {
+    padding-top: 3px;
+    color: var(--champagne);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.demo-benefit-list h2 {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.demo-benefit-list p {
+    margin-top: 7px;
+    color: var(--text-secondary);
+    font-size: 0.76rem;
+    line-height: 1.7;
+}
+
+.demo-assurance {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 30px;
+    border: 1px solid var(--stone);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 19px;
+}
+
+.demo-assurance > i {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    background: var(--obsidian);
+    color: var(--champagne);
+    font-size: 0.8rem;
+}
+
+.demo-assurance strong,
+.demo-assurance span {
+    display: block;
+}
+
+.demo-assurance strong {
+    font-size: 0.72rem;
+}
+
+.demo-assurance span {
+    margin-top: 4px;
+    color: var(--medium-gray);
+    font-size: 0.66rem;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   DEMO FORM CARD
+========================================================= */
+
+.demo-form-card {
+    border: 1px solid var(--stone);
+    background: var(--warm-white);
+    padding: clamp(30px, 4vw, 52px);
+    box-shadow: var(--shadow-medium);
+}
+
+.demo-form-heading {
+    margin-bottom: 35px;
+}
+
+.demo-form-heading h2 {
+    max-width: 480px;
+    margin-top: 13px;
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+.demo-form-heading p {
+    max-width: 530px;
+    margin-top: 17px;
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    line-height: 1.75;
+}
+
+/* =========================================================
+   FORM MESSAGE
+========================================================= */
+
+.demo-message {
+    display: none;
+    margin-bottom: 23px;
+    border: 1px solid var(--stone);
+    padding: 14px 16px;
+    background: var(--white);
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    line-height: 1.6;
+}
+
+.demo-message.show {
+    display: block;
+}
+
+.demo-message.error {
+    border-color: rgba(159, 48, 56, 0.4);
+    color: var(--error);
+}
+
+.demo-message.success {
+    border-color: rgba(53, 107, 76, 0.4);
+    color: #356b4c;
+}
+
+/* =========================================================
+   FORM LAYOUT
+========================================================= */
+
+.demo-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.demo-form-group {
+    margin-bottom: 21px;
+}
+
+.demo-form-group label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 9px;
+    color: var(--black);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.demo-form-group label span {
+    color: var(--medium-gray);
+    font-size: 0.56rem;
+    font-weight: 500;
+}
+
+.demo-form-group input,
+.demo-form-group select,
+.demo-form-group textarea {
+    width: 100%;
+    border: 1px solid var(--stone);
+    border-radius: 0;
+    outline: none;
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        background-color 180ms ease;
+}
+
+.demo-form-group input,
+.demo-form-group select {
+    height: 54px;
+    padding: 0 15px;
+}
+
+.demo-form-group select {
+    appearance: none;
+    cursor: pointer;
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #79756e 50%
+        ),
+        linear-gradient(
+            135deg,
+            #79756e 50%,
+            transparent 50%
+        );
+    background-position:
+        calc(100% - 18px) 24px,
+        calc(100% - 13px) 24px;
+    background-repeat: no-repeat;
+    background-size: 5px 5px;
+    padding-right: 40px;
+}
+
+.demo-form-group textarea {
+    min-height: 145px;
+    padding: 15px;
+    line-height: 1.7;
+    resize: vertical;
+}
+
+.demo-form-group input::placeholder,
+.demo-form-group textarea::placeholder {
+    color: #aaa69f;
+}
+
+.demo-form-group input:hover,
+.demo-form-group select:hover,
+.demo-form-group textarea:hover {
+    border-color: #c8c4bc;
+}
+
+.demo-form-group input:focus,
+.demo-form-group select:focus,
+.demo-form-group textarea:focus {
+    border-color: var(--black);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+.demo-form-group input.invalid,
+.demo-form-group select.invalid,
+.demo-form-group textarea.invalid {
+    border-color: var(--error);
+}
+
+.demo-error {
+    display: block;
+    min-height: 15px;
+    margin-top: 6px;
+    color: var(--error);
+    font-size: 0.61rem;
+    line-height: 1.4;
+}
+
+.demo-textarea-meta {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.demo-textarea-meta > small:last-child {
+    margin-top: 6px;
+    color: var(--medium-gray);
+    font-size: 0.6rem;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   CONSENT CHECKBOX
+========================================================= */
+
+.demo-consent {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-secondary);
+    font-size: 0.68rem;
+    line-height: 1.65;
+    cursor: pointer;
+}
+
+.demo-consent input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.demo-checkbox-control {
+    display: grid;
+    place-items: center;
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    border: 1px solid var(--stone);
+    background: var(--white);
+    color: var(--white);
+}
+
+.demo-checkbox-control i {
+    font-size: 0.55rem;
+    opacity: 0;
+}
+
+.demo-consent input:checked +
+.demo-checkbox-control {
+    border-color: var(--black);
+    background: var(--black);
+}
+
+.demo-consent input:checked +
+.demo-checkbox-control i {
+    opacity: 1;
+}
+
+.demo-consent input:focus-visible +
+.demo-checkbox-control {
+    outline: 2px solid var(--champagne);
+    outline-offset: 3px;
+}
+
+.demo-consent-error {
+    margin-left: 31px;
+}
+
+.demo-submit {
+    margin-top: 18px;
+}
+
+.demo-submit:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.demo-form-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 17px;
+    color: var(--medium-gray);
+    font-size: 0.59rem;
+}
+
+.demo-form-notice i {
+    font-size: 0.57rem;
+}
+
+/* =========================================================
+   SHARED SECTION HEADING
+========================================================= */
+
+.demo-section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 390px;
+    align-items: end;
+    gap: 70px;
+    margin-bottom: 55px;
+}
+
+.demo-section-heading .section-description {
+    margin: 0;
+}
+
+/* =========================================================
+   DEMO COVERAGE
+========================================================= */
+
+.demo-coverage {
+    background: var(--white);
+}
+
+.demo-coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--stone);
+    border-left: 1px solid var(--stone);
+}
+
+.demo-coverage-grid article {
+    position: relative;
+    min-height: 320px;
+    border-right: 1px solid var(--stone);
+    border-bottom: 1px solid var(--stone);
+    padding: 30px;
+}
+
+.demo-coverage-grid article > i {
+    display: grid;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 75px;
+    background: var(--obsidian);
+    color: var(--white);
+    font-size: 0.82rem;
+}
+
+.demo-coverage-grid article > span {
+    position: absolute;
+    top: 32px;
+    right: 28px;
+    color: var(--champagne);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.demo-coverage-grid h3 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.05;
+}
+
+.demo-coverage-grid p {
+    margin-top: 11px;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   PRICING SUMMARY
+========================================================= */
+
+.demo-pricing-summary .demo-section-heading {
+    align-items: center;
+}
+
+.demo-pricing-summary .eyebrow {
+    color: var(--champagne);
+}
+
+.demo-plan-strip {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        45px
+        minmax(0, 1fr)
+        45px
+        minmax(0, 1fr)
+        45px
+        minmax(0, 1fr);
+    align-items: stretch;
+    margin-top: 55px;
+}
+
+.demo-plan-strip article {
+    min-width: 0;
+    border: 1px solid #373737;
+    padding: 25px;
+}
+
+.demo-plan-strip article.popular {
+    border-color: var(--champagne);
+    background: var(--charcoal);
+}
+
+.demo-plan-strip > i {
+    display: grid;
+    place-items: center;
+    color: var(--champagne);
+    font-size: 0.65rem;
+}
+
+.demo-plan-strip span,
+.demo-plan-strip strong,
+.demo-plan-strip small {
+    display: block;
+}
+
+.demo-plan-strip span {
+    min-height: 31px;
+    color: var(--champagne);
+    font-size: 0.59rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.demo-plan-strip strong {
+    margin-top: 21px;
+    font-family: var(--font-display);
+    font-size: clamp(2.7rem, 4vw, 4rem);
+    font-weight: 400;
+    line-height: 0.9;
+}
+
+.demo-plan-strip small {
+    margin-top: 8px;
+    color: #8f8d88;
+    font-size: 0.57rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+    .demo-hero-grid {
+        grid-template-columns:
+            minmax(0, 0.85fr)
+            minmax(460px, 1.15fr);
+        gap: 45px;
+    }
+
+    .demo-form-card {
+        padding: 34px;
+    }
+
+    .demo-coverage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .demo-plan-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .demo-plan-strip > i {
+        display: none;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE LAYOUT
+========================================================= */
+
+@media (max-width: 860px) {
+    .demo-hero {
+        padding: 65px 0 80px;
+    }
+
+    .demo-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .demo-introduction {
+        position: static;
+        padding-top: 0;
+    }
+
+    .demo-introduction h1 {
+        max-width: 720px;
+    }
+
+    .demo-section-heading {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .demo-section-heading .section-description {
+        max-width: 650px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 620px) {
+    .demo-page {
+        padding-top: var(--header-height);
+    }
+
+    .demo-hero {
+        padding: 45px 0 65px;
+    }
+
+    .demo-introduction h1 {
+        font-size: clamp(3.8rem, 18vw, 5.5rem);
+    }
+
+    .demo-form-card {
+        padding: 28px 20px;
+    }
+
+    .demo-form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .demo-coverage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-coverage-grid article {
+        min-height: auto;
+    }
+
+    .demo-coverage-grid article > i {
+        margin-bottom: 55px;
+    }
+
+    .demo-plan-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-plan-strip article {
+        padding: 25px 22px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .demo-form-group input,
+    .demo-form-group select,
+    .demo-form-group textarea {
+        transition: none;
+    }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Explore agency services, expertise, locations, and company information on Avera Privé."
+    >
+
+    <title>Agency Profile | Avera Privé</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/agency-profile.css">
+    <link rel="stylesheet" href="css/agency-profile-enhancements.css">
+  <script defer src="js/agency-logos.js"></script>
+</head>
+
+<body>
+
+    <a href="#mainContent" class="skip-link">
+        Skip to agency profile
+    </a>
+
+    <!-- HEADER -->
+    <header class="site-header scrolled">
+        <div class="container header-container">
+
+            <a
+                href="index.html"
+                class="brand brand-image-link"
+                aria-label="Avera Privé homepage"
+            >
+                <img
+                    src="assets/images/avera-prive-header-logo.png"
+                    alt="Avera Privé"
+                    class="brand-logo-image"
+                >
+            </a>
+
+            <nav
+                class="desktop-navigation"
+                aria-label="Main navigation"
+            >
+                <a href="agencies.html">Agencies</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="compare.html">Compare</a>
+                <a href="insights.html">Insights</a>
+                <a href="for-agencies.html">For Agencies</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="/agency/login" class="header-login">
+                    Log In
+                </a>
+
+                <a
+                    href="/agency/register"
+                    class="button button-black header-trial"
+                >
+                    Start Free Trial
+                </a>
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav
+            class="mobile-navigation"
+            id="mobileNavigation"
+            aria-label="Mobile navigation"
+        >
+            <a href="agencies.html">Agencies</a>
+            <a href="rankings.html">Rankings</a>
+            <a href="compare.html">Compare</a>
+            <a href="insights.html">Insights</a>
+            <a href="for-agencies.html">For Agencies</a>
+            <a href="/agency/login">Log In</a>
+
+            <a
+                href="/agency/register"
+                class="button button-black"
+            >
+                Start Free Trial
+            </a>
+        </nav>
+    </header>
+
+    <main id="mainContent" class="agency-profile-page">
+      <section class="profile-unavailable container" id="profileUnavailable" role="status">
+        <span class="eyebrow">AGENCY DIRECTORY</span>
+        <h1>Agency profile unavailable</h1>
+        <p>Only reviewed and published agency profiles appear here. Explore the directory for approved listings.</p>
+        <a href="agencies.html" class="button button-black">Explore agencies</a>
+      </section>
+      <div id="profilePublished" hidden>
+        <section class="profile-demo-notice" id="profileDemoNotice" hidden><div class="container"><strong>DEMONSTRATION OFM PROFILE</strong><p>This is a fictional agency created to demonstrate Avera Privé. It is not a real business, is not verified or ranked, has no Trustpilot profile, and cannot receive inquiries.</p></div></section>
+        <section class="profile-hero" aria-labelledby="agencyName">
+          <div class="profile-cover" id="profileCover" role="img" aria-label="Agency cover image"></div>
+          <div class="container">
+            <nav class="profile-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="agencies.html">Agencies</a><span>/</span><span id="breadcrumbAgencyName"></span></nav>
+            <div class="profile-hero-grid">
+              <div class="profile-identity">
+                <div class="profile-logo" id="agencyLogo"></div>
+                <div class="profile-title-area">
+                  <div class="profile-labels"><span class="profile-demo-label" id="profileDemoLabel" hidden>Demo OFM Profile</span><span class="profile-verified" id="verificationBadge" hidden>Verified agency</span><span class="profile-top-rated" id="topRatedBadge" hidden>Top Rated</span><span class="profile-featured" id="sponsoredBadge" hidden>Featured / Sponsored</span></div>
+                  <h1 id="agencyName"></h1><p class="profile-tagline" id="agencyTagline"></p>
+                  <div class="profile-meta"><span><i class="fa-solid fa-location-dot"></i> <span id="agencyLocation"></span></span><span id="agencyExperience"></span><span id="agencySize"></span></div>
+                </div>
+              </div>
+              <aside class="profile-actions-card"><p>Interested in this agency?</p><button type="button" class="button button-black button-full" id="contactAgencyButton" hidden>Contact Agency</button><a class="button button-outline button-full" id="agencyWebsite" target="_blank" rel="noopener noreferrer" hidden>Visit Website</a><a class="button button-outline button-full" id="claimAgencyButton" hidden>Claim this profile</a><p id="contactAvailability"></p><small>Contact details are shared when you choose to send an inquiry.</small></aside>
+            </div>
+            <p class="placement-disclosure" id="placementDisclosure" hidden>Featured / Sponsored placement is paid. Verification and reviews are assessed separately; payment does not affect rankings.</p>
+          </div>
+        </section>
+        <div class="profile-navigation-wrapper"><div class="container"><nav class="profile-navigation" aria-label="Agency profile sections"><a href="#overview">About</a><a href="#services">Services</a><a href="#expertise">Creator niches</a><a href="#locations">Regions</a><a href="#portfolio">Portfolio</a><a href="#case-studies">Case studies</a><a href="#results">Results</a><a href="#reviews">Reviews</a><a href="#verification">Verification</a></nav></div></div>
+        <section class="profile-content"><div class="container profile-content-grid"><div class="profile-main-column">
+          <article class="profile-section" id="overview"><span class="eyebrow">COMPANY OVERVIEW</span><h2>About the agency</h2><p id="agencyDescription"></p></article>
+          <article class="profile-section" id="directory-information"><span class="eyebrow">PUBLIC SOURCES</span><h2>Business information</h2><p>Details below are statements from public agency sources. Missing facts are marked “Not yet confirmed.” Registered addresses may differ from headquarters. A listing does not confirm ownership or business credentials.</p><dl id="directoryInformation"></dl><div id="directorySources"></div></article>
+          <article class="profile-section" id="services"><span class="eyebrow">CAPABILITIES</span><h2>Services and specialties</h2><div class="service-card-grid" id="servicesGrid"></div></article>
+          <article class="profile-section" id="expertise"><span class="eyebrow">EXPERTISE</span><h2>Creator niches</h2><div class="profile-tag-list" id="expertiseTags"></div></article>
+          <article class="profile-section" id="locations"><span class="eyebrow">COVERAGE</span><h2>Countries and regions served</h2><div class="location-list" id="locationList"></div></article>
+          <article class="profile-section" id="portfolio"><span class="eyebrow">SELECTED WORK</span><h2>Portfolio</h2><div class="profile-entry-grid" id="portfolioGrid"></div></article>
+          <article class="profile-section" id="case-studies"><span class="eyebrow">CLIENT WORK</span><h2>Case studies</h2><div class="profile-entry-grid" id="caseStudyGrid"></div></article>
+          <article class="profile-section" id="results"><span class="eyebrow">EVIDENCE</span><h2>Substantiated results</h2><p>Results are shown only when an agency provides a clear metric, timeframe, and supporting evidence reviewed for publication. Individual outcomes are not guarantees.</p><div class="profile-entry-grid" id="resultsGrid"></div></article>
+          <article class="profile-section" id="reviews"><span class="eyebrow">CLIENT FEEDBACK</span><h2>Published reviews</h2><div id="reviewSummary"></div><div class="profile-entry-grid" id="reviewsGrid"></div><p>Reviews are moderated; agencies may respond and report concerns. A published review is not a guarantee of future performance. <a href="trust.html">Read the review policy</a>.</p></article>
+          <article class="profile-section verification-section" id="verification"><span class="eyebrow">TRUST</span><h2>Verification status</h2><p id="verificationDescription"></p><p>Verification checks company identity and an authorized representative. It is independent of paid plans and does not guarantee results. <a href="trust.html">Read the criteria and dispute process</a>.</p></article>
+        </div><aside class="profile-sidebar">
+          <section class="sidebar-card"><span class="eyebrow">AGENCY DETAILS</span><dl class="agency-detail-list"><div><dt>Headquarters</dt><dd id="sidebarHeadquarters"></dd></div><div><dt>Agency size</dt><dd id="sidebarSize"></dd></div><div><dt>Years in business</dt><dd id="sidebarYears"></dd></div></dl></section>
+          <section class="sidebar-card"><span class="eyebrow">SOCIAL PROFILES</span><div class="profile-socials" id="profileSocials"></div></section>
+          <section class="sidebar-card profile-report-card"><h3>See incorrect information?</h3><p>Contact us to report profile or review concerns.</p><button type="button" id="reportProfileButton">Report a concern</button></section>
+        </aside></div></section>
+        <section class="related-agencies section"><div class="container"><div class="related-heading"><div><span class="eyebrow">CONTINUE EXPLORING</span><h2>Related agencies</h2></div><a href="agencies.html" class="button button-outline">View directory</a></div><div class="related-agency-grid" id="relatedAgencyGrid"></div></div></section>
+      </div>
+    </main>
+    <div class="profile-modal-overlay" id="contactModal" aria-hidden="true"><div class="profile-modal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle"><div class="profile-modal-heading"><h2 id="contactModalTitle">Contact this agency</h2><button type="button" class="profile-modal-close" id="closeContactModal" aria-label="Close contact form">×</button></div><form id="agencyContactForm" novalidate><div class="form-group"><label for="contactName">Your name</label><input id="contactName" class="form-input" maxlength="100" required></div><div class="form-group"><label for="contactEmail">Email address</label><input id="contactEmail" class="form-input" type="email" required></div><div class="form-group"><label for="contactMessage">How can the agency help?</label><textarea id="contactMessage" class="form-textarea" minlength="20" maxlength="3000" required></textarea></div><div class="form-trap" aria-hidden="true"><label for="contactWebsite">Website</label><input id="contactWebsite" tabindex="-1" autocomplete="off"></div><label class="contact-consent"><input id="contactConsent" type="checkbox" required><span>I consent to Avera Privé securely sharing this inquiry with the selected agency.</span></label><div class="contact-form-message" id="contactFormMessage" role="status"></div><button class="button button-black button-full" type="submit">Send inquiry</button></form></div></div>
+    <script src="js/main.js"></script>
+    <script src="js/agency-profile.js"></script>
+</body>
+</html>

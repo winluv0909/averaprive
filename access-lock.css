@@ -1,0 +1,55 @@
+/*
+ * Desktop access screens use a true split viewport:
+ * the brand panel never scrolls and the content panel owns all scrolling.
+ * Kept separate from login.css so visual updates cannot remove this behavior.
+ */
+@media (min-width: 981px) {
+  html:has(.access-page),
+  body:has(.access-page) {
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+  }
+
+  body:has(.access-page) {
+    position: fixed !important;
+    inset: 0 !important;
+  }
+
+  .access-page {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .access-page > .access-brand {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 auto 0 0 !important;
+    width: 51vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    transform: none !important;
+  }
+
+  .access-page > .access-main {
+    display: flex !important;
+    position: fixed !important;
+    inset: 0 0 0 51vw !important;
+    width: 49vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+    overscroll-behavior: contain !important;
+  }
+}

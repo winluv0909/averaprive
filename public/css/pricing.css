@@ -1,0 +1,71 @@
+.pricing-hero{padding:140px 0 78px;background:#f4f0e9;border-bottom:1px solid rgba(18,18,18,.12)}
+.pricing-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:90px;align-items:end}
+.pricing-kicker,.section-label{display:block;margin-bottom:22px;color:#b57a32;font-size:.72rem;font-weight:800;letter-spacing:.22em}
+.pricing-hero h1{max-width:850px;font-family:"Cormorant Garamond",serif;font-size:clamp(4rem,7vw,7.5rem);font-weight:500;line-height:.82;letter-spacing:-.055em}
+.pricing-hero h1 em{font-weight:500;color:#9a672c}
+.pricing-hero-copy>p{font-size:1.08rem;line-height:1.75;color:#444}
+.pricing-assurances{display:grid;gap:12px;margin-top:28px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.pricing-assurances i{margin-right:9px;color:#b57a32}
+.plans-section{padding:110px 0;background:#fff}
+.plans-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
+.price-card{position:relative;display:flex;flex-direction:column;min-height:710px;padding:34px 28px;border:1px solid #d9d2c8;background:#faf9f7}
+.price-card-head>span{display:block;margin-bottom:28px;color:#a96e2c;font-size:.67rem;font-weight:800;letter-spacing:.2em}
+.price-card h2{font-family:"Cormorant Garamond",serif;font-size:2.3rem;font-weight:600;line-height:1}
+.price-card-head p{margin-top:10px;color:#777;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.11em}
+.price{display:flex;align-items:end;gap:8px;margin:34px 0 18px}
+.price strong{font-family:"Cormorant Garamond",serif;font-size:3.25rem;font-weight:600;line-height:.8}
+.price span{color:#777;font-size:.76rem}
+.plan-summary{min-height:88px;color:#555;font-size:.9rem;line-height:1.65}
+.plan-button{width:100%;margin:24px 0 28px;text-align:center;justify-content:center}
+.price-card ul{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.price-card li{display:flex;gap:10px;font-size:.8rem;line-height:1.45}
+.price-card li i{margin-top:3px;color:#a96e2c}
+.price-card-featured{border-color:#151515;background:#151515;color:#fff;transform:translateY(-16px)}
+.price-card-featured .price-card-head p,.price-card-featured .plan-summary,.price-card-featured .price span{color:#c7c2bb}
+.price-card-featured li i{color:#d2a568}
+.popular-label{position:absolute;top:0;right:0;padding:9px 12px;background:#c18a45;color:#111;font-size:.57rem;font-weight:900;letter-spacing:.12em}
+.launch-note{max-width:760px;margin:44px auto 0;text-align:center;color:#706a63;font-size:.78rem;line-height:1.7}
+.trust-separation-section{padding:115px 0;background:#171717;color:#fff}
+.trust-separation-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:90px}
+.trust-separation-section h2{font-family:"Cormorant Garamond",serif;font-size:clamp(3rem,5vw,5.5rem);font-weight:500;line-height:.92}
+.signal-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #444;border-left:1px solid #444}
+.signal-grid article{min-height:220px;padding:30px;border-right:1px solid #444;border-bottom:1px solid #444}
+.signal-grid span{color:#d2a568;font-size:.63rem;font-weight:800;letter-spacing:.18em}
+.signal-grid h3{margin:28px 0 10px;font-family:"Cormorant Garamond",serif;font-size:1.75rem}
+.signal-grid p{color:#aaa;font-size:.84rem;line-height:1.65}
+.comparison-section{padding:115px 0;background:#f4f0e9}
+.comparison-heading{display:grid;grid-template-columns:.65fr 1fr .8fr;gap:40px;align-items:end;margin-bottom:55px}
+.comparison-heading h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2.8rem,4vw,4.7rem);font-weight:500;line-height:.95}
+.comparison-heading p{color:#625d57;font-size:.9rem;line-height:1.7}
+.comparison-table-wrap{overflow-x:auto;border:1px solid #d4ccc1;background:#fff}
+.comparison-table{width:100%;min-width:850px;border-collapse:collapse}
+.comparison-table th,.comparison-table td{padding:20px 22px;border-right:1px solid #e1dbd3;border-bottom:1px solid #e1dbd3;text-align:center;font-size:.78rem}
+.comparison-table th:first-child,.comparison-table td:first-child{text-align:left;font-weight:700}
+.comparison-table thead{background:#171717;color:#fff;text-transform:uppercase;letter-spacing:.1em}
+.comparison-table tbody tr:last-child td{border-bottom:0}
+.pricing-faq-section{padding:115px 0;background:#fff}
+.faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:100px}
+.faq-grid h2{font-family:"Cormorant Garamond",serif;font-size:clamp(3rem,5vw,5rem);font-weight:500;line-height:.92}
+.faq-list{border-top:1px solid #cfc8be}
+.faq-list details{border-bottom:1px solid #cfc8be}
+.faq-list summary{display:flex;justify-content:space-between;gap:25px;padding:25px 0;cursor:pointer;font-weight:700;list-style:none}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list details[open] summary i{transform:rotate(45deg)}
+.faq-list summary i{color:#a96e2c;transition:transform .2s ease}
+.faq-list details p{max-width:700px;padding:0 45px 25px 0;color:#625d57;font-size:.9rem;line-height:1.75}
+.pricing-cta{padding:100px 0;background:#9a672c;color:#fff}
+.pricing-cta-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:100px;align-items:end}
+.pricing-cta span{font-size:.68rem;font-weight:800;letter-spacing:.2em}
+.pricing-cta h2{margin-top:22px;font-family:"Cormorant Garamond",serif;font-size:clamp(3.2rem,5vw,5.7rem);font-weight:500;line-height:.9}
+.pricing-cta p{margin-bottom:26px;line-height:1.7;color:#f0e8dc}
+@media(max-width:1100px){.plans-grid{grid-template-columns:1fr 1fr}.price-card-featured{transform:none}.comparison-heading{grid-template-columns:1fr 1fr}.comparison-heading p{grid-column:2}.pricing-hero-grid,.trust-separation-grid,.pricing-cta-grid{gap:50px}}
+@media(max-width:760px){.pricing-hero{padding:112px 0 60px}.pricing-hero-grid,.trust-separation-grid,.comparison-heading,.faq-grid,.pricing-cta-grid{grid-template-columns:1fr}.pricing-hero-grid,.trust-separation-grid,.faq-grid,.pricing-cta-grid{gap:45px}.plans-section,.trust-separation-section,.comparison-section,.pricing-faq-section,.pricing-cta{padding:62px 0}.plans-grid{grid-template-columns:1fr}.price-card{min-height:0}.plan-summary{min-height:0}.comparison-heading p{grid-column:auto}.signal-grid{grid-template-columns:1fr}.pricing-hero h1{font-size:clamp(3.7rem,18vw,5.5rem)}}
+
+/* Compact, consistent public-page rhythm. */
+.pricing-hero{padding:140px 0 78px}
+.plans-section,.trust-separation-section,.comparison-section,.pricing-faq-section{padding:88px 0}
+.pricing-cta{padding:80px 0}
+@media(max-width:760px){
+  .pricing-hero{padding:112px 0 60px}
+  .plans-section,.trust-separation-section,.comparison-section,.pricing-faq-section,.pricing-cta{padding:62px 0}
+}

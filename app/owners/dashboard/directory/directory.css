@@ -1,0 +1,60 @@
+.directory-operations {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 24px;
+  color: #181916;
+}
+.directory-operations h1,
+.directory-operations h2,
+.directory-operations h3 {
+  font-family: Georgia, serif;
+}
+.directory-operations h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+.directory-operations form,
+.directory-operations article {
+  padding: 24px;
+  margin: 24px 0;
+  border: 1px solid #d7cdbd;
+  background: #fff;
+}
+.directory-operations label {
+  display: block;
+  margin: 16px 0;
+  font-weight: 600;
+}
+.directory-operations input:not([type="checkbox"]),
+.directory-operations textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #bcb4a6;
+  background: #fff;
+  color: #181916;
+  font: inherit;
+}
+.directory-operations textarea {
+  min-height: 120px;
+}
+.directory-operations button {
+  padding: 12px 18px;
+  margin: 8px 12px 8px 0;
+  border: 1px solid #181916;
+  background: #181916;
+  color: #fff;
+  cursor: pointer;
+}
+.directory-operations a {
+  color: #725d37;
+}
+.directory-operations [role="alert"] {
+  padding: 16px;
+  border-left: 3px solid #b02020;
+  background: #fff;
+}
+.directory-operations article p {
+  overflow-wrap: anywhere;
+}

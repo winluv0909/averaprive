@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="FantasyRise">
+  <rect width="64" height="64" rx="13" fill="#3B2440"/>
+  <circle cx="21" cy="32" r="9" fill="none" stroke="#FAF5F3" stroke-width="5.5"/>
+  <path d="M30 32H54" stroke="#FAF5F3" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M45 32V42" stroke="#BE3062" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M53 32V40" stroke="#BE3062" stroke-width="5.5" stroke-linecap="round"/>
+</svg>

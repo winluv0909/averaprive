@@ -1,0 +1,407 @@
+[
+  {
+    "agency": "Creators Inc",
+    "slug": "creators-inc",
+    "website": "https://www.creatorsinc.com/",
+    "image_source": "https://www.creatorsinc.com/#header-logo",
+    "local_url": "/assets/images/agencies/creators-inc.svg",
+    "sha256": "f659304b14cfce7deb8b11571bf80b4be64c68faac751cd2c0fbffdad6897daf",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "FansHub",
+    "slug": "fanshub",
+    "website": "https://www.usefanshub.com/",
+    "image_source": "https://www.usefanshub.com/wp-content/uploads/2026/04/Fanshub-Logo.avif",
+    "local_url": "/assets/images/agencies/fanshub.png",
+    "sha256": "7a497ce375a67bff779902f62d56e4aeba822c710b98cf61dac70337e5ae4f11",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Sakura Management",
+    "slug": "sakura-management",
+    "website": "https://www.sakura.agency/",
+    "image_source": "https://cdn.prod.website-files.com/6380611d34419190c5cb43e2/66b7b1319333b31a0659b2ae_Sakura%20Logo%20Shape%20v2%201.png",
+    "local_url": "/assets/images/agencies/sakura-management.png",
+    "sha256": "480e7fd1a7dc6eecfaf745739b3199a02bad1ae1837aa2902e0a09fd5b722588",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "TEASY Agency",
+    "slug": "teasy-agency",
+    "website": "https://teasyagency.com/",
+    "image_source": "https://teasyagency.com/wp-content/uploads/2024/01/teasy-agency-white.png",
+    "local_url": "/assets/images/agencies/teasy-agency.png",
+    "sha256": "0a08287c9eef9d17752935c9bc128918037bd2a62b5a67db58a1d7856eaf242d",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Bunny Agency",
+    "slug": "bunny-agency",
+    "website": "https://bunny-agency.com/",
+    "image_source": "https://bunny-agency.com/ba-white-350.png",
+    "local_url": "/assets/images/agencies/bunny-agency.png",
+    "sha256": "1572f0a21d47aa2b74090ccfddf63dde112913eab47474143e8dd8739ff049bb",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Louna's Models",
+    "slug": "louna-s-models",
+    "website": "https://lounasmodels.com/",
+    "image_source": "https://lounasmodels.com/wp-content/uploads/2025/11/Asset-5@4x-8.png",
+    "local_url": "/assets/images/agencies/louna-s-models.png",
+    "sha256": "8a6368c1d6a5721b1e91b691c8c62f3eb16bc988355e3f8cf726cb67dcc771ac",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "MANGO",
+    "slug": "mango",
+    "website": "https://www.mangova.agency/",
+    "image_source": "https://www.mangova.agency/logo.png",
+    "local_url": "/assets/images/agencies/mango.png",
+    "sha256": "3d5954a85923634049092fecbf19fd0e2fb846eec2a1d40e08599bb5d4cba987",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "FantasyRise",
+    "slug": "fantasyrise",
+    "website": "https://fantasyrise.com/",
+    "image_source": "https://fantasyrise.com/assets/brand/logo-mark.svg",
+    "local_url": "/assets/images/agencies/fantasyrise.svg",
+    "sha256": "035a47237c619124eaed749f1eec60555e8954e3cde38ff311c18b05c984453d",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "OnModelStudios",
+    "slug": "onmodelstudios",
+    "website": "https://onmodelstudios.com/",
+    "image_source": "https://onmodelstudios.com/logo-onmodel-96.png",
+    "local_url": "/assets/images/agencies/onmodelstudios.png",
+    "sha256": "6f5808418bb7f61b7acbc2eaecf3bd00fa6b0da907bb2a0826f2a477e0754386",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Perlage Studios",
+    "slug": "perlage-studios",
+    "website": "https://perlagestudios.com/",
+    "image_source": "https://perlagestudios.com/logo.png",
+    "local_url": "/assets/images/agencies/perlage-studios.png",
+    "sha256": "c0763dd53a67cc8c9efd461395902d9bb017bc88deae143944fdc5be7e05ee58",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Lumina Connect",
+    "slug": "lumina-connect",
+    "website": "https://lumina-connect.com/",
+    "image_source": "https://lumina-connect.com/logo-wordmark-364.webp",
+    "local_url": "/assets/images/agencies/lumina-connect.png",
+    "sha256": "9c823a77e140d34a33f41ee5a27ae56a5c2ffd51a14eaca8cfff76d10bda211e",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Foxy Studios",
+    "slug": "foxy-studios",
+    "website": "https://foxy-studios.com/",
+    "image_source": "https://foxy-studios.com/public/images/foxy-studios-logo.webp",
+    "local_url": "/assets/images/agencies/foxy-studios.png",
+    "sha256": "d7d9fd53abf0dc09025f8c7f180e97e92f7b3decbcce050e3585ab1bd1a7edaa",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Aruna Talent",
+    "slug": "aruna-talent",
+    "website": "https://arunatalent.com/",
+    "image_source": "https://arunatalent.com/images/logo.webp",
+    "local_url": "/assets/images/agencies/aruna-talent.png",
+    "sha256": "16e66aba18eea32579b11024474d8a37959df249ddba4f1e7250a037e8036dee",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Hush Talent Inc.",
+    "slug": "hush-talent-inc",
+    "website": "https://hushtalentinc.com/",
+    "image_source": "https://hushtalentinc.com/favicon.svg",
+    "local_url": "/assets/images/agencies/hush-talent-inc.svg",
+    "sha256": "4c6b7fdf41c0b000651d0a9cdc566462026da45c5a489fba49cba6639f443a96",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "SirenCY",
+    "slug": "sirency",
+    "website": "https://www.sirency.com/",
+    "image_source": "https://www.sirency.com/images/Logo-1-1.svg",
+    "local_url": "/assets/images/agencies/sirency.svg",
+    "sha256": "ff0da815ee4d79e78021ff2befc93579f15963cedd44d31fcffa643d92fb15d1",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "TopStar MGMT",
+    "slug": "topstar-mgmt",
+    "website": "https://www.topstarmgmt.com/",
+    "image_source": "https://www.topstarmgmt.com/brand_assets/logo.opt.jpg",
+    "local_url": "/assets/images/agencies/topstar-mgmt.png",
+    "sha256": "b028e679bc6c03234b8913240ddda0116ef87704cf34f68e6211d669af5ae79d",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "AROA Agency",
+    "slug": "aroa-agency",
+    "website": "https://aroaagency.com/",
+    "image_source": "https://aroaagency.com/_astro/logo.BnPy_HRe_3Bixm.webp",
+    "local_url": "/assets/images/agencies/aroa-agency.png",
+    "sha256": "4a4e913f7970145723b9bf12eac3f949f259ffde1607a8bd89d66e4e4b16efae",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "AT Agency",
+    "slug": "at-agency",
+    "website": "https://at-agency.co/",
+    "image_source": "https://at-agency.co/logo_transparent.png",
+    "local_url": "/assets/images/agencies/at-agency.png",
+    "sha256": "59c595ec9b3b02c7f33d45c0968ebcdc09d24bc61834118c313ade773278a12f",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "XCreatorMgmt",
+    "slug": "xcreatormgmt",
+    "website": "https://www.xcreatormgmt.com/",
+    "image_source": "https://cdn.prod.website-files.com/6603e6d9e2a14050dcf8effe/662be94bbd9efba33b09572d_x%20creator%20mgmt%20agency%20(2).svg",
+    "local_url": "/assets/images/agencies/xcreatormgmt.svg",
+    "sha256": "5947229fb29b9387611a83fd554f2bd55814c7996eae064d7b0b28271a1d7f85",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Vanguard Star Management",
+    "slug": "vanguard-star-management",
+    "website": "https://vsmagency.com/",
+    "image_source": "https://vsmagency.com/#header-logo",
+    "local_url": "/assets/images/agencies/vanguard-star-management.svg",
+    "sha256": "3c7e78939b352c22b70cf4b8ac36647f5f4c9dbf9b4f8b0e76c6cbcb51ce19d1",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Model Starz",
+    "slug": "model-starz",
+    "website": "https://www.modelstarzmgmt.com/",
+    "image_source": "https://images.squarespace-cdn.com/content/v1/60399fba7b5f487d2f75a832/88a06ad8-c355-4c13-a7dd-ec11280fa1e8/ModelStarz_Logo_A1.jpeg?format=1500w",
+    "local_url": "/assets/images/agencies/model-starz.png",
+    "sha256": "db21e85a9362498c2d1ee6db08cb5bd5915e0692f1a515a30e9fc23dfdea4b91",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Vantage Agency",
+    "slug": "vantage-agency",
+    "website": "https://thevantage.agency/",
+    "image_source": "https://thevantage.agency/#header-logo",
+    "local_url": "/assets/images/agencies/vantage-agency.svg",
+    "sha256": "2364f40ce9cecb064f95beaee0861f170aadfbfdcdd933747fced3de73c85183",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Lush Management",
+    "slug": "lush-management",
+    "website": "https://www.lushmgt.com/",
+    "image_source": "https://static.wixstatic.com/media/2dde46_376a9231818742e7b9974b7bc81a4347~mv2.png",
+    "local_url": "/assets/images/agencies/lush-management.png",
+    "sha256": "9ac22f29acda33e1b9630925c0a240dc0d2592d17eb4c9a1b3dfd01aac897ea7",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Hussar OFM",
+    "slug": "hussar-ofm",
+    "website": "https://www.hussarofm.com/",
+    "image_source": "https://www.hussarofm.com/logo.jpg",
+    "local_url": "/assets/images/agencies/hussar-ofm.png",
+    "sha256": "a22586eabd8485cc55b3ec32dccc772b24d4f279a46063ea9707277483cd9c9e",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Lookstars Agency",
+    "slug": "lookstars-agency",
+    "website": "https://www.lookstarsagency.com/en",
+    "image_source": "https://www.lookstarsagency.com/images/logo.svg",
+    "local_url": "/assets/images/agencies/lookstars-agency.svg",
+    "sha256": "e89541fa9738e34a8ccf56aa24ab5f4aae93eb8a66153273cf5f7797e69fa267",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "EROS Agency",
+    "slug": "eros-agency",
+    "website": "https://www.agency-eros.com/",
+    "image_source": "https://cdn.prod.website-files.com/6723dd3f0008aac0f2ae645a/675189969855d3b01acadee0_Group.avif",
+    "local_url": "/assets/images/agencies/eros-agency.png",
+    "sha256": "4f178c57fed6be5ddfa0417672bce7fb7f6c522c25147acec37ca9030d347804",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "FEM Management",
+    "slug": "fem-management",
+    "website": "https://www.fem-management.com/",
+    "image_source": "https://cdn.prod.website-files.com/67ecf27f055cf4c78b332baf/684da6f416fb7e5effdb454b_FEM-Management-2025-White.svg",
+    "local_url": "/assets/images/agencies/fem-management.svg",
+    "sha256": "687bda03fdf826cc78170432058dc88c8a19e01f4f0fa4a2b59c5279de90381e",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Aura Management",
+    "slug": "aura-management",
+    "website": "https://www.auramgmt.com.au/",
+    "image_source": "https://static.wixstatic.com/media/68b680_2d29f10e2e85400dbd4e1b8b0674d9c4~mv2.png",
+    "local_url": "/assets/images/agencies/aura-management.png",
+    "sha256": "e55252843f33d4b9fe7b05df4dda273cd60cb5b2ed76b6572fc1be6c5a74878f",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Nest Talent",
+    "slug": "nest-talent",
+    "website": "https://www.nesttalent.com/",
+    "image_source": "https://static.wixstatic.com/media/24a956_042d0832a6e24bb0bb8a569adbd5e5de~mv2.png/v1/fill/w_109,h_109,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Nest%20logo.png",
+    "local_url": "/assets/images/agencies/nest-talent.png",
+    "sha256": "59b8ac334c64428480640bde89a86f2b73a7ad8271b28cf12c4797daf1654692",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Blue Rose Talent",
+    "slug": "blue-rose-talent",
+    "website": "https://bluerosetalent.com/",
+    "image_source": "https://bluerosetalent.com/brand/logo-primary-colour.svg",
+    "local_url": "/assets/images/agencies/blue-rose-talent.svg",
+    "sha256": "699d547480622496217c155fe5b6d265b16d471542a4daa6c688f80377f684d9",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "The Scandilo Agency",
+    "slug": "the-scandilo-agency",
+    "website": "https://scandiloagency.com/",
+    "image_source": "https://scandiloagency.com/apple-touch-icon.png",
+    "local_url": "/assets/images/agencies/the-scandilo-agency.png",
+    "sha256": "d369d26e78b0dd968df1eee77675f8a1c084de051406032c7c22e4f79e97ae3d",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "ALLURE",
+    "slug": "allure",
+    "website": "https://www.allureagencyparis.com/en",
+    "image_source": "https://www.allureagencyparis.com/_next/image?url=%2Fbrand%2Fallure-wordmark-white.png&w=256&q=75&dpl=dpl_CoW2wXw5EsypWeuVaiEu6BxQ1Ttr",
+    "local_url": "/assets/images/agencies/allure.png",
+    "sha256": "00a5a3b9f7438db0ceee903760c00749df447352e3843ab64f35a78a04d85339",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Unfiltered Management",
+    "slug": "unfiltered-management",
+    "website": "https://www.unfiltered-management.com/",
+    "image_source": "https://cdn.prod.website-files.com/667a7383543d53aa4b4ec4d4/667a7383543d53aa4b4ec696_unfilteredWhite.png",
+    "local_url": "/assets/images/agencies/unfiltered-management.png",
+    "sha256": "3e7b992b4a7adc5005d17b92d94c499997a55b2034a2d81dc2c3c64cbe1f9791",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Xentra Group",
+    "slug": "xentra-group",
+    "website": "https://xentragroup.co.uk/onlyfans-agency-uk",
+    "image_source": "https://xentragroup.co.uk/_next/image?url=%2Fxentra-logo.png&w=384&q=75",
+    "local_url": "/assets/images/agencies/xentra-group.png",
+    "sha256": "6f98517f3e4fe90df12c6d06be088ea98711d494a6e86ae5314446f4b200f942",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Elvision Studios",
+    "slug": "elvision-studios",
+    "website": "https://elvision-studios.com/en/europe/united-kingdom",
+    "image_source": "https://elvision-studios.com/logo.png",
+    "local_url": "/assets/images/agencies/elvision-studios.png",
+    "sha256": "49bc9549bd0a7787a1443acd0838dd1b4e7fc5f1dbdf236f0671f9c1b84e4008",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Shevo Studio",
+    "slug": "shevo-studio",
+    "website": "https://www.shevostudio.com/",
+    "image_source": "https://www.shevostudio.com/images/logo.jpg",
+    "local_url": "/assets/images/agencies/shevo-studio.png",
+    "sha256": "74b234ca993c3ad7687d576ebafd60d1de60f2fa7d06d7e83793f952ea74cf55",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Norvo Management",
+    "slug": "norvo-management",
+    "website": "https://norvomanagement.com/",
+    "image_source": "https://norvomanagement.com/brand/norvo-logo.png",
+    "local_url": "/assets/images/agencies/norvo-management.png",
+    "sha256": "b0c6f231b24dbcb8e7224fed0545245a2ad156d1c880d1944e41e6297f357f63",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "20MG",
+    "slug": "20mg",
+    "website": "https://20mg.co/",
+    "image_source": "https://20mg.co/brand/20mg/icons/icon-signal-zero/20mg-icon-signal-512.png",
+    "local_url": "/assets/images/agencies/20mg.png",
+    "sha256": "3c02859c9bb9cf9e2d9b0356388e2366123469de93f3f50e047f14a11701d1a2",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Lambert Agency",
+    "slug": "lambert-agency",
+    "website": "https://agencylambert.com/",
+    "image_source": "https://agencylambert.com/assets/logo-mark.png",
+    "local_url": "/assets/images/agencies/lambert-agency.png",
+    "sha256": "e572d608a0799ea7ae61b90ab07ae7e2614b268815a86e2086f072ac08ebfb10",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Empire of Agency",
+    "slug": "empire-of-agency",
+    "website": "https://www.empireofagency.com/",
+    "image_source": "https://www.empireofagency.com/images/eoa/logo.png",
+    "local_url": "/assets/images/agencies/empire-of-agency.png",
+    "sha256": "040a433e851eb9d29f226b37ca8f7602ee9d728f104a15c1383225acf0b91518",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "Elev Agency",
+    "slug": "elev-agency",
+    "website": "https://elev.agency/",
+    "image_source": "https://elev.agency/images/elev-logo-icon.png",
+    "local_url": "/assets/images/agencies/elev-agency.png",
+    "sha256": "915f91b23070f2ca0fad336bf6416e4aeeda87f8103f32272b38d9f9f23da328",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "OFAgency.co",
+    "slug": "ofagency-co",
+    "website": "https://www.ofagency.co/",
+    "image_source": "https://cdn.prod.website-files.com/63ce8930440ed76e410dab2a/63ce9834c5889616348933ee_OFAgency.co%20logo%202.png",
+    "local_url": "/assets/images/agencies/ofagency-co.png",
+    "sha256": "94358814b9f5625a681a8b6cfa2dca54d22ead07613a1e92f7eacb01648d4f5e",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "TDM Business",
+    "slug": "tdm-business",
+    "website": "https://tdmbusiness.com/",
+    "image_source": "https://tdmbusiness.com/wp-content/themes/tdm-business/assets/images/logo.png",
+    "local_url": "/assets/images/agencies/tdm-business.png",
+    "sha256": "fac4105c11cbec05b74f20e05f7cd6d30e116a19c1eb0569c472a355352d34ad",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "OFM Models Agency",
+    "slug": "ofm-models-agency",
+    "website": "https://www.onlyfansmanagement.info/",
+    "image_source": "https://www.onlyfansmanagement.info/#header-logo",
+    "local_url": "/assets/images/agencies/ofm-models-agency.svg",
+    "sha256": "863d6e234395a95de13971ccf369b37ff849384d1615daa4faad97386a316f19",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "agency": "BeaconOFM",
+    "slug": "beaconofm",
+    "website": "https://beaconofm.com/",
+    "image_source": "https://beaconofm.com/icon-512.png",
+    "local_url": "/assets/images/agencies/beaconofm.png",
+    "sha256": "98910b9b4917687461b61c7c144eb4c5f6dca5c2f8082588aa030d3cb0688b9f",
+    "checked_on": "2026-10-10"
+  }
+]

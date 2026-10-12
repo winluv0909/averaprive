@@ -1,0 +1,27 @@
+import Link from "next/link";
+import { requireStaffRole } from "@/lib/auth/authorization";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { OwnerOperationsShell } from "@/app/dashboard/_components/portal-shells";
+import { createStaff } from "./actions";
+import "./staff-team.css";
+
+export const metadata = { title: "Staff accounts", robots: { index: false, follow: false } };
+const roleNames: Record<string,string> = { super_admin:"Platform owner",moderator:"Moderator",verification_reviewer:"Verification reviewer",support:"Support",finance:"Finance" };
+export default async function TeamPage({searchParams}:{searchParams:Promise<{error?:string;created?:string;page?:string}>}) {
+  const {user}=await requireStaffRole(["super_admin"]);
+  const query=await searchParams;
+  const requested=Number(query.page);
+  const page=Number.isSafeInteger(requested)&&requested>0&&requested<100000?requested:1;
+  const db=createAdminClient();
+  const {data:roles,error,count}=await db.from("ap_staff_roles").select("id,user_id,role,created_at",{count:"exact"}).order("created_at",{ascending:false}).order("id",{ascending:false}).range((page-1)*20,page*20-1);
+  if(error) throw new Error("Staff roles could not be loaded.");
+  const accounts=await Promise.all([...new Set((roles||[]).map(item=>String(item.user_id)))].map(async id=>{const result=await db.auth.admin.getUserById(id);return {id,email:result.data.user?.email||"Email unavailable",pending:result.data.user?.app_metadata?.platform_password_change_required===true};}));
+  const total=count||0;
+  return <OwnerOperationsShell email={user.email} active="team"><main className="ap-staff-page">
+    <header className="ap-staff-header"><div><p className="ap-staff-kicker">OWNER ADMINISTRATION</p><h1>Your team. Their access.</h1><p>Create individual staff accounts and assign the right permissions.</p></div><span className="ap-staff-owner-badge">Owner access only</span></header>
+    {query.error&&<div role="alert" className="ap-staff-alert ap-staff-alert--error">{query.error}</div>}
+    {query.created&&<div role="status" className="ap-staff-alert">Account created. Share the temporary credentials privately. The staff member must change their password on first login. No invitation email has been sent.</div>}
+    <div className="ap-staff-grid"><section className="ap-staff-create" aria-labelledby="create-staff-title"><div className="ap-staff-card-heading"><p className="ap-staff-kicker">ADD A TEAM MEMBER</p><h2 id="create-staff-title">Create staff account</h2><p>One person, one login. Access follows their assigned role.</p></div><form action={createStaff}><label htmlFor="staff-email">Staff email address</label><input id="staff-email" name="email" type="email" autoComplete="off" placeholder="name@company.com" required/><label htmlFor="staff-password">Temporary password</label><input id="staff-password" name="temporary_password" type="password" minLength={12} maxLength={128} autoComplete="new-password" placeholder="Use 12–128 characters" required/><small>The staff member replaces this after signing in.</small><label htmlFor="staff-role">Assigned role</label><select id="staff-role" name="role" required><option value="moderator">Moderator</option><option value="verification_reviewer">Verification reviewer</option><option value="support">Support</option><option value="finance">Finance</option></select><button type="submit">Create staff account <span aria-hidden="true">→</span></button></form><p className="ap-staff-login-note">Staff sign in at <code>/owners/login</code>. Owner permissions are assigned separately.</p></section>
+    <section className="ap-staff-roster" aria-labelledby="staff-roster-title"><header><div><p className="ap-staff-kicker">PLATFORM ACCESS</p><h2 id="staff-roster-title">Assigned accounts</h2></div><span className="ap-staff-count">{total} role {total===1?"assignment":"assignments"}</span></header><div className="ap-staff-account-list">{roles?.length?roles.map(item=>{const account=accounts.find(entry=>entry.id===item.user_id);return <article key={item.id} className="ap-staff-account"><div className="ap-staff-avatar" aria-hidden="true">{item.role==="super_admin"?"AP":"TM"}</div><div className="ap-staff-account-info"><strong>{account?.email||"Email unavailable"}</strong><span>{roleNames[item.role]||item.role.replaceAll("_"," ")}</span><details><summary>User ID</summary><code>{item.user_id}</code></details></div><span className="ap-staff-state" data-pending={account?.pending}>{account?.pending?"Password setup":"Assigned"}</span></article>;}):<div className="ap-staff-empty">No role assignments on this page.</div>}</div>{total>20&&<nav className="ap-staff-pagination" aria-label="Account list pages">{page>1&&<Link href={`/owners/dashboard/team?page=${page-1}`}>← Previous</Link>}<span>Page {page} of {Math.ceil(total/20)}</span>{page*20<total&&<Link href={`/owners/dashboard/team?page=${page+1}`}>Next →</Link>}</nav>}<div className="ap-staff-guidance"><h3>Access by role</h3><dl><div><dt>Moderator</dt><dd>Reviews, moderation and trust operations</dd></div><div><dt>Verification reviewer</dt><dd>Verification and fraud review</dd></div><div><dt>Support</dt><dd>Support tickets, inquiries and disputes</dd></div><div><dt>Finance</dt><dd>Payments, subscriptions and commercial operations</dd></div></dl><p>Only platform owners can create staff accounts. This form cannot create another owner.</p></div></section></div>
+  </main></OwnerOperationsShell>;
+}

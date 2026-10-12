@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Discover and compare professional creator, talent, influencer, and social-media agencies on Avera Privé."
+    >
+
+    <title>Discover Agencies | Avera Privé</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/agencies.css">
+    <link rel="stylesheet" href="css/directory-enhancements.css">
+  <script defer src="js/agency-logos.js"></script>
+</head>
+
+<body>
+
+    <a href="#mainContent" class="skip-link">
+        Skip to agencies
+    </a>
+
+    <!-- =============================================
+         HEADER
+    ============================================== -->
+
+    <header class="site-header scrolled" id="siteHeader">
+        <div class="container header-container">
+
+            <a
+                href="index.html"
+                class="brand brand-image-link"
+                aria-label="Avera Privé homepage"
+            >
+                <img
+                    src="assets/images/avera-prive-header-logo.png"
+                    alt="Avera Privé"
+                    class="brand-logo-image"
+                >
+            </a>
+
+            <nav
+                class="desktop-navigation"
+                aria-label="Primary navigation"
+            >
+                <a href="agencies.html" class="active">
+                    Agencies
+                </a>
+
+                <a href="rankings.html">
+                    Rankings
+                </a>
+
+                <a href="compare.html">
+                    Compare
+                </a>
+
+                <a href="insights.html">
+                    Insights
+                </a>
+
+                <a href="for-agencies.html">
+                    For Agencies
+                </a>
+            </nav>
+
+            <div class="header-actions">
+
+                <div class="language-selector">
+                    <button
+                        type="button"
+                        class="language-button"
+                        id="languageButton"
+                        aria-label="Select language"
+                        aria-expanded="false"
+                    >
+                        <i class="fa-solid fa-globe"></i>
+                        <span id="currentLanguage">EN</span>
+                        <i class="fa-solid fa-chevron-down language-arrow"></i>
+                    </button>
+
+                    <div
+                        class="language-dropdown"
+                        id="languageDropdown"
+                    >
+                        <div class="language-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="languageSearch"
+                                placeholder="Search language"
+                                autocomplete="off"
+                            >
+                        </div>
+
+                        <div class="language-list" id="languageList">
+                            <button data-language="en" class="selected">
+                                <span>English</span>
+                                <small>EN</small>
+                            </button>
+
+                            <button data-language="de">
+                                <span>Deutsch</span>
+                                <small>DE</small>
+                            </button>
+
+                            <button data-language="fr">
+                                <span>Français</span>
+                                <small>FR</small>
+                            </button>
+
+                            <button data-language="es">
+                                <span>Español</span>
+                                <small>ES</small>
+                            </button>
+
+                            <button data-language="ja">
+                                <span>日本語</span>
+                                <small>JA</small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/agency/login" class="header-login">
+                    Log In
+                </a>
+
+                <a
+                    href="demo.html"
+                    class="button button-outline header-demo"
+                >
+                    Get a Demo
+                </a>
+
+                <a
+                    href="/agency/register"
+                    class="button button-black header-trial"
+                >
+                    Start Free Trial
+                </a>
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="mobile-navigation" id="mobileNavigation">
+            <a href="agencies.html">Agencies</a>
+            <a href="rankings.html">Rankings</a>
+            <a href="compare.html">Compare</a>
+            <a href="insights.html">Insights</a>
+            <a href="for-agencies.html">For Agencies</a>
+            <a href="/agency/login">Log In</a>
+
+            <a href="demo.html" class="button button-outline">
+                Get a Demo
+            </a>
+
+            <a href="/agency/register" class="button button-black">
+                Start Free Trial
+            </a>
+        </div>
+    </header>
+
+    <main id="mainContent">
+
+        <!-- =============================================
+             DIRECTORY HERO
+        ============================================== -->
+
+        <section class="directory-hero">
+            <div class="container directory-hero-layout">
+
+                <div class="directory-heading">
+                    <span class="eyebrow">
+                        THE GLOBAL AGENCY DIRECTORY
+                    </span>
+
+                    <h1>
+                        Find your next
+                        <em>agency partner.</em>
+                    </h1>
+
+                    <p>
+                        Search and compare professional agencies by
+                        expertise, location, team size, and services.
+                    </p>
+                </div>
+
+                <div class="directory-statistics">
+                    <article>
+                        <strong>Curated</strong>
+                        <span>Moderated profiles</span>
+                    </article>
+
+                    <article>
+                        <strong>Global</strong>
+                        <span>Worldwide discovery</span>
+                    </article>
+
+                    <article>
+                        <strong>Independent</strong>
+                        <span>Trust methodology</span>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="directory-trust-strip" aria-label="Directory standards">
+            <div class="container">
+                <div><span>01</span><p><strong>Profiles are moderated</strong><small>Publication follows a separate quality and policy decision.</small></p></div>
+                <div><span>02</span><p><strong>Verification is independent</strong><small>Verified status cannot be purchased through a paid plan.</small></p></div>
+                <div><span>03</span><p><strong>Ranking stays objective</strong><small>Commercial visibility is labelled and separated from trust signals.</small></p></div>
+            </div>
+        </section>
+
+        <!-- =============================================
+             SEARCH
+        ============================================== -->
+
+        <section class="directory-search-section">
+            <div class="container">
+
+                <form class="directory-search" id="agencySearchForm">
+
+                    <div class="directory-search-field search-keyword">
+                        <label for="agencySearch">
+                            Agency or service
+                        </label>
+
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="agencySearch"
+                                placeholder="Search agencies or expertise"
+                                autocomplete="off"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="directory-search-field">
+                        <label for="locationFilter">
+                            Country / region
+                        </label>
+
+                        <select id="locationFilter">
+                            <option value="">Worldwide</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                        </select>
+                    </div>
+
+                    <div class="directory-search-field">
+                        <label for="categoryFilter">Category</label>
+                        <select id="categoryFilter"><option value="">All categories</option><option>Creator management</option><option>Talent</option><option>Marketing</option><option>Production</option><option>PR</option></select>
+                    </div>
+
+                    <div class="directory-search-field">
+                        <label for="serviceFilter">
+                            Service
+                        </label>
+
+                        <select id="serviceFilter">
+                            <option value="">All services</option>
+                            <option value="Creator Management">
+                                Creator Management
+                            </option>
+                            <option value="Talent Management">
+                                Talent Management
+                            </option>
+                            <option value="Influencer Marketing">
+                                Influencer Marketing
+                            </option>
+                            <option value="Social Media">
+                                Social Media
+                            </option>
+                            <option value="Content Strategy">
+                                Content Strategy
+                            </option>
+                            <option value="Brand Partnerships">
+                                Brand Partnerships
+                            </option>
+                        </select>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="button button-black directory-search-button"
+                    >
+                        Search
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+            </div>
+        </section>
+
+        <!-- =============================================
+             DIRECTORY
+        ============================================== -->
+
+        <section class="agency-directory-section">
+            <div class="container directory-layout">
+
+                <!-- Filters -->
+                <aside class="directory-filters" id="directoryFilters">
+
+                    <div class="filter-heading">
+                        <div>
+                            <span>FILTER DIRECTORY</span>
+                            <strong>Refine results</strong>
+                        </div>
+
+                        <button type="button" id="clearFilters">
+                            Clear
+                        </button>
+                    </div>
+
+                    <fieldset class="filter-group">
+                        <legend>Creator niche</legend>
+                        <label for="nicheFilter" class="filter-select-label">Area of expertise</label>
+                        <select id="nicheFilter"><option value="">All niches</option><option>Fashion</option><option>Fitness</option><option>Gaming</option><option>Lifestyle</option><option>Beauty</option><option>Adult creators</option></select>
+                    </fieldset>
+
+                    <fieldset class="filter-group">
+                        <legend>Trust and availability</legend>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                id="verifiedFilter"
+                            >
+                            <span>Verified agencies</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                id="featuredFilter"
+                            >
+                            <span>Featured / Sponsored placement</span>
+                        </label>
+                        <label><input type="checkbox" id="reviewsFilter"><span>Has published reviews</span></label>
+                        <label><input type="checkbox" id="contactFilter"><span>Accepting inquiries</span></label>
+                        <p class="filter-disclosure">Verification requires independent review. Paid placement is labelled and does not affect verification or ratings. <a href="trust.html">How our trust labels work</a>.</p>
+                        
+                    </fieldset>
+
+                    <fieldset class="filter-group">
+                        <legend>Agency size</legend>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="agencySize"
+                                value=""
+                                checked
+                            >
+                            <span>All sizes</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="agencySize"
+                                value="Boutique"
+                            >
+                            <span>Solo / Boutique</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="agencySize"
+                                value="2–10"
+                            >
+                            <span>2–10</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="agencySize"
+                                value="11–50"
+                            >
+                            <span>11–50</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="agencySize"
+                                value="51+"
+                            >
+                            <span>51+</span>
+                        </label>
+                    </fieldset>
+
+                    <fieldset class="filter-group">
+                        <legend>Years in business</legend>
+                        <label for="experienceFilter" class="filter-select-label">Minimum years</label>
+
+                        <select id="experienceFilter">
+                            <option value="0">Any experience</option>
+                            <option value="1">1+ years</option>
+                            <option value="3">3+ years</option>
+                            <option value="5">5+ years</option>
+                            <option value="10">10+ years</option>
+                        </select>
+                    </fieldset>
+
+                </aside>
+
+                <!-- Results -->
+                <div class="directory-results">
+
+                    <div class="results-toolbar">
+
+                        <div>
+                            <button
+                                type="button"
+                                class="mobile-filter-button"
+                                id="mobileFilterButton"
+                            >
+                                <i class="fa-solid fa-sliders"></i>
+                                Filters
+                            </button>
+
+                            <p>
+                                Showing
+                                <strong id="resultCount">0</strong>
+                                agencies
+                            </p>
+                        </div>
+
+                        <label class="sort-control">
+                            <span>Sort by</span>
+
+                            <select id="sortFilter">
+                                <option value="name">Agency name (A–Z)</option>
+                                <option value="rating">Highest rated (reviewed first)</option>
+                                <option value="experience">Most experienced</option>
+                                <option value="newest">Recently approved</option>
+                            </select>
+                        </label>
+
+                    </div>
+
+                    <details class="sort-explanation"><summary>How sorting works</summary><p>Agency name sorts alphabetically. Highest rated uses published review averages, with agencies without reviews last; ties use review count, then name. Most experienced uses disclosed years in business. Recently approved uses approval date. Featured / Sponsored is separately labelled and does not change these sort orders. <a href="trust.html">Read our methodology</a>.</p></details>
+
+                    <div
+                        class="agency-card-grid"
+                        id="agencyCardGrid"
+                    ></div>
+
+                    <div
+                        class="directory-empty-state"
+                        id="directoryEmptyState"
+                        hidden
+                    >
+                        <i class="fa-regular fa-folder-open"></i>
+
+                        <h2>No agencies found</h2>
+
+                        <p>
+                            Approved agencies will appear here after review.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="button button-black"
+                            id="emptyClearFilters"
+                        >
+                            Clear Filters
+                        </button>
+                    </div>
+
+                    <nav
+                        class="directory-pagination"
+                        id="directoryPagination"
+                        aria-label="Agency directory pages"
+                    ></nav>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+             CTA
+        ============================================== -->
+
+        <section class="directory-cta">
+            <div class="container directory-cta-layout">
+                <div>
+                    <span class="eyebrow">
+                        FOR AGENCY OWNERS
+                    </span>
+
+                    <h2>
+                        Put your agency in the room.
+                    </h2>
+
+                    <p>
+                        Create your permanent free profile and start
+                        a seven-day premium trial.
+                    </p>
+                </div>
+
+                <a
+                    href="/agency/register"
+                    class="button button-white"
+                >
+                    Create Agency Profile
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =============================================
+         FOOTER
+    ============================================== -->
+
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-main">
+
+                    <a
+                        href="index.html"
+                        class="brand footer-brand brand-image-link"
+                    >
+                        <img
+                            src="assets/images/avera-prive-footer-logo.png"
+                            alt="Avera Privé"
+                            class="footer-logo-image"
+                        >
+                    </a>
+
+                    <p class="footer-description">
+                        An independent global directory for discovering,
+                        researching, and comparing professional agencies.
+                    </p>
+
+                </div>
+
+                <div class="footer-column">
+                    <h3>Discover</h3>
+                    <a href="agencies.html">Agencies</a>
+                    <a href="rankings.html">Rankings</a>
+                    <a href="compare.html">Compare</a>
+                    <a href="insights.html">Insights</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>For Agencies</h3>
+                    <a href="/agency/register">Create Profile</a>
+                    <a href="for-agencies.html">Verification</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="/agency/login">Agency Login</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="about.html">About</a>
+                    <a href="trust.html">Methodology</a>
+                    <a href="demo.html">Contact</a>
+                    <a href="trust.html#reports">Report a Concern</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © <span id="currentYear"></span> Avera Privé.
+                    All rights reserved.
+                </p>
+
+                <div class="footer-bottom-links">
+                    <a href="legal.html#privacy">Privacy</a>
+                    <a href="legal.html#terms">Terms</a>
+                    <a href="legal.html#cookies">Cookie Settings</a>
+                    <a href="legal.html#acceptable-use">Acceptable Use</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <div
+        class="filter-overlay"
+        id="filterOverlay"
+    ></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/agencies.js"></script>
+</body>
+</html>

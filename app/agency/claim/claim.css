@@ -1,0 +1,81 @@
+.claim-page {
+  min-height: 100vh;
+  background: #f5f2eb;
+  color: #181916;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+.claim-page *, .claim-page *::before, .claim-page *::after { box-sizing: border-box; }
+.claim-page .access-main {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 48px 24px 80px;
+  overflow: visible;
+}
+.claim-page .access-form-wrap { width: 100%; max-width: 960px; margin: 0 auto; }
+.claim-page a { color: #725d37; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.claim-page .access-form-wrap > a { display: inline-block; margin-bottom: 28px; }
+.claim-page .access-heading { margin-bottom: 32px; }
+.claim-page .access-heading > p {
+  margin: 0 0 12px; color: #806539; font-size: 12px; font-weight: 700; letter-spacing: .16em;
+}
+.claim-page .access-heading h1 {
+  margin: 0; font: 500 clamp(30px, 4vw, 48px)/1.15 Georgia, serif;
+  letter-spacing: -.02em; overflow-wrap: anywhere;
+}
+.claim-page .access-heading > span { display: block; max-width: 740px; margin-top: 18px; color: #646058; }
+.claim-page h2 { margin: 0 0 16px; font: 500 clamp(22px, 3vw, 28px)/1.25 Georgia, serif; }
+.claim-page p { margin: 0 0 18px; overflow-wrap: anywhere; }
+.claim-page section {
+  padding: 28px; margin-bottom: 28px; border: 1px solid #d9d3c8; background: #fff;
+}
+.claim-page section dl {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 24px; margin: 24px 0;
+}
+.claim-page section dl > div { min-width: 0; padding: 16px 0; border-top: 1px solid #e7e1d7; }
+.claim-page section dt { color: #725d37; font-size: 13px; font-weight: 700; }
+.claim-page section dd { margin: 6px 0 0; font-size: 15px; line-height: 1.55; }
+.claim-page section ul { margin: 0; padding-left: 20px; }
+.claim-page form {
+  padding: 28px; margin: 24px 0; border: 1px solid #d9d3c8; background: #fff;
+}
+.claim-page .access-form label {
+  display: block; margin: 22px 0; font-size: 15px; font-weight: 600;
+}
+.claim-page .access-form input:not([type="checkbox"]):not([type="hidden"]),
+.claim-page .access-form textarea {
+  display: block; width: 100%; max-width: 100%; margin-top: 8px; padding: 12px 14px;
+  border: 1px solid #bdb5a9; border-radius: 3px; background: #fff; color: #181916;
+  font: 400 16px/1.5 Arial, sans-serif;
+}
+.claim-page .access-form input:not([type="checkbox"]):not([type="hidden"]) { min-height: 48px; }
+.claim-page .access-form textarea { min-height: 144px; resize: vertical; }
+.claim-page .access-form label:has(input[type="checkbox"]) {
+  display: grid; grid-template-columns: 18px minmax(0, 1fr); align-items: start; gap: 12px;
+  font-weight: 400; line-height: 1.5;
+}
+.claim-page .access-form input[type="checkbox"] {
+  display: block; width: 18px; height: 18px; min-height: 0; margin: 3px 0 0;
+  padding: 0; accent-color: #181916;
+}
+.claim-page button {
+  display: inline-flex; align-items: center; justify-content: center;
+  max-width: 100%; min-height: 48px; padding: 12px 22px;
+  border: 1px solid #181916; border-radius: 3px; background: #181916; color: #fff;
+  font: 600 15px/1.4 Arial, sans-serif; white-space: normal; cursor: pointer;
+}
+.claim-page button.button-outline { background: #fff; color: #181916; }
+.claim-page button:hover { background: #38352e; color: #fff; }
+.claim-page :is(input, textarea, button, a):focus-visible { outline: 2px solid #806539; outline-offset: 3px; }
+.claim-page [role="alert"], .claim-page [role="status"] {
+  padding: 16px 20px; border-left: 3px solid #806539; background: #fff;
+}
+.claim-page [role="alert"] { border-color: #a52d2d; }
+@media (max-width: 640px) {
+  .claim-page .access-main { padding: 28px 16px 48px; }
+  .claim-page section, .claim-page form { padding: 20px; }
+  .claim-page section dl { grid-template-columns: minmax(0, 1fr); }
+  .claim-page button { width: 100%; }
+}

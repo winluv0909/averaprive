@@ -1,0 +1,9 @@
+import Link from "next/link";
+import { requireStaffRole } from "@/lib/auth/authorization";
+import { OwnerOperationsShell } from "../_components/portal-shells";
+
+export default async function ReviewQueue() {
+  const { supabase, user } = await requireStaffRole(["super_admin", "moderator"]);
+  const { data: reviews } = await supabase.from("ap_reviews").select("id,rating,body,status,created_at,ap_agencies(name,country)").eq("status", "pending").order("created_at");
+  return <OwnerOperationsShell active="reviews" email={user.email}><main className="ops-main"><header className="ops-header"><div><p className="ops-kicker">RELATIONSHIP EVIDENCE</p><h1>Review queue.</h1><p>Moderate submitted reviews and validate relationship evidence before any review becomes publicly visible.</p></div><div className="ops-summary"><span>REVIEWS WAITING</span><strong>{reviews?.length ?? 0}</strong><small>Publication decisions needed</small></div></header><div className="ops-toolbar"><span>Pending reviews ordered by submission time</span><Link href="/owners/dashboard">RETURN TO OVERVIEW</Link></div><section className="ops-grid">{reviews?.length ? reviews.map((review) => { const agency = Array.isArray(review.ap_agencies) ? review.ap_agencies[0] : review.ap_agencies; return <article className="ops-card" key={review.id}><div className="ops-card-top"><span className="ops-badge">{review.status}</span><span className="ops-card-id">{review.id.slice(0, 8)}</span></div><h2>{agency?.name ?? "Agency"}</h2><p>{review.body}</p><p className="ops-rating">{review.rating}/5 RATING</p><div className="ops-card-footer"><small>{agency?.country ?? "Country not provided"}</small><Link className="ops-action" href={`/owners/dashboard/reviews/${review.id}`}>REVIEW SUBMISSION →</Link></div></article>; }) : <div className="ops-empty"><strong>Review moderation is clear.</strong><span>No independent reviews are currently awaiting a decision.</span></div>}</section></main></OwnerOperationsShell>;
+}

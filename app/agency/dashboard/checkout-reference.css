@@ -1,0 +1,101 @@
+/* Reference checkout design. Scoped to checkout; overrides older checkout rules. */
+.agency-shell:has(.checkout-reference) { --s-paper:#f4f1e9; background:#f4f1e9; }
+.agency-shell:has(.checkout-reference) .agency-sidebar { background:#fff; color:#242019; border-color:#e1d9cd; }
+.agency-shell:has(.checkout-reference) .agency-brand { border-color:#e1d9cd; }
+.agency-shell:has(.checkout-reference) .agency-brand > span { color:#171513; border-color:#d2c4ae; }
+.agency-shell:has(.checkout-reference) .agency-brand b { color:#171513; }
+.agency-shell:has(.checkout-reference) .agency-brand small { color:#8c8274; }
+.agency-shell:has(.checkout-reference) .agency-sidebar nav p { color:#a29787; }
+.agency-shell:has(.checkout-reference) .agency-sidebar nav a { color:#6e6558; border-radius:0; }
+.agency-shell:has(.checkout-reference) .agency-sidebar nav a.active,
+.agency-shell:has(.checkout-reference) .agency-sidebar nav a:hover { background:#f7f3eb; color:#171513; border-left-color:#b28b4d; }
+.agency-shell:has(.checkout-reference) .agency-sidebar nav span { color:#a7834f; }
+.agency-shell:has(.checkout-reference) .agency-account { border-color:#e1d9cd; }
+.agency-shell:has(.checkout-reference) .agency-account b { color:#171513; }
+.agency-shell:has(.checkout-reference) .agency-account small { color:#81776a; }
+.agency-shell:has(.checkout-reference) .agency-workspace { background:#f4f1e9; }
+.agency-shell:has(.checkout-reference) .agency-topbar { background:#fbf9f5; }
+.agency-shell main.checkout-reference { width:100%; max-width:1600px; padding:28px 24px 64px; }
+.agency-shell .checkout-reference .premium-checkout-bar { display:flex; align-items:center; justify-content:space-between; gap:18px; background:transparent; border:0; border-radius:0; padding:0; margin:0 0 24px; }
+.agency-shell .checkout-reference .premium-checkout-brand { color:#171513; font:500 24px/1.4 Georgia,serif; letter-spacing:.23em; }
+.agency-shell .checkout-reference .premium-checkout-secure { color:#92713e; font:400 13px/1.5 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-checkout { display:grid; grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr); width:100%; max-width:none; align-items:stretch; gap:0; margin:0; padding:0; overflow:hidden; border:1px solid #e1d9cd; border-radius:18px; background:#fff; box-shadow:0 20px 65px rgba(44,34,22,.08); }
+.agency-shell .checkout-reference .premium-checkout-summary { display:block; height:auto; align-self:stretch; border:0; border-right:1px solid #e6dfd5; border-radius:0; background:#fdfbf7; box-shadow:none; overflow:hidden; min-width:0; }
+.agency-shell .checkout-reference .premium-plan-visual { display:flex; align-items:center; position:relative; min-height:320px; padding:42px 36px; background:radial-gradient(circle at 80% 28%,rgba(184,145,86,.27),transparent 38%),linear-gradient(135deg,#0d0c0b,#26211b 60%,#100f0e); color:#fff; overflow:hidden; }
+.agency-shell .checkout-reference .premium-plan-visual > div { position:relative; z-index:2; max-width:65%; }
+.agency-shell .checkout-reference .premium-plan-visual::before { content:""; position:absolute; width:290px; height:290px; border:1px solid rgba(201,163,103,.16); border-radius:50%; top:-120px; right:-70px; }
+.agency-shell .checkout-reference .premium-plan-visual::after { content:""; position:absolute; width:185px; height:185px; top:50%; right:24px; transform:translateY(-50%); border:0; border-radius:50%; background:url('/assets/images/avera-prive-monogram.png') center/200% no-repeat; mix-blend-mode:screen; opacity:.9; pointer-events:none; }
+.agency-shell .checkout-reference .premium-plan-visual p { margin:0 0 18px; color:#cfb17c; font:700 10px/1.5 Arial,sans-serif; letter-spacing:.18em; }
+.agency-shell .checkout-reference .premium-plan-visual h1 { margin:0; color:#fff; font:400 clamp(38px,3.6vw,62px)/1.1 Georgia,serif; letter-spacing:-.02em; }
+.agency-shell .checkout-reference .premium-plan-visual span { font:400 13px/1.65 Arial,sans-serif; color:#e6dfd3; margin-top:12px; }
+.agency-shell .checkout-reference .premium-plan-visual strong { color:#f2d9aa; font:400 clamp(27px,2.6vw,40px)/1.25 Georgia,serif; margin-top:28px; }
+.agency-shell .checkout-reference .premium-plan-visual small { color:#d2c8ba; font:400 12px/1.6 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-order-summary { padding:36px; }
+.agency-shell .checkout-reference .premium-order-summary h2,
+.agency-shell .checkout-reference .premium-checkout-payment > h2 { margin:0 0 22px; color:#201b14; font:400 clamp(29px,2.6vw,42px)/1.2 Georgia,serif; letter-spacing:-.025em; }
+.agency-shell .checkout-reference .premium-order-line { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:17px 0; border-bottom:1px solid #e5ddd1; font:400 13px/1.6 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-order-line b { font-weight:600; }
+.agency-shell .checkout-reference .premium-order-total { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:22px 0; border:0; font:400 13px/1.6 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-order-total strong { color:#94713d; font:400 24px/1.3 Georgia,serif; white-space:nowrap; }
+.agency-shell .checkout-reference .premium-plan-benefits { display:grid; gap:20px; padding:0; margin:22px 0 0; list-style:none; }
+.agency-shell .checkout-reference .premium-plan-benefits li { display:flex; align-items:center; gap:14px; }
+.agency-shell .checkout-reference .premium-plan-benefits li > span { display:grid; place-items:center; flex:0 0 42px; height:42px; border-radius:50%; background:#f0ebe2; color:#a7834f; }
+.agency-shell .checkout-reference .premium-plan-benefits b { display:block; font:400 16px/1.5 Georgia,serif; }
+.agency-shell .checkout-reference .premium-plan-benefits small { display:block; font:400 11px/1.6 Arial,sans-serif; color:#81786c; }
+.agency-shell .checkout-reference .premium-checkout-payment { height:auto; align-self:stretch; min-width:0; padding:42px 36px; border:0; border-radius:0; background:#fff; box-shadow:none; }
+.agency-shell .checkout-reference .premium-checkout-kicker { margin:0 0 12px; color:#a7834f; font:700 10px/1.5 Arial,sans-serif; letter-spacing:.15em; }
+.agency-shell .checkout-reference .premium-payment-methods { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; padding:0; border:0; margin:30px 0; }
+.agency-shell .checkout-reference .premium-payment-methods .premium-payment-method { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; min-width:0; min-height:100px; margin:0; padding:15px 8px; border:1px solid #e3ddd3; border-radius:9px; background:#fff; text-align:center; }
+.agency-shell .checkout-reference .premium-payment-methods .premium-payment-method:has(input:checked) { border:2px solid #ae874b; box-shadow:0 5px 16px rgba(44,34,22,.06); }
+.agency-shell .checkout-reference .premium-payment-methods .premium-payment-method--coming-soon { background:#f6f6f6; opacity:.5; }
+.agency-shell .checkout-reference .premium-payment-icon { font-size:22px; color:#a7834f; }
+.agency-shell .checkout-reference .premium-payment-method b { font:600 12px/1.4 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-payment-method small { font:400 9px/1.5 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-crypto-options { padding:26px; margin:28px 0 0; border:1px solid #e1d9cd; border-radius:12px; background:linear-gradient(135deg,#fdfbf7,#f7f4ee); }
+.agency-shell .checkout-reference .premium-crypto-options__header h3 { margin:8px 0 14px; font:400 26px/1.3 Georgia,serif; }
+.agency-shell .checkout-reference .premium-crypto-options__header > p:not(.premium-checkout-kicker) { color:#81776a; font:400 12px/1.7 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-crypto-options__fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:24px; }
+.agency-shell .checkout-reference .premium-crypto-options__fields label { font:600 12px/1.5 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-crypto-options__fields select { height:44px; margin-top:7px; font:400 12px/1.5 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-crypto-warning { margin-top:22px; padding:18px; border-radius:8px; background:#fff9ed; }
+.agency-shell .checkout-reference .premium-crypto-warning :is(b,p) { font-size:12px; line-height:1.7; }
+.agency-shell .checkout-reference .premium-payment-notice { display:flex; gap:16px; align-items:flex-start; padding:20px; border:1px solid #e1d9cd; border-radius:10px; background:#fcfaf7; margin:0 0 26px; }
+.agency-shell .checkout-reference .premium-payment-notice b { font:600 12px/1.6 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-payment-notice p { font:400 12px/1.7 Arial,sans-serif; color:#81776a; margin:8px 0 0; }
+.agency-shell .checkout-reference .premium-card-preview { flex:0 0 46px; }
+.agency-shell .checkout-reference .premium-checkout-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 18px; align-items:start; margin-top:26px; }
+.agency-shell .checkout-reference .premium-checkout-fields > label,
+.agency-shell .checkout-reference .billing-cycle-selector { display:flex; flex-direction:column; gap:7px; margin:0; min-width:0; font:600 12px/1.5 Arial,sans-serif; }
+.agency-shell .checkout-reference .billing-cycle-selector > label { display:block; margin:0; font:600 12px/1.5 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-checkout-fields label.wide { grid-column:1/-1; }
+.agency-shell .checkout-reference .premium-checkout-fields :is(input,select,textarea) { order:0; display:block; width:100%; min-height:44px; height:44px; margin:0; padding:11px 12px; border:1px solid #d7cfc3; border-radius:6px; background:#fff; color:#171513; font:400 12px/1.5 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-checkout-fields textarea { height:auto; min-height:84px; resize:vertical; }
+.agency-shell .checkout-reference .premium-checkout-fields label > small { order:1; margin:0; font:400 10px/1.5 Arial,sans-serif; color:#81776a; }
+.agency-shell .checkout-reference .billing-cycle-savings { margin:0; color:#81776a; font:400 11px/1.6 Arial,sans-serif; }
+.agency-shell .checkout-reference .premium-pay-button { display:flex; justify-content:center; align-items:center; width:100%; min-height:50px; margin-top:28px; padding:12px 18px; border:0; border-radius:6px; background:linear-gradient(90deg,#ac8850,#b5945b,#94713e); color:#fff; font:600 16px/1.5 Georgia,serif; letter-spacing:0; }
+.agency-shell .checkout-reference .premium-pay-button:hover { background:#96713c; }
+.agency-shell .checkout-reference .premium-payment-footnote { font:400 11px/1.65 Arial,sans-serif; color:#81776a; margin-top:18px; }
+.agency-shell .checkout-reference .premium-commercial-note { font:400 10px/1.7 Arial,sans-serif; color:#81776a; margin-top:20px; padding-top:18px; border-top:1px solid #ece6dd; text-align:center; }
+@media(max-width:1250px) {
+  .agency-shell .checkout-reference .premium-plan-visual::after { width:140px; height:140px; right:14px; }
+  .agency-shell .checkout-reference .premium-plan-visual > div { max-width:66%; }
+  .agency-shell .checkout-reference .premium-checkout-payment { padding:30px 24px; }
+  .agency-shell .checkout-reference .premium-plan-visual,.agency-shell .checkout-reference .premium-order-summary { padding:30px 24px; }
+}
+@media(max-width:1100px) {
+  .agency-shell .checkout-reference .premium-checkout { grid-template-columns:minmax(0,1fr); }
+  .agency-shell .checkout-reference .premium-checkout-summary { border-right:0; border-bottom:1px solid #e6dfd5; }
+  .agency-shell .checkout-reference .premium-plan-visual::after { width:185px; height:185px; right:30px; }
+}
+@media(max-width:600px) {
+  .agency-shell main.checkout-reference { padding:22px 14px 40px; }
+  .agency-shell .checkout-reference .premium-checkout-brand { font-size:19px; letter-spacing:.12em; }
+  .agency-shell .checkout-reference .premium-checkout-secure { font-size:11px; }
+  .agency-shell .checkout-reference .premium-payment-methods { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .agency-shell .checkout-reference .premium-checkout-fields,.agency-shell .checkout-reference .premium-crypto-options__fields { grid-template-columns:minmax(0,1fr); }
+  .agency-shell .checkout-reference .premium-crypto-options { padding:20px; }
+  .agency-shell .checkout-reference .premium-plan-visual::after { width:125px; height:125px; right:16px; }
+  .agency-shell .checkout-reference .premium-plan-visual h1 { font-size:38px; }
+  .agency-shell .checkout-reference .premium-plan-visual strong { font-size:26px; }
+  .agency-shell .checkout-reference .premium-plan-visual > div { max-width:64%; }
+}

@@ -1,0 +1,25 @@
+.env
+.env.local
+.env.*.local
+.next
+node_modules
+playwright-report
+test-results
+.vercel
+.vscode
+coverage
+*.log
+.DS_Store
+
+.vercel
+
+# Local secrets and update packages
+.env*
+!.env.example
+/files/
+**/*backup*/
+*.zip
+*.rar
+*.tsbuildinfo
+/Install-*.ps1
+/Avera-Prive-*.ps1

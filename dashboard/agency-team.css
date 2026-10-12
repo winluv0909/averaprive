@@ -1,0 +1,594 @@
+.team-main {
+  width: min(1320px, 100%);
+  padding: 44px clamp(24px, 4vw, 58px) 72px;
+}
+
+.team-back-link {
+  color: #1a1917;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.team-back-link:hover {
+  color: #a26d2f;
+}
+
+.team-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin: 25px 0 28px;
+}
+
+.team-hero h1 {
+  margin: 8px 0 13px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 600;
+  line-height: 0.92;
+}
+
+.team-hero > div:first-child > span {
+  display: block;
+  max-width: 700px;
+  color: #6c675f;
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.team-summary {
+  min-width: 230px;
+  padding: 24px;
+  background: #171614;
+  color: #ffffff;
+}
+
+.team-summary strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.team-summary span,
+.team-summary small {
+  display: block;
+  margin-top: 5px;
+  color: #aaa49b;
+  font-size: 0.53rem;
+  letter-spacing: 0.12em;
+}
+
+.team-security-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 18px;
+  padding: 26px;
+  border: 1px solid #d9cbb8;
+  background: #e9e0d2;
+}
+
+.team-security-notice p,
+.team-members > header p,
+.team-invite-card > p,
+.team-role-guide > p,
+.team-pending > header p {
+  margin: 0;
+  color: #98672c;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.team-security-notice h2,
+.team-members > header h2,
+.team-invite-card h2,
+.team-role-guide h2,
+.team-pending > header h2 {
+  margin: 7px 0;
+  font-family: Georgia, serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.team-security-notice span {
+  display: block;
+  max-width: 800px;
+  color: #625d56;
+  font-size: 0.65rem;
+  line-height: 1.6;
+}
+
+.team-security-notice > b {
+  flex-shrink: 0;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+}
+
+.team-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.65fr);
+  gap: 18px;
+}
+
+.team-members,
+.team-invite-card,
+.team-role-guide,
+.team-pending {
+  border: 1px solid #d9d2c7;
+  background: #ffffff;
+}
+
+.team-members > header,
+.team-pending > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  border-bottom: 1px solid #e5dfd6;
+}
+
+.team-members > header h2,
+.team-pending > header h2 {
+  margin-bottom: 0;
+}
+
+.team-members > header > span,
+.team-pending > header > span {
+  color: #746e66;
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.team-member-card {
+  display: grid;
+  grid-template-columns:
+    minmax(190px, 1.1fr)
+    minmax(170px, 1fr)
+    90px
+    minmax(230px, 0.9fr);
+  align-items: center;
+  gap: 16px;
+  padding: 19px 24px;
+  border-bottom: 1px solid #eee9e1;
+}
+
+.team-member-card:last-child {
+  border-bottom: 0;
+}
+
+.team-member-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.team-member-identity i {
+  display: grid;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  background: #171614;
+  color: #ffffff;
+  font-size: 0.62rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.team-member-identity div,
+.team-member-role {
+  min-width: 0;
+}
+
+.team-member-identity b,
+.team-member-identity span,
+.team-member-role b,
+.team-member-role span {
+  display: block;
+}
+
+.team-member-identity b {
+  overflow: hidden;
+  font-size: 0.68rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-member-identity span {
+  overflow: hidden;
+  margin-top: 4px;
+  color: #716b63;
+  font-size: 0.54rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-member-role b {
+  margin-bottom: 4px;
+  font-size: 0.54rem;
+  letter-spacing: 0.06em;
+}
+
+.team-member-role span {
+  color: #716b63;
+  font-size: 0.54rem;
+  line-height: 1.45;
+}
+
+.team-member-status {
+  justify-self: start;
+  padding: 7px 9px;
+  background: #e6efe7;
+  color: #39704a;
+  font-size: 0.48rem;
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.team-member-status.suspended {
+  background: #f2e4c9;
+  color: #8a5b1e;
+}
+
+.team-member-status.revoked {
+  background: #f0dcdc;
+  color: #9a2f2f;
+}
+
+.team-member-card form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.team-member-card form label {
+  min-width: 0;
+}
+
+.team-member-card form label > span {
+  display: block;
+  margin-bottom: 5px;
+  color: #716b63;
+  font-size: 0.45rem;
+  font-weight: 800;
+}
+
+.team-member-card select {
+  width: 100%;
+  min-width: 0;
+  padding: 9px;
+  border: 1px solid #cfc7ba;
+  border-radius: 0;
+  background: #ffffff;
+  color: #171614;
+  font-size: 0.52rem;
+}
+
+.team-member-card button {
+  grid-column: 1 / -1;
+}
+
+.team-member-card button,
+.team-invite-card button,
+.team-pending button {
+  border: 0;
+  border-radius: 0;
+  background: #171614;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.49rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.team-member-card button {
+  min-height: 34px;
+}
+
+.team-member-card button:hover,
+.team-invite-card button:hover {
+  background: #a26d2f;
+}
+
+.team-protected {
+  color: #716b63;
+  font-size: 0.52rem;
+}
+
+.team-sidebar {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
+.team-invite-card,
+.team-role-guide {
+  padding: 24px;
+}
+
+.team-invite-card form {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.team-invite-card label > span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.51rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.team-invite-card input,
+.team-invite-card select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cfc7ba;
+  border-radius: 0;
+  background: #ffffff;
+  color: #171614;
+}
+
+.team-invite-card button {
+  min-height: 44px;
+  padding: 0 16px;
+}
+
+.team-invite-card > small {
+  display: block;
+  margin-top: 14px;
+  color: #716b63;
+  font-size: 0.54rem;
+  line-height: 1.55;
+}
+
+.team-role-guide > div {
+  padding: 13px 0;
+  border-top: 1px solid #e8e2da;
+}
+
+.team-role-guide > div:first-of-type {
+  margin-top: 18px;
+}
+
+.team-role-guide b,
+.team-role-guide span {
+  display: block;
+}
+
+.team-role-guide b {
+  font-size: 0.54rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.team-role-guide span {
+  margin-top: 4px;
+  color: #716b63;
+  font-size: 0.55rem;
+  line-height: 1.45;
+}
+
+.team-pending {
+  margin-top: 18px;
+}
+
+.team-pending article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 17px 24px;
+  border-bottom: 1px solid #eee9e1;
+}
+
+.team-pending article:last-child {
+  border-bottom: 0;
+}
+
+.team-pending article b,
+.team-pending article span {
+  display: block;
+}
+
+.team-pending article b {
+  font-size: 0.66rem;
+}
+
+.team-pending article span {
+  margin-top: 5px;
+  color: #716b63;
+  font-size: 0.5rem;
+  letter-spacing: 0.04em;
+}
+
+.team-pending button {
+  min-height: 36px;
+  padding: 0 13px;
+  background: #8e2828;
+}
+
+.team-pending button:hover {
+  background: #6f1d1d;
+}
+
+@media (max-width: 1100px) {
+  .team-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .team-member-card {
+    grid-template-columns:
+      minmax(190px, 1fr)
+      minmax(170px, 1fr)
+      90px;
+  }
+
+  .team-member-card form,
+  .team-protected {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .team-main {
+    padding: 30px 18px 60px;
+  }
+
+  .team-hero,
+  .team-security-notice {
+    display: block;
+  }
+
+  .team-summary {
+    margin-top: 22px;
+  }
+
+  .team-security-notice > b {
+    display: block;
+    margin-top: 18px;
+  }
+
+  .team-member-card {
+    grid-template-columns: 1fr;
+  }
+
+  .team-member-card form,
+  .team-protected {
+    grid-column: auto;
+  }
+
+  .team-pending article {
+    display: block;
+  }
+
+  .team-pending form {
+    margin-top: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-member-card form {
+    grid-template-columns: 1fr;
+  }
+
+  .team-member-card button {
+    grid-column: auto;
+  }
+}
+.workspace-invitations {
+  margin-bottom: 22px;
+  padding: 27px;
+  border: 1px solid #171614;
+  background: #171614;
+  color: #ffffff;
+}
+
+.workspace-invitations-heading {
+  max-width: 760px;
+  margin-bottom: 21px;
+}
+
+.workspace-invitations-heading p {
+  margin: 0;
+  color: #c89555;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.workspace-invitations-heading h2 {
+  margin: 7px 0;
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.workspace-invitations-heading span {
+  color: #aaa49b;
+  font-size: 0.6rem;
+  line-height: 1.55;
+}
+
+.workspace-invitation-list {
+  border-top: 1px solid #393631;
+}
+
+.workspace-invitation-list article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid #393631;
+}
+
+.workspace-invitation-list article:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.workspace-invitation-list article b,
+.workspace-invitation-list article span {
+  display: block;
+}
+
+.workspace-invitation-list article b {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+}
+
+.workspace-invitation-list article span {
+  margin-top: 6px;
+  color: #aaa49b;
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+}
+
+.workspace-invitation-list button {
+  min-height: 42px;
+  padding: 0 17px;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  background: #ffffff;
+  color: #171614;
+  cursor: pointer;
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.workspace-invitation-list button:hover {
+  background: #c89555;
+  border-color: #c89555;
+}
+
+@media (max-width: 650px) {
+  .workspace-invitations {
+    padding: 22px;
+  }
+
+  .workspace-invitation-list article {
+    display: block;
+  }
+
+  .workspace-invitation-list form {
+    margin-top: 15px;
+  }
+
+  .workspace-invitation-list button {
+    width: 100%;
+  }
+}

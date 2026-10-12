@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Avera Privé's agency index and transparent ranking methodology. No agencies are ranked until approved reviews meet the published criteria.">
+  <title>Rankings & Agency Index | Avera Privé</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/rankings.css">
+  <script defer src="js/agency-logos.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to rankings</a>
+  <header class="ranking-header"><div class="container ranking-header-inner">
+    <a href="index.html" class="brand" aria-label="Avera Privé homepage"><img src="assets/images/avera-prive-header-logo.png" alt="Avera Privé" class="brand-logo-image"></a>
+    <nav aria-label="Main navigation"><a href="agencies.html">Agencies</a><a href="rankings.html" aria-current="page">Rankings</a><a href="compare.html">Compare</a><a href="trust.html">Trust</a><a href="for-agencies.html">For Agencies</a></nav>
+  </div></header>
+  <main id="mainContent">
+    <section class="ranking-hero"><div class="container">
+      <span class="ranking-eyebrow">Avera Privé / AGENCY INDEX</span>
+      <h1>Discover with clarity.<br><em>Rank with evidence.</em></h1>
+      <p>The agency index will list approved companies. Review based rankings will appear only when agencies meet the published eligibility rules. Paid placement cannot buy a rank.</p>
+      <div class="ranking-actions"><a class="ranking-button" href="agencies.html">Explore the directory <span aria-hidden="true">↗</span></a><a class="ranking-link" href="#methodology">Read the methodology ↓</a></div>
+    </div></section>
+    <section class="ranking-section" aria-labelledby="indexTitle"><div class="container ranking-two-col">
+      <div><span class="ranking-eyebrow">01 / AGENCY INDEX</span><h2 id="indexTitle">Every approved agency, clearly listed.</h2><p>The index is a discovery tool, not an endorsement. The default directory sort is agency name from A to Z. Visitors can choose other disclosed sorts and filters on the <a href="agencies.html">directory page</a>.</p></div>
+      <div class="ranking-empty" role="status"><span class="ranking-empty-count">0</span><h3>No approved agencies yet</h3><p>We are starting with an empty index. We will not publish sample companies as real listings or award trust labels before the required review.</p></div>
+    </div></section>
+    <section class="ranking-section ranking-muted" aria-labelledby="rankingTitle"><div class="container ranking-two-col">
+      <div><span class="ranking-eyebrow">02 / REVIEW BASED RANKINGS</span><h2 id="rankingTitle">Earned recognition.</h2><p>Top Rated is intended for agencies with enough published, evidence checked client reviews. It is distinct from identity verification and paid visibility.</p><p class="ranking-status">Status: Rankings have not launched. There are no eligible agencies or published ranked results.</p></div>
+      <div class="ranking-card"><h3>Top Rated eligibility</h3><ul><li>Approved and publicly listed agency.</li><li>At least five published reviews from distinct, evidence checked clients.</li><li>Average rating of at least 4.5 out of 5 across all published reviews.</li><li>No unresolved serious trust report.</li></ul><p>Meeting the criteria determines eligibility; it does not imply guaranteed results for clients.</p></div>
+    </div></section>
+    <section class="ranking-section" id="methodology" aria-labelledby="methodTitle"><div class="container">
+      <span class="ranking-eyebrow">OUR PUBLISHED RULES</span><h2 id="methodTitle">Ranking methodology</h2>
+      <p class="ranking-intro">These are the rules we intend to apply when review based rankings launch. We will show the first calculation date and last update date when results are published.</p>
+      <div class="ranking-grid">
+        <article><span>01</span><h3>Which signals count?</h3><p>Eligibility uses approval status, distinct evidence checked published reviews, average rating, and unresolved serious trust reports. Among eligible agencies, sort by the average of all published ratings, highest first. Break equal averages by number of published reviews, then agency name A to Z.</p></article>
+        <article><span>02</span><h3>How often does it change?</h3><p>Planned schedule: recalculate every Monday at 00:00 UTC after review moderation and serious report checks. An agency that loses eligibility should be removed when the decision is recorded. The live ranking page will display its latest calculation date once launched.</p></article>
+        <article><span>03</span><h3>What does not count?</h3><p>Subscription tier, advertising spend, sponsored placement, website clicks, inquiry volume, and sales claims do not affect review ranking or verification decisions. Results and case studies require separate substantiation and are not ranking inputs.</p></article>
+        <article><span>04</span><h3>How are reviews protected?</h3><p>Reviews require evidence of a client relationship and moderation before publication. Suspected duplicates, conflicts, manipulation, and fraud are investigated. Agencies may report or dispute a review; serious unresolved reports suspend Top Rated eligibility while reviewed. <a href="trust.html">See trust principles</a>.</p></article>
+      </div>
+      <div class="ranking-disclosure"><h3>Sponsored placement is separate</h3><p>If sponsored or featured agencies are shown near the index, they must appear in a separate area labelled “Featured / Sponsored.” They do not receive an organic rank number, move within the organic list, or receive Verified or Top Rated automatically.</p></div>
+      <p class="ranking-fineprint">Methodology version 1.0 · Published 22 September 2026 · This page describes launch rules; no ranking service or automatic recalculation is currently operating.</p>
+    </div></section>
+  </main>
+  <footer class="ranking-footer"><div class="container"><p>© <span id="rankingYear"></span> Avera Privé</p><div><a href="agencies.html">Directory</a><a href="trust.html">Trust & reviews</a><a href="index.html">Home</a></div></div></footer>
+  <script>document.getElementById('rankingYear').textContent = new Date().getFullYear();</script>
+</body>
+</html>

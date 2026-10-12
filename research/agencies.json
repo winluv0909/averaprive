@@ -1,0 +1,2537 @@
+[
+  {
+    "id": 1,
+    "name": "Creators Inc",
+    "website_url": "https://www.creatorsinc.com/",
+    "description": "Creators Inc describes its services as account management, content planning, fan relationships and creator brand development.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.creatorsinc.com/",
+    "slug": "creators-inc",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://www.creatorsinc.com/",
+        "https://www.creatorsinc.com/contact/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Content planning"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 2,
+    "name": "FansHub",
+    "website_url": "https://www.usefanshub.com/",
+    "description": "FansHub describes its services as account management, fan messaging, marketing, content strategy and content protection.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.usefanshub.com/",
+    "slug": "fanshub",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "operating_locations": [
+        "United Kingdom",
+        "United States"
+      ],
+      "sources": [
+        "https://www.usefanshub.com/",
+        "https://www.usefanshub.com/services/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Creator marketing",
+      "Content strategy"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 3,
+    "name": "Sakura Management",
+    "website_url": "https://www.sakura.agency/",
+    "description": "Sakura Management describes its services as creator account management, social media marketing, fan messaging and leak protection.",
+    "country": "United States",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.sakura.agency/",
+    "slug": "sakura-management",
+    "city": "Los Angeles",
+    "directory_information": {
+      "legal_name": "Sakura Management LLC",
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://www.sakura.agency/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Creator marketing",
+      "Social media support",
+      "Leak protection"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 4,
+    "name": "TEASY Agency",
+    "website_url": "https://teasyagency.com/",
+    "description": "TEASY Agency describes its services as onlyFans management and marketing services for creator accounts.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://teasyagency.com/",
+    "slug": "teasy-agency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "team@teasyagency.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://teasyagency.com/",
+        "https://teasyagency.com/contact-us/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Creator marketing"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 5,
+    "name": "Bunny Agency",
+    "website_url": "https://bunny-agency.com/",
+    "description": "Bunny Agency describes its services as creator account management, fan communication and marketing across subscription platforms.",
+    "country": "United States",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://bunny-agency.com/",
+    "slug": "bunny-agency",
+    "city": null,
+    "directory_information": {
+      "legal_name": "Bunny Agency LLC",
+      "registration_number": null,
+      "registered_address": "1309 Coffeen Avenue STE 1200, Sheridan, Wyoming 82801, USA",
+      "public_email": "info@bunny-agency.com",
+      "public_phone": null,
+      "founded_year": 2019,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "operating_locations": [
+        "Florida, USA"
+      ],
+      "sources": [
+        "https://bunny-agency.com/",
+        "https://bunny-agency.com/impressum/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "public_phone",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Subscriber communication",
+      "Creator marketing"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 6,
+    "name": "Louna's Models",
+    "website_url": "https://lounasmodels.com/",
+    "description": "Louna's Models describes its services as onlyFans management, social media traffic, content planning and subscriber retention.",
+    "country": "United States",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://lounasmodels.com/",
+    "slug": "louna-s-models",
+    "city": "Los Angeles",
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": 2018,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://lounasmodels.com/",
+        "https://lounasmodels.com/contact"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Content planning",
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 7,
+    "name": "MANGO",
+    "website_url": "https://www.mangova.agency/",
+    "description": "MANGO describes its services as onlyFans management focused on developing an existing creator account.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.mangova.agency/",
+    "slug": "mango",
+    "city": null,
+    "directory_information": {
+      "legal_name": "AG Media Pro LLC",
+      "registration_number": "Wyoming filing 2025-001664576",
+      "registered_address": "5830 E 2nd St, Ste 7000 #24316, Casper, Wyoming 82609, USA",
+      "public_email": "mangova.agency@gmail.com",
+      "public_phone": null,
+      "founded_year": 2025,
+      "team_size": "16 (agency-reported)",
+      "languages": [
+        "English",
+        "Spanish"
+      ],
+      "markets_served": [
+        "Europe",
+        "Asia"
+      ],
+      "note": "Agency states business founded April 2025 and operations started June 2025.",
+      "sources": [
+        "https://www.mangova.agency/",
+        "https://www.mangova.agency/about"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "public_phone",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 8,
+    "name": "FantasyRise",
+    "website_url": "https://fantasyrise.com/",
+    "description": "FantasyRise describes its services as account management, fan messaging, pricing, content planning, marketing and reporting.",
+    "country": "United States",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://fantasyrise.com/",
+    "slug": "fantasyrise",
+    "city": "Jacksonville",
+    "directory_information": {
+      "legal_name": "FantasyRise LLC",
+      "registration_number": "Wyoming filing 2024-001405482",
+      "registered_address": null,
+      "public_email": "contact@fantasyrise.com",
+      "public_phone": null,
+      "founded_year": 2021,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "note": "Agency states operations since 2021; LLC formation is stated as 2024. These are separate dates.",
+      "sources": [
+        "https://fantasyrise.com/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registered_address",
+      "public_phone",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Creator marketing",
+      "Content planning",
+      "Performance reporting"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 9,
+    "name": "OnModelStudios",
+    "website_url": "https://onmodelstudios.com/",
+    "description": "OnModelStudios describes its services as account management, fan messaging, creator marketing and performance reporting.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://onmodelstudios.com/about",
+    "slug": "onmodelstudios",
+    "city": null,
+    "directory_information": {
+      "legal_name": "ON INTERNATIONAL BUSINESS LLC",
+      "registration_number": "Florida document L22000521896",
+      "registered_address": "2880 W Oakland Park Blvd, Suite 225C, Oakland Park, FL 33311, USA",
+      "public_email": "management@on-studios.com",
+      "public_phone": null,
+      "founded_year": 2021,
+      "team_size": "35+ (agency-reported)",
+      "languages": [
+        "English",
+        "German"
+      ],
+      "markets_served": null,
+      "sources": [
+        "https://onmodelstudios.com/",
+        "https://onmodelstudios.com/about",
+        "https://onmodelstudios.com/legal-notice"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "public_phone",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Creator marketing",
+      "Performance reporting"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 10,
+    "name": "Perlage Studios",
+    "website_url": "https://perlagestudios.com/",
+    "description": "Perlage Studios describes its services as boutique OnlyFans management with content planning, messaging, marketing and reporting.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://perlagestudios.com/",
+    "slug": "perlage-studios",
+    "city": null,
+    "directory_information": {
+      "legal_name": "Perlage Studios Marketing Agency LLC",
+      "registration_number": null,
+      "registered_address": "2880 W Oakland Park Blvd, Suite 225C, Oakland Park, FL 33311, USA",
+      "public_email": "perlagestudios@gmail.com",
+      "public_phone": "+43 664 75080133",
+      "founded_year": 2021,
+      "team_size": null,
+      "languages": [
+        "English",
+        "German"
+      ],
+      "markets_served": null,
+      "sources": [
+        "https://perlagestudios.com/",
+        "https://perlagestudios.com/impressum"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "team_size",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Creator marketing",
+      "Content planning",
+      "Performance reporting"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 11,
+    "name": "Lumina Connect",
+    "website_url": "https://lumina-connect.com/",
+    "description": "Lumina Connect describes its services as account management, fan messaging, content planning, marketing and leak removal.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://lumina-connect.com/",
+    "slug": "lumina-connect",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": "VAT DE451305405",
+      "registered_address": "Bremerkampstraße 4, 49610 Quakenbrück, Germany",
+      "public_email": "luminaconnected@gmail.com",
+      "public_phone": null,
+      "founded_year": 2021,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "note": "Imprint names Tom Hehler. Registered legal form has not been confirmed.",
+      "sources": [
+        "https://lumina-connect.com/",
+        "https://lumina-connect.com/imprint"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "public_phone",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Creator marketing",
+      "Content planning",
+      "Leak protection"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 12,
+    "name": "Foxy Studios",
+    "website_url": "https://foxy-studios.com/",
+    "description": "Foxy Studios describes its services as creator management, social media strategy, content planning and fan engagement.",
+    "country": "Switzerland",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://foxy-studios.com/",
+    "slug": "foxy-studios",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "hello@foxy-studios.com",
+      "public_phone": "+41 79 744 21 11",
+      "founded_year": 2021,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://foxy-studios.com/",
+        "https://foxy-studios.com/contact"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Content planning",
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 13,
+    "name": "Aruna Talent",
+    "website_url": "https://arunatalent.com/",
+    "description": "Aruna Talent describes its services as creator management with fan messaging, marketing, content strategy and privacy support.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://arunatalent.com/",
+    "slug": "aruna-talent",
+    "city": null,
+    "directory_information": {
+      "legal_name": "Aruna Talent LLC",
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "intake@arunatalent.com",
+      "public_phone": null,
+      "founded_year": 2022,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "note": "Agency identifies a Wyoming LLC; registration number and street address require confirmation.",
+      "sources": [
+        "https://arunatalent.com/",
+        "https://arunatalent.com/about"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Creator marketing",
+      "Content strategy",
+      "Privacy support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 14,
+    "name": "Hush Talent Inc.",
+    "website_url": "https://hushtalentinc.com/",
+    "description": "Hush Talent Inc. describes its services as creator management across OnlyFans and other subscription and social platforms.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://hushtalentinc.com/",
+    "slug": "hush-talent-inc",
+    "city": null,
+    "directory_information": {
+      "legal_name": "Hush Talent Inc.",
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "apps@hushtalentinc.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "email_purpose": "Creator applications",
+      "operating_locations": [
+        "Connecticut, USA",
+        "New York, USA",
+        "Los Angeles, USA"
+      ],
+      "note": "Agency states incorporation in California; full registered address and company number not confirmed.",
+      "sources": [
+        "https://hushtalentinc.com/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 15,
+    "name": "SirenCY",
+    "website_url": "https://www.sirency.com/",
+    "description": "SirenCY describes its services as content planning, fan messaging workflows, monetization strategy and account operations.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.sirency.com/",
+    "slug": "sirency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "anyro@sirency.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "email_purpose": "Partnership contact",
+      "sources": [
+        "https://www.sirency.com/",
+        "https://www.sirency.com/contact"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Fan messaging",
+      "Content planning"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 16,
+    "name": "TopStar MGMT",
+    "website_url": "https://www.topstarmgmt.com/",
+    "description": "TopStar MGMT describes its services as account management, content strategy, fan messaging, brand development and social media.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.topstarmgmt.com/",
+    "slug": "topstar-mgmt",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://www.topstarmgmt.com/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Content strategy",
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 17,
+    "name": "AROA Agency",
+    "website_url": "https://aroaagency.com/",
+    "description": "AROA Agency describes its services as onlyFans management, fan messaging, content calendars, branding and audience growth.",
+    "country": "United States",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://aroaagency.com/",
+    "slug": "aroa-agency",
+    "city": "Miami",
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "office@aroaagency.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://aroaagency.com/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 18,
+    "name": "AT Agency",
+    "website_url": "https://at-agency.co/",
+    "description": "AT Agency describes its services as creator account operations, content planning, fan engagement and audience development.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://at-agency.co/",
+    "slug": "at-agency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://at-agency.co/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Content planning"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 19,
+    "name": "XCreatorMgmt",
+    "website_url": "https://www.xcreatormgmt.com/",
+    "description": "XCreatorMgmt describes its services as account management, social media marketing, content ideas and subscriber communication.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.xcreatormgmt.com/",
+    "slug": "xcreatormgmt",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "yourfriends@xcreatormgmt.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://www.xcreatormgmt.com/",
+        "https://www.xcreatormgmt.com/contact"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Subscriber communication",
+      "Creator marketing",
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 20,
+    "name": "Vanguard Star Management",
+    "website_url": "https://vsmagency.com/",
+    "description": "Vanguard Star Management describes its services as onlyFans management, marketing, fan messaging, content strategy and brand protection.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://vsmagency.com/",
+    "slug": "vanguard-star-management",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://vsmagency.com/",
+        "https://vsmagency.com/contact"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Creator marketing",
+      "Content strategy"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 21,
+    "name": "Model Starz",
+    "website_url": "https://www.modelstarzmgmt.com/",
+    "description": "Model Starz describes its services as onlyFans and Fansly creator management, content strategy and audience promotion.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.modelstarzmgmt.com/",
+    "slug": "model-starz",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": [
+        "United States",
+        "Europe",
+        "Asia"
+      ],
+      "sources": [
+        "https://www.modelstarzmgmt.com/",
+        "https://www.modelstarzmgmt.com/contact"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Content strategy"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 22,
+    "name": "Vantage Agency",
+    "website_url": "https://thevantage.agency/",
+    "description": "Vantage Agency describes its services as creator brand management across subscription platforms, social media and fan communities.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://thevantage.agency/",
+    "slug": "vantage-agency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "hello@thevantage.agency",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://thevantage.agency/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 23,
+    "name": "Lush Management",
+    "website_url": "https://www.lushmgt.com/",
+    "description": "Lush Management describes its services as onlyFans account management, content posting, subscriber messaging and social media support.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.lushmgt.com/",
+    "slug": "lush-management",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "info@lushmgt.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://www.lushmgt.com/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 24,
+    "name": "Rize Agency",
+    "website_url": "https://rizeagency.co/",
+    "description": "Rize Agency describes its services as creator growth management with social media promotion and subscriber conversion.",
+    "country": "United Kingdom",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://rizeagency.co/",
+    "slug": "rize-agency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://rizeagency.co/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 25,
+    "name": "Hussar OFM",
+    "website_url": "https://www.hussarofm.com/",
+    "description": "Hussar OFM describes its services as onlyFans account management, fan messaging, content planning, growth and administration.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.hussarofm.com/",
+    "slug": "hussar-ofm",
+    "city": null,
+    "directory_information": {
+      "legal_name": "Hussar Technology",
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "info@hussarofm.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "operating_locations": [
+        "New York City, USA",
+        "Warsaw, Poland"
+      ],
+      "note": "Agency describes a Polish sole proprietorship (JDG); company registration number not confirmed.",
+      "sources": [
+        "https://www.hussarofm.com/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Content planning"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 26,
+    "name": "Lookstars Agency",
+    "website_url": "https://www.lookstarsagency.com/en",
+    "description": "Lookstars Agency describes its services as boutique OnlyFans management with fan engagement and social media marketing.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.lookstarsagency.com/en",
+    "slug": "lookstars-agency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "info@lookstarsagency.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": [
+        "Europe"
+      ],
+      "sources": [
+        "https://www.lookstarsagency.com/en",
+        "https://www.lookstarsagency.com/en/about-us"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Creator marketing",
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 27,
+    "name": "EROS Agency",
+    "website_url": "https://www.agency-eros.com/",
+    "description": "EROS Agency describes its services as onlyFans account management, fan monetization, audience growth and creator brand strategy.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.agency-eros.com/",
+    "slug": "eros-agency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://www.agency-eros.com/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 28,
+    "name": "SVJ Talent",
+    "website_url": "https://svjtalent.com/",
+    "description": "SVJ Talent describes its services as chatting-focused creator management with fan messaging and account communication support.",
+    "country": "United States",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://svjtalent.com/",
+    "slug": "svj-talent",
+    "city": "Boise",
+    "directory_information": {
+      "legal_name": "SVJ Talent LLC",
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "note": "Specialist chat service; content production and social marketing are not offered.",
+      "sources": [
+        "https://svjtalent.com/",
+        "https://svjtalent.com/about"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Fan messaging",
+      "Chat operations"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 29,
+    "name": "OnlyFans Management (Australia)",
+    "website_url": "https://onlyfansmanagement.com.au/",
+    "description": "OnlyFans Management (Australia) describes its services as creator management with account strategy, marketing and ongoing account support.",
+    "country": "Australia",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://onlyfansmanagement.com.au/",
+    "slug": "onlyfans-management-australia",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": 2022,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://onlyfansmanagement.com.au/",
+        "https://onlyfansmanagement.com.au/contact/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Creator marketing"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 30,
+    "name": "FEM Management",
+    "website_url": "https://www.fem-management.com/",
+    "description": "FEM Management describes its services as onlyFans management with fan messaging, content ideas, promotion and leak protection.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.fem-management.com/",
+    "slug": "fem-management",
+    "city": null,
+    "directory_information": {
+      "legal_name": "FTD Media LLC",
+      "registration_number": "EIN 92-1332408 (tax identifier; not a company registration number)",
+      "registered_address": "3833 Powerline Rd, Suite 301-B, Fort Lauderdale, FL 33309, USA",
+      "public_email": "info@fem-management.com",
+      "public_phone": "+43 665 65677423",
+      "founded_year": 2022,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://www.fem-management.com/",
+        "https://www.fem-management.com/imprint"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Leak protection"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 31,
+    "name": "Aura Management",
+    "website_url": "https://www.auramgmt.com.au/",
+    "description": "Aura Management describes its services as australian creator talent management and OnlyFans account support.",
+    "country": "Australia",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.auramgmt.com.au/",
+    "slug": "aura-management",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "note": "Website states Australian registered and owned; legal entity details require confirmation.",
+      "sources": [
+        "https://www.auramgmt.com.au/",
+        "https://www.auramgmt.com.au/talentenquiry"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 32,
+    "name": "Nest Talent",
+    "website_url": "https://www.nesttalent.com/",
+    "description": "Nest Talent describes its services as creator account strategy, social media growth, audience engagement and operational support.",
+    "country": "Australia",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.nesttalent.com/",
+    "slug": "nest-talent",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "hello@nesttalent.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://www.nesttalent.com/",
+        "https://www.nesttalent.com/about-us"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 33,
+    "name": "Blue Rose Talent",
+    "website_url": "https://bluerosetalent.com/",
+    "description": "Blue Rose Talent describes its services as creator career management and support for OnlyFans and other creator platforms.",
+    "country": "Australia",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://bluerosetalent.com/",
+    "slug": "blue-rose-talent",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "info@bluerosetalent.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://bluerosetalent.com/",
+        "https://bluerosetalent.com/contact"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 34,
+    "name": "The Scandilo Agency",
+    "website_url": "https://scandiloagency.com/",
+    "description": "The Scandilo Agency describes its services as onlyFans management with promotion, fan messaging and a personal account manager.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://scandiloagency.com/",
+    "slug": "the-scandilo-agency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": [
+        "Scandinavia",
+        "Europe"
+      ],
+      "sources": [
+        "https://scandiloagency.com/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 35,
+    "name": "ALLURE",
+    "website_url": "https://www.allureagencyparis.com/en",
+    "description": "ALLURE describes its services as creator management with account operations, social media traffic and growth strategy.",
+    "country": "France",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.allureagencyparis.com/en",
+    "slug": "allure",
+    "city": "Paris",
+    "directory_information": {
+      "legal_name": "ALLURE SAS",
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "allure.agency.paris@gmail.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "email_purpose": "Privacy contact",
+      "sources": [
+        "https://www.allureagencyparis.com/en",
+        "https://www.allureagencyparis.com/mentions-legales"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 36,
+    "name": "Unfiltered Management",
+    "website_url": "https://www.unfiltered-management.com/",
+    "description": "Unfiltered Management describes its services as onlyFans creator management, account strategy and support for switching agency teams.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.unfiltered-management.com/services/agency-switch",
+    "slug": "unfiltered-management",
+    "city": null,
+    "directory_information": {
+      "legal_name": "UNLIMITED STUDIOS CONSULTING LLC",
+      "registration_number": null,
+      "registered_address": "2880 W Oakland Park Blvd, STE 225C, Oakland Park, FL 33311, USA",
+      "public_email": "info@unfiltered-management.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "operating_locations": [
+        "Miami, USA",
+        "Berlin, Germany",
+        "Poland"
+      ],
+      "sources": [
+        "https://www.unfiltered-management.com/",
+        "https://www.unfiltered-management.com/services/agency-switch",
+        "https://www.unfiltered-management.com/imprint"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 37,
+    "name": "Xentra Group",
+    "website_url": "https://xentragroup.co.uk/onlyfans-agency-uk",
+    "description": "Xentra Group describes its services as onlyFans creator management with fan messaging, account strategy and audience growth.",
+    "country": "United Kingdom",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://xentragroup.co.uk/onlyfans-agency-uk",
+    "slug": "xentra-group",
+    "city": null,
+    "directory_information": {
+      "legal_name": "CoachFlo Ltd",
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "admin@xentragroup.co.uk",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://xentragroup.co.uk/onlyfans-agency-uk"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 38,
+    "name": "Elvision Studios",
+    "website_url": "https://elvision-studios.com/en/europe/united-kingdom",
+    "description": "Elvision Studios describes its services as remote OnlyFans management for creators, including support for UK-based accounts.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://elvision-studios.com/en/europe/united-kingdom",
+    "slug": "elvision-studios",
+    "city": null,
+    "directory_information": {
+      "legal_name": "Elvision LLC",
+      "registration_number": null,
+      "registered_address": "30 N Gould St, Ste N, Sheridan, Wyoming 82801, USA",
+      "public_email": "contact@elvision-studios.com",
+      "public_phone": "+49 1577 3840073",
+      "founded_year": 2022,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "note": "Registered address is not an operational headquarters. UK landing page indicates a service market, not headquarters.",
+      "sources": [
+        "https://elvision-studios.com/en/europe/united-kingdom",
+        "https://uk.elvision-studios.com/imprint"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 39,
+    "name": "Shevo Studio",
+    "website_url": "https://www.shevostudio.com/",
+    "description": "Shevo Studio describes its services as onlyFans and Fansly account management with fan retention and social media marketing.",
+    "country": "United Kingdom",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.shevostudio.com/",
+    "slug": "shevo-studio",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://www.shevostudio.com/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Creator marketing",
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 40,
+    "name": "Norvo Management",
+    "website_url": "https://norvomanagement.com/",
+    "description": "Norvo Management describes its services as onlyFans management with fan messaging, content strategy and creator growth planning.",
+    "country": "United Kingdom",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://norvomanagement.com/",
+    "slug": "norvo-management",
+    "city": null,
+    "directory_information": {
+      "legal_name": "Norvo Ltd",
+      "registration_number": "England and Wales company 17416436",
+      "registered_address": null,
+      "public_email": "contact@norvomanagement.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://norvomanagement.com/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Content strategy"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 41,
+    "name": "Creator House",
+    "website_url": "https://creatorhouse.agency/",
+    "description": "Creator House describes its services as creator management with social media strategy, fan messaging and privacy support.",
+    "country": "Spain",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://creatorhouse.agency/",
+    "slug": "creator-house",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "hello@creatorhouse.agency",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": [
+        "Argentina",
+        "Mexico"
+      ],
+      "sources": [
+        "https://creatorhouse.agency/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Social media support",
+      "Privacy support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 42,
+    "name": "20MG",
+    "website_url": "https://20mg.co/",
+    "description": "20MG describes its services as onlyFans creator management and growth services for international creator accounts.",
+    "country": "United States",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://20mg.co/",
+    "slug": "20mg",
+    "city": null,
+    "directory_information": {
+      "legal_name": "Twenty Management Group LLC",
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "hello@20mg.co",
+      "public_phone": "+1 332 265 3480",
+      "founded_year": 2025,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://20mg.co/",
+        "https://20mg.co/about"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registration_number",
+      "registered_address",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 43,
+    "name": "TOAgency",
+    "website_url": "https://theonlyfans.agency/",
+    "description": "TOAgency describes its services as creator account management with strategic content planning and ongoing fan engagement.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://theonlyfans.agency/",
+    "slug": "toagency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "note": "Contact page contains stock-template address, phone and noreply@envato.com. Identity and usable contact need direct confirmation. Do not import until reviewed.",
+      "sources": [
+        "https://theonlyfans.agency/",
+        "https://theonlyfans.agency/contact/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "hold — direct confirmation required",
+    "services": [
+      "Creator account management",
+      "Content planning"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 44,
+    "name": "Lambert Agency",
+    "website_url": "https://agencylambert.com/",
+    "description": "Lambert Agency describes its services as onlyFans management with content planning, fan messaging and audience acquisition.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://agencylambert.com/",
+    "slug": "lambert-agency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "contact_channel": "Telegram @lambert_agency",
+      "sources": [
+        "https://agencylambert.com/",
+        "https://t.me/lambert_agency"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Content planning"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 45,
+    "name": "Empire of Agency",
+    "website_url": "https://www.empireofagency.com/",
+    "description": "Empire of Agency describes its services as creator management covering strategy, distribution, fan operations and reporting.",
+    "country": "France",
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.empireofagency.com/",
+    "slug": "empire-of-agency",
+    "city": "Paris",
+    "directory_information": {
+      "legal_name": "Empire of Agency",
+      "registration_number": "893032946 (agency-reported; registry verification pending)",
+      "registered_address": null,
+      "public_email": "legal@empireofagency.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "email_purpose": "Legal contact",
+      "note": "Host/provider address has been excluded; it is not an agency address.",
+      "sources": [
+        "https://www.empireofagency.com/",
+        "https://www.empireofagency.com/legal"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Performance reporting"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 46,
+    "name": "Elev Agency",
+    "website_url": "https://elev.agency/",
+    "description": "Elev Agency describes its services as creator management, social media planning and fan engagement services.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://elev.agency/",
+    "slug": "elev-agency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "ethan@elev-agency.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://elev.agency/",
+        "https://elev.agency/about"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Social media support"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 47,
+    "name": "OFAgency.co",
+    "website_url": "https://www.ofagency.co/",
+    "description": "OFAgency.co describes its services as onlyFans account management, traffic acquisition, fan messaging and content strategy.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.ofagency.co/about",
+    "slug": "ofagency-co",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": null,
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "sources": [
+        "https://www.ofagency.co/",
+        "https://www.ofagency.co/about",
+        "https://www.ofagency.co/contact"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_email",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging",
+      "Content strategy"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 48,
+    "name": "TDM Business",
+    "website_url": "https://tdmbusiness.com/",
+    "description": "TDM Business describes its services as onlyFans management and support services for creators and agency businesses.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://tdmbusiness.com/",
+    "slug": "tdm-business",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "info@tdmbusiness.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "operating_locations": [
+        "United States",
+        "United Kingdom"
+      ],
+      "sources": [
+        "https://tdmbusiness.com/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 49,
+    "name": "OFM Models Agency",
+    "website_url": "https://www.onlyfansmanagement.info/",
+    "description": "OFM Models Agency describes its services as OnlyFans account management, fan messaging, profile growth and mentoring.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://www.onlyfansmanagement.info/",
+    "slug": "ofm-models-agency",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "modelsagency.ofm@gmail.com",
+      "public_phone": null,
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "contact_channel": "Telegram @jfhello",
+      "sources": [
+        "https://www.onlyfansmanagement.info/"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "registered_address",
+      "public_phone",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging"
+    ],
+    "social_links": {}
+  },
+  {
+    "id": 50,
+    "name": "BeaconOFM",
+    "website_url": "https://beaconofm.com/",
+    "description": "BeaconOFM describes its services as creator management with fan messaging, traffic strategy and an AI content production offering.",
+    "country": null,
+    "checked_on": "2026-10-10",
+    "ownership": "unclaimed",
+    "verification": "public website evidence; business credentials not independently certified",
+    "source_url": "https://beaconofm.com/",
+    "slug": "beaconofm",
+    "city": null,
+    "directory_information": {
+      "legal_name": null,
+      "registration_number": null,
+      "registered_address": null,
+      "public_email": "contact@beaconofm.com",
+      "public_phone": "+995 591 268799",
+      "founded_year": null,
+      "team_size": null,
+      "languages": null,
+      "markets_served": null,
+      "note": "Website publishes Gudauri Village, street 7, number 12; address type and country require confirmation. Registered legal entity is not confirmed. Phone country code is not headquarters evidence.",
+      "sources": [
+        "https://beaconofm.com/",
+        "https://beaconofm.com/about"
+      ],
+      "checked_on": "2026-10-10",
+      "evidence_status": "Agency website statements; registry, contact reachability and ownership not independently verified"
+    },
+    "missing_information": [
+      "legal_name",
+      "registration_number",
+      "founded_year",
+      "team_size",
+      "languages",
+      "markets_served",
+      "social_links",
+      "pricing",
+      "minimum_requirements",
+      "creator_niches",
+      "registered_address"
+    ],
+    "publication_review": "candidate — owner source review required",
+    "services": [
+      "Creator account management",
+      "Fan messaging"
+    ],
+    "social_links": {}
+  }
+]

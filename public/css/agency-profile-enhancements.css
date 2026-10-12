@@ -1,0 +1,277 @@
+.profile-unavailable { padding: clamp(58px,8vw,88px) 0; max-width: 760px; }
+.profile-unavailable h1 { font-family: 'Cormorant Garamond',serif; font-size: clamp(3rem,6vw,5rem); line-height:1; margin: 16px 0; }
+.profile-unavailable p { line-height:1.7; margin-bottom:24px; }
+#profilePublished[hidden], #profileUnavailable[hidden], [hidden] { display:none !important; }
+.profile-cover { height:clamp(190px,24vw,360px); background:linear-gradient(125deg,#181818,#51493f 55%,#c8b89f); background-size:cover; background-position:center; }
+.profile-logo { overflow:hidden; flex-shrink:0; }
+.profile-logo img { display:block; width:100%; height:100%; object-fit:contain; background:#fff; }
+.placement-disclosure { margin:22px 0 0; padding:12px 16px; border-left:3px solid #8b734f; background:#f5f1ea; color:#403a32; font-size:.85rem; line-height:1.5; }
+.profile-navigation { overflow-x:auto; scrollbar-width:thin; white-space:nowrap; }
+.profile-no-data { color:#6d6862; font-style:italic; padding:12px 0; }
+.profile-entry-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; margin-top:18px; }
+.profile-entry-card { padding:20px; border:1px solid #e6e1db; background:#fff; line-height:1.55; }
+.profile-entry-card img { width:100%; max-height:200px; object-fit:cover; display:block; margin-bottom:14px; }
+.profile-entry-card h3 { margin:0 0 10px; }
+.profile-entry-card p { overflow-wrap:anywhere; }
+.profile-entry-card small { display:block; margin-top:8px; color:#555; }
+#reviewSummary { margin:12px 0; font-weight:600; }
+.profile-socials a { overflow-wrap:anywhere; }
+@media(max-width:700px){ .profile-cover { height:190px; }.profile-entry-grid { grid-template-columns:1fr; } }
+
+.profile-top-rated { display:inline-flex; padding:7px 10px; background:#f2ead7; color:#634b20; font-size:.76rem; font-weight:700; letter-spacing:.04em; }
+.profile-demo-notice { padding:18px 0; background:#211d18; color:#fff; border-bottom:1px solid #5f503d; }
+.profile-demo-notice .container { display:flex; align-items:flex-start; justify-content:space-between; gap:24px; }
+.profile-demo-notice strong { color:#e4c89f; letter-spacing:.14em; font-size:.75rem; white-space:nowrap; }
+.profile-demo-notice p { max-width:760px; margin:0; color:#e5dfd7; font-size:.88rem; line-height:1.6; }
+.profile-demo-label { display:inline-flex; padding:7px 10px; background:#26221d; color:#f4dfbd; border:1px solid #8d7553; font-size:.76rem; font-weight:700; letter-spacing:.04em; }
+@media(max-width:700px){.profile-demo-notice .container{display:block}.profile-demo-notice p{margin-top:8px}}
+/* Clean agency profile navbar */
+.site-header.scrolled {
+  background: #fff;
+  border-bottom: 1px solid #e7e2da;
+  backdrop-filter: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.035);
+}
+
+.site-header .header-container {
+  gap: 24px;
+}
+
+.site-header .brand-logo-image {
+  height: 68px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+}
+
+.site-header .desktop-navigation a {
+  letter-spacing: 0.04em;
+}
+
+.site-header .header-trial {
+  border-radius: 4px;
+}
+
+/* Give the profile a clean opening below the navbar */
+.agency-profile-page .profile-hero {
+  padding: 0 0 48px;
+  background: #fff;
+}
+
+/* Remove the empty gradient placeholder.
+   An actual uploaded agency cover will still appear. */
+.agency-profile-page #profileCover {
+  display: none;
+  background: transparent;
+}
+
+.agency-profile-page #profileCover[style*="background-image"] {
+  display: block;
+  height: clamp(160px, 18vw, 260px);
+  background-size: cover;
+  background-position: center;
+}
+
+.agency-profile-page .profile-hero > .container {
+  padding-top: 28px;
+}
+
+.agency-profile-page .profile-breadcrumb {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 700px) {
+  .site-header .brand-logo-image {
+    height: 58px;
+  }
+
+  .agency-profile-page .profile-hero > .container {
+    padding-top: 22px;
+  }
+
+  .agency-profile-page .profile-breadcrumb {
+    margin-bottom: 24px;
+  }
+}
+/* Premium navigation trail for every agency profile */
+.agency-profile-page .profile-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 36px;
+  padding: 13px 20px;
+
+  background: #fcfaf6;
+  border: 1px solid #e7dfd2;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(35, 28, 18, 0.035);
+
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+}
+
+.agency-profile-page .profile-breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+
+  color: #625b50;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.agency-profile-page .profile-breadcrumb a:hover {
+  color: #94703e;
+}
+
+.agency-profile-page .profile-breadcrumb a:focus-visible {
+  outline: 2px solid #94703e;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Subtle gold separators */
+.agency-profile-page .profile-breadcrumb > span:not(
+  #breadcrumbAgencyName
+) {
+  color: #bba47e;
+  font-weight: 400;
+}
+
+/* Current agency name */
+.agency-profile-page #breadcrumbAgencyName {
+  color: #211d17;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 620px) {
+  .agency-profile-page .profile-breadcrumb {
+    gap: 9px;
+    margin-bottom: 26px;
+    padding: 11px 14px;
+    font-size: 0.7rem;
+  }
+}
+/* Premium business information section */
+.agency-profile-page #directory-information h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: normal;
+  margin-bottom: 18px;
+}
+
+.agency-profile-page #directory-information > p {
+  max-width: 700px;
+  margin-bottom: 28px;
+  color: #736d64;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+/* Structured label-and-value rows */
+.agency-profile-page #directoryInformation {
+  display: grid;
+  grid-template-columns: minmax(160px, 38%) minmax(0, 1fr);
+  margin: 0;
+  background: #fff;
+  border: 1px solid #e6e0d7;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.agency-profile-page #directoryInformation dt,
+.agency-profile-page #directoryInformation dd {
+  margin: 0;
+  padding: 17px 22px;
+  border-bottom: 1px solid #eee9e2;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.agency-profile-page #directoryInformation dt {
+  background: #faf8f4;
+  color: #756b5d;
+  font-weight: 500;
+}
+
+.agency-profile-page #directoryInformation dd {
+  color: #29251f;
+  font-weight: 500;
+}
+
+.agency-profile-page #directoryInformation dt:last-of-type,
+.agency-profile-page #directoryInformation dd:last-of-type {
+  border-bottom: 0;
+}
+
+/* Public source links */
+.agency-profile-page #directorySources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.agency-profile-page #directorySources br {
+  display: none;
+}
+
+.agency-profile-page #directorySources a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 15px;
+
+  background: #fff;
+  border: 1px solid #e6e0d7;
+  border-radius: 6px;
+
+  color: #725b38;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.agency-profile-page #directorySources a::after {
+  content: "↗";
+  flex-shrink: 0;
+}
+
+.agency-profile-page #directorySources a:hover {
+  background: #faf7f1;
+  border-color: #bba47e;
+}
+
+.agency-profile-page #directorySources a:focus-visible {
+  outline: 2px solid #94703e;
+  outline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .agency-profile-page #directoryInformation {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .agency-profile-page #directoryInformation dt {
+    padding: 15px 16px 4px;
+    background: #fff;
+    border-bottom: 0;
+    font-size: 0.72rem;
+  }
+
+  .agency-profile-page #directoryInformation dd {
+    padding: 0 16px 15px;
+  }
+}

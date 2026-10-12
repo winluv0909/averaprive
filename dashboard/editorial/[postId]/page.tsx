@@ -1,0 +1,6 @@
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { requireStaffRole } from "@/lib/auth/authorization";
+import { OwnerOperationsShell } from "../../_components/portal-shells";
+import { EditorialForm, type EditorialPost } from "../editorial-form";
+export default async function EditEditorialPage({params,searchParams}:{params:Promise<{postId:string}>;searchParams:Promise<{saved?:string;error?:string}>}){const {postId}=await params;const query=await searchParams;const {supabase,user}=await requireStaffRole(["super_admin","moderator"]);const {data}=await supabase.from("ap_editorial_posts").select("*").eq("id",postId).maybeSingle();if(!data)notFound();const post=data as EditorialPost;return <OwnerOperationsShell active="editorial" email={user.email}><main className="editorial-editor"><Link href="/owners/dashboard/editorial">← EDITORIAL LIBRARY</Link><div className="editorial-editor-head"><p>{post.status.toUpperCase().replace("_"," ")}</p><h1>Edit the story.</h1></div>{query.saved&&<p className="operation-notice">Editorial post saved.</p>}{query.error&&<p className="operation-error">{query.error}</p>}<EditorialForm post={post}/></main></OwnerOperationsShell>}
