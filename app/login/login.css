@@ -1248,3 +1248,56 @@
 .social-access.google-only {
   grid-template-columns: 1fr;
 }
+
+/* Agency workspace entry beneath platform sign-in. */
+.owner-access-page .access-switch {
+  margin-top: 24px;
+  padding: 20px;
+  text-align: left;
+  border: 1px solid #ded4c3;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fffdf8, #f2eadc);
+  box-shadow: 0 6px 20px rgba(46, 36, 20, .04);
+}
+.owner-access-page .access-switch p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: #514a3e;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.owner-access-page .access-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 11px 16px;
+  border: 1px solid #a68a53;
+  border-radius: 10px;
+  background: #24231f;
+  color: #f8e7bc;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: background .18s ease, border-color .18s ease;
+}
+.owner-access-page .access-switch a::after { content: '\2192'; }
+.owner-access-page .access-switch a:hover {
+  background: #3a3326;
+  border-color: #c3a566;
+}
+.owner-access-page .access-switch a:focus-visible {
+  outline: 3px solid #8e6d30;
+  outline-offset: 4px;
+}
+@media (max-width: 540px) {
+  .owner-access-page .access-switch { padding: 18px; }
+  .owner-access-page .access-switch p { flex-direction: column; align-items: stretch; gap: 12px; }
+  .owner-access-page .access-switch a { width: 100%; box-sizing: border-box; }
+}
