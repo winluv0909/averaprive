@@ -1323,3 +1323,23 @@ a {
 .has-official-logo:has(img[src*="/assets/images/agencies/tdm-business.png"]),
 .has-official-logo:has(img[src*="/assets/images/agencies/ofm-models-agency.svg"]) { background: #171717; }
 .has-official-logo img { background: transparent; }
+
+/* Consistent narrow-screen header: respect the viewport and keep menus below it. */
+@media(max-width:900px){
+  :root{--header-height:80px}
+  html #siteHeader .header-container{min-height:80px;gap:12px;width:calc(100% - 32px);max-width:100%;margin-inline:auto}
+  html #siteHeader .brand-logo-image{height:54px;width:auto;max-width:140px;object-fit:contain;flex-shrink:1}
+  #siteHeader .brand{min-width:0;flex-shrink:1}
+  #siteHeader .header-actions{gap:8px;flex-shrink:0}
+  #siteHeader .language-button{font-size:14px;min-height:44px;padding-inline:10px}
+  #siteHeader .mobile-menu-button{width:44px;min-width:44px;min-height:44px}
+  #siteHeader .mobile-navigation{top:calc(var(--header-height) + 8px);max-height:calc(100dvh - var(--header-height) - 24px);overscroll-behavior:contain}
+  #siteHeader .mobile-navigation>a:not(.button){font-size:14px;line-height:1.5}
+  #siteHeader .language-dropdown{top:calc(var(--header-height) + 8px);max-height:calc(100dvh - var(--header-height) - 24px);overflow-y:auto}
+  html .trust-header .brand-logo-image{height:48px!important;max-width:140px!important}
+}
+@media(max-width:360px){
+  html #siteHeader .header-container{width:calc(100% - 24px);gap:8px}
+  html #siteHeader .brand-logo-image{max-width:120px;height:48px}
+  #siteHeader .language-button{padding-inline:8px;gap:6px}
+}
