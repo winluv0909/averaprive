@@ -1,5 +1,5 @@
 /* =========================================================
-   Avera PrivÃ© â€” RANKINGS
+   Avera Privé — RANKINGS
 
    Rankings are not published until:
    - Agencies are approved for publication
@@ -370,7 +370,7 @@ function createRankingRow(agency) {
                 <strong>
                     ${
                         reviewCount === null
-                            ? "â€”"
+                            ? "—"
                             : reviewCount
                     }
                 </strong>
@@ -382,7 +382,7 @@ function createRankingRow(agency) {
                 <strong>
                     ${
                         years === null
-                            ? "â€”"
+                            ? "—"
                             : `${years} years`
                     }
                 </strong>

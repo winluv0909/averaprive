@@ -1,4 +1,4 @@
-/* Avera PrivÃ© directory. Only approved, published records belong here. */
+/* Avera Privé directory. Only approved, published records belong here. */
 let agencies = [];
 
 function marketplaceSession() {
@@ -102,12 +102,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         const tags=node('div','agency-services','');list(agency.services).slice(0,3).forEach(service=>tags.append(node('span','',service)));article.append(tags);
         const meta=node('div','agency-card-meta','');
         const demoExternalStatus=agency.externalRatingStatus;
-        const reputationValue=agency.demoProfile===true?(demoExternalStatus==='active'?`${Number(agency.externalRating).toFixed(1)} Â· ${Number(agency.externalReviewCount||0)}`:demoExternalStatus==='unavailable'?'Unavailable':'No profile found'):(reviewCount(agency) ? `${rating(agency).toFixed(1)} Â· ${reviewCount(agency)}` : 'No reviews');
+        const reputationValue=agency.demoProfile===true?(demoExternalStatus==='active'?`${Number(agency.externalRating).toFixed(1)} · ${Number(agency.externalReviewCount||0)}`:demoExternalStatus==='unavailable'?'Unavailable':'No profile found'):(reviewCount(agency) ? `${rating(agency).toFixed(1)} · ${reviewCount(agency)}` : 'No reviews');
         const reputationLabel=agency.demoProfile===true?'Simulated external rating':'Published reviews';
-        for (const [value,label] of [[reputationValue,reputationLabel],[years(agency)||'â€”','Years in business'],[agency.size||'â€”','Agency size']]) {const part=document.createElement('div');part.append(node('strong','',value),node('span','',label));meta.append(part);} article.append(meta);
-        if(agency.demoProfile===true) article.append(node('p','agency-demo-disclosure','Fictional OFM profile for platform demonstration. External rating data is simulatedâ€”not a live Trustpilot score. Not verified, ranked, or available for inquiries.'));
+        for (const [value,label] of [[reputationValue,reputationLabel],[years(agency)||'—','Years in business'],[agency.size||'—','Agency size']]) {const part=document.createElement('div');part.append(node('strong','',value),node('span','',label));meta.append(part);} article.append(meta);
+        if(agency.demoProfile===true) article.append(node('p','agency-demo-disclosure','Fictional OFM profile for platform demonstration. External rating data is simulated—not a live Trustpilot score. Not verified, ranked, or available for inquiries.'));
         if(agency.acceptingInquiries===true) article.append(node('p','agency-availability','Accepting inquiries'));
-        const link=node('a','agency-card-link','View Agency Profile â†’');
+        const link=node('a','agency-card-link','View Agency Profile →');
         const key=String(agency.id || agency.slug || '');
         if (/^[a-zA-Z0-9_-]+$/.test(key)) link.href=`agency-profile.html?id=${encodeURIComponent(key)}`;
         else {link.removeAttribute('href');link.setAttribute('aria-disabled','true');}

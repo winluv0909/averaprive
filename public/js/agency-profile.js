@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       else if (/about/i.test(path)) label = 'About the agency';
       else if (/services/i.test(path)) label = 'Services';
       else if (/privacy/i.test(path)) label = 'Privacy policy';
-      const link = add(sources, 'a', '', label + ' Â· ' + parsed.hostname);
+      const link = add(sources, 'a', '', label + ' · ' + parsed.hostname);
       link.href = safe;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async () => {
  tags('expertiseTags',agency.niches || agency.expertise,'No creator niches published.');
  const regions=agency.countriesServed || agency.countries;if(!array(regions).length)notice('locationList','No additional regions published.');else array(regions).forEach(item=>add(byId('locationList'),'div','',item));
  function entries(id,items,empty,kind){const published=array(items).filter(x=>x?.status==='published' && (kind!=='result' || (x.metric && x.timeframe && x.evidenceStatus==='reviewed')));if(!published.length)return notice(id,empty);
- published.forEach(item=>{const card=add(byId(id),'article','profile-entry-card','');if(kind==='portfolio' && url(item.imageUrl)){const img=document.createElement('img');img.src=url(item.imageUrl);img.alt=str(item.imageAlt || item.title);img.loading='lazy';card.append(img);}add(card,'h3','',item.title);add(card,'p','',item.summary || item.description);if(kind==='result'){add(card,'strong','',item.metric);add(card,'small','', 'Timeframe: '+item.timeframe+' Â· Evidence reviewed');}});}
+ published.forEach(item=>{const card=add(byId(id),'article','profile-entry-card','');if(kind==='portfolio' && url(item.imageUrl)){const img=document.createElement('img');img.src=url(item.imageUrl);img.alt=str(item.imageAlt || item.title);img.loading='lazy';card.append(img);}add(card,'h3','',item.title);add(card,'p','',item.summary || item.description);if(kind==='result'){add(card,'strong','',item.metric);add(card,'small','', 'Timeframe: '+item.timeframe+' · Evidence reviewed');}});}
  entries('portfolioGrid',agency.portfolio,'No portfolio work published.','portfolio');entries('caseStudyGrid',agency.caseStudies,'No case studies published.','case');entries('resultsGrid',agency.results,'No substantiated results published.','result');
  const reviews=array(agency.reviews).filter(x=>x?.status==='published' && Number(x.rating)>=1 && Number(x.rating)<=5);
  const externalSummary=agency.externalRatingStatus==='active'?`${Number(agency.externalRating).toFixed(1)} simulated external rating from ${Number(agency.externalReviewCount||0)} fictional demo records.`:agency.externalRatingStatus==='unavailable'?'Simulated external rating is unavailable.':'No simulated external profile found.';
