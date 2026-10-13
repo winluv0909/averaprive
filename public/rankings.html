@@ -27,10 +27,10 @@
     </div></section>
     <section class="ranking-section" aria-labelledby="indexTitle"><div class="container ranking-two-col">
       <div><span class="ranking-eyebrow">01 / AGENCY INDEX</span><h2 id="indexTitle">Every approved agency, clearly listed.</h2><p>The index is a discovery tool, not an endorsement. The default directory sort is agency name from A to Z. Visitors can choose other disclosed sorts and filters on the <a href="agencies.html">directory page</a>.</p></div>
-      <div class="ranking-empty" role="status"><span class="ranking-empty-count">0</span><h3>No approved agencies yet</h3><p>We are starting with an empty index. We will not publish sample companies as real listings or award trust labels before the required review.</p></div>
+      <div class="ranking-empty" id="directoryIndexStatus" role="status" aria-live="polite"><span class="ranking-empty-count" id="directoryIndexCount">…</span><h3 id="directoryIndexHeading">Loading agency index</h3><p id="directoryIndexDescription">Fetching the current public directory.</p><a href="agencies.html">Browse the agency directory</a></div>
     </div></section>
     <section class="ranking-section ranking-muted" aria-labelledby="rankingTitle"><div class="container ranking-two-col">
-      <div><span class="ranking-eyebrow">02 / REVIEW BASED RANKINGS</span><h2 id="rankingTitle">Earned recognition.</h2><p>Top Rated is intended for agencies with enough published, evidence checked client reviews. It is distinct from identity verification and paid visibility.</p><p class="ranking-status">Status: Rankings have not launched. There are no eligible agencies or published ranked results.</p></div>
+      <div><span class="ranking-eyebrow">02 / REVIEW BASED RANKINGS</span><h2 id="rankingTitle">Earned recognition.</h2><p>Top Rated is intended for agencies with enough published, evidence checked client reviews. It is distinct from identity verification and paid visibility.</p><p class="ranking-status">Status: Rankings have not launched. Published ranked results are not available yet.</p></div>
       <div class="ranking-card"><h3>Top Rated eligibility</h3><ul><li>Approved and publicly listed agency.</li><li>At least five published reviews from distinct, evidence checked clients.</li><li>Average rating of at least 4.5 out of 5 across all published reviews.</li><li>No unresolved serious trust report.</li></ul><p>Meeting the criteria determines eligibility; it does not imply guaranteed results for clients.</p></div>
     </div></section>
     <section class="ranking-section" id="methodology" aria-labelledby="methodTitle"><div class="container">
@@ -47,6 +47,7 @@
     </div></section>
   </main>
   <footer class="ranking-footer"><div class="container"><p>© <span id="rankingYear"></span> Avera Privé</p><div><a href="agencies.html">Directory</a><a href="trust.html">Trust & reviews</a><a href="index.html">Home</a></div></div></footer>
+  <script src="js/rankings-directory.js" defer></script>
   <script>document.getElementById('rankingYear').textContent = new Date().getFullYear();</script>
 </body>
 </html>
