@@ -811,3 +811,8 @@ body.profile-modal-open {
 }
 .form-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
 .contact-consent{display:flex;gap:.75rem;align-items:flex-start;font-size:.82rem;line-height:1.45;color:var(--muted,#65625e);margin:.9rem 0 1rem}.contact-consent input{margin-top:.2rem;accent-color:#151513}.contact-form-message{min-height:1.35rem;margin:.5rem 0;color:#8a5a16;font-size:.86rem}
+
+/* Public contact controls */
+.profile-modal-overlay[hidden] { display: none !important; }
+#reportProfileButton { display: inline-block; text-decoration: underline; text-underline-offset: 3px; }
+#reportProfileButton:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }

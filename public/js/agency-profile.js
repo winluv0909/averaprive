@@ -95,9 +95,49 @@ document.addEventListener('DOMContentLoaded', async () => {
  const socials=byId('profileSocials');for(const [label,target] of Object.entries(agency.socials || {})){const safe=url(target);if(!safe)continue;const link=add(socials,'a','',label);link.href=safe;link.target='_blank';link.rel='noopener noreferrer';}if(!socials.children.length)notice('profileSocials','No social links published.');
  const related=approvedAgencyProfiles.filter(x=>x!==agency && x.status==='approved' && x.published===true && x.category===agency.category).slice(0,3);if(!related.length)notice('relatedAgencyGrid','No related agencies published yet.');
  related.forEach(item=>{const card=add(byId('relatedAgencyGrid'),'article','related-agency-card','');add(card,'h3','',item.name);add(card,'p','',item.positioningStatement || item.location || '');const link=add(card,'a','','View profile →');link.href='agency-profile.html?id='+encodeURIComponent(item.id);});
- byId('reportProfileButton').addEventListener('click',event=>{event.currentTarget.textContent='Reporting will be available when support is connected.';event.currentTarget.disabled=true;});
- const modal=byId('contactModal'),opener=byId('contactAgencyButton');function close(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('profile-modal-open');opener.focus();}
- opener.addEventListener('click',()=>{recordEvent(agency,'contact_open');modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('profile-modal-open');byId('contactName').focus();});
- byId('closeContactModal').addEventListener('click',close);modal.addEventListener('click',event=>{if(event.target===modal)close();});document.addEventListener('keydown',event=>{if(event.key==='Escape' && modal.classList.contains('open'))close();});
- byId('agencyContactForm').addEventListener('submit',async event=>{event.preventDefault();const form=event.currentTarget;const button=form.querySelector('button[type="submit"]');if(!form.checkValidity() || byId('contactMessage').value.trim().length<20){set('contactFormMessage','Complete every field, provide at least 20 characters, and accept the consent statement.');form.reportValidity();return;}button.disabled=true;button.textContent='Sending…';set('contactFormMessage','');try{const response=await fetch('/api/marketplace/inquiry',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({agencyId:agency.agencyId,sessionId:marketplaceSession(),name:byId('contactName').value,email:byId('contactEmail').value,message:byId('contactMessage').value,website:byId('contactWebsite').value,consent:byId('contactConsent').checked,source:eventSource(agency)})});const result=await response.json();if(!response.ok)throw new Error(result.error||'Inquiry could not be sent.');form.reset();set('contactFormMessage','Inquiry received securely. The agency can now review your request.');button.textContent='Inquiry sent';}catch(error){set('contactFormMessage',error.message||'Inquiry could not be sent. Please try again.');button.disabled=false;button.textContent='Send inquiry';}});
+ const reportLink=byId('reportProfileButton');
+ const reportUrl=new URL('agency-profile.html',location.href);
+ reportUrl.searchParams.set('id',agency.slug || agency.id);
+ reportLink.href='mailto:averaprivemain@gmail.com?subject='+encodeURIComponent('Agency profile concern: '+agency.name)+'&body='+encodeURIComponent('Agency: '+agency.name+'\nProfile: '+reportUrl.href+'\n\nConcern:\n\nSupporting information:\n');
+ const modal=byId('contactModal'),opener=byId('contactAgencyButton');
+ const dialog=modal.querySelector('[role="dialog"]');
+ let backgroundState=[];
+ modal.hidden=true;
+ dialog.tabIndex=-1;
+ function close(){
+   backgroundState.forEach(([element,wasInert])=>{element.inert=wasInert;});
+   backgroundState=[];
+   opener.focus();
+   modal.classList.remove('open');
+   modal.hidden=true;
+   modal.setAttribute('aria-hidden','true');
+   document.body.classList.remove('profile-modal-open');
+ }
+ opener.addEventListener('click',()=>{
+   if(modal.classList.contains('open'))return;
+   recordEvent(agency,'contact_open');
+   backgroundState=Array.from(document.body.children)
+     .filter(element=>element instanceof HTMLElement && element!==modal && !element.contains(modal) && !['SCRIPT','STYLE','LINK'].includes(element.tagName))
+     .map(element=>[element,element.inert]);
+   backgroundState.forEach(([element])=>{element.inert=true;});
+   modal.hidden=false;
+   modal.classList.add('open');
+   modal.setAttribute('aria-hidden','false');
+   document.body.classList.add('profile-modal-open');
+   byId('contactName').focus();
+ });
+ byId('closeContactModal').addEventListener('click',close);
+ modal.addEventListener('click',event=>{if(event.target===modal)close();});
+ document.addEventListener('keydown',event=>{
+   if(!modal.classList.contains('open'))return;
+   if(event.key==='Escape'){event.preventDefault();event.stopPropagation();close();return;}
+   if(event.key!=='Tab')return;
+   const controls=Array.from(dialog.querySelectorAll('a[href],button,input,select,textarea,[tabindex]'))
+     .filter(element=>!element.disabled && element.tabIndex>=0 && element.getClientRects().length);
+   if(!controls.length){event.preventDefault();dialog.focus();return;}
+   const first=controls[0],last=controls[controls.length-1];
+   if(event.shiftKey && (document.activeElement===first || !controls.includes(document.activeElement))){event.preventDefault();last.focus();}
+   else if(!event.shiftKey && (document.activeElement===last || !controls.includes(document.activeElement))){event.preventDefault();first.focus();}
+ },true);
+ byId('agencyContactForm').addEventListener('submit',async event=>{event.preventDefault();const form=event.currentTarget;const button=form.querySelector('button[type="submit"]');if(button.disabled)return;if(!form.checkValidity() || byId('contactMessage').value.trim().length<20){set('contactFormMessage','Complete every field, provide at least 20 characters, and accept the consent statement.');form.reportValidity();return;}button.disabled=true;button.textContent='Sending…';set('contactFormMessage','');try{const response=await fetch('/api/marketplace/inquiry',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({agencyId:agency.agencyId,sessionId:marketplaceSession(),name:byId('contactName').value,email:byId('contactEmail').value,message:byId('contactMessage').value,website:byId('contactWebsite').value,consent:byId('contactConsent').checked,source:eventSource(agency)})});const result=await response.json();if(!response.ok)throw new Error(result.error||'Inquiry could not be sent.');form.reset();set('contactFormMessage','Inquiry received securely. The agency can now review your request.');button.textContent='Inquiry sent';}catch(error){set('contactFormMessage',error.message||'Inquiry could not be sent. Please try again.');button.disabled=false;button.textContent='Send inquiry';}});
 });
