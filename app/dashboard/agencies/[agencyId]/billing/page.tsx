@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireAgencyRole } from "@/lib/auth/authorization";
 import { AgencyWorkspaceShell } from "../../../_components/portal-shells";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { startTrial } from "./actions";
 
 type Plan = { code: string; name: string; monthly_price_usd: number; description: string; entitlements: Record<string, unknown> };
@@ -15,13 +16,14 @@ export default async function AgencyBillingPage({ params, searchParams }: {
   const { agencyId } = await params;
   const query = await searchParams;
   const { supabase, user } = await requireAgencyRole(agencyId, ["owner", "admin", "billing"]);
-  const [{ data: agency }, { data: plans }, { data: subscription }, { data: invoices }] = await Promise.all([
+  const [{ data: agency }, { data: plans }, { data: subscription }, { data: invoices, error: invoiceError }] = await Promise.all([
     supabase.from("ap_agencies").select("name").eq("id", agencyId).maybeSingle(),
     supabase.from("ap_plans").select("*").order("display_order"),
     supabase.from("ap_subscriptions").select("*").eq("agency_id", agencyId).maybeSingle(),
-    supabase.from("ap_invoices").select("id,invoice_number,status,currency,total_amount,issued_at,ap_payment_orders(provider,plan_code,paypal_environment)").eq("agency_id", agencyId).order("issued_at", { ascending: false }).limit(10),
+    createAdminClient().from("ap_invoices").select("id,invoice_number,status,currency,total_amount,issued_at,ap_payment_orders(provider,plan_code,paypal_environment)").eq("agency_id", agencyId).order("issued_at", { ascending: false }).limit(10),
   ]);
   if (!agency) notFound();
+  if (invoiceError) throw new Error("Invoices could not be loaded");
   const catalog = (plans ?? []) as Plan[];
   const history = (invoices ?? []) as Invoice[];
   const current = subscription?.plan_code ?? "free";

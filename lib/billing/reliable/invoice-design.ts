@@ -4,14 +4,22 @@ import {join} from "node:path";
 import QRCode from "qrcode";
 import type {Invoice} from "./invoice";
 const ink=[0.09,0.09,0.085],gold=[0.65,0.51,0.29],muted=[0.43,0.42,0.39],ivory=[0.974,0.967,0.947],white=[1,1,1];
+type FontMetric = {name:string;widths:number[];bbox:number[];ascent:number;descent:number};
+const metrics: FontMetric[]=JSON.parse(readFileSync(join(process.cwd(),"public/assets/invoice/font-metrics.json"),"utf8"));
+const winAnsi: Record<number,number>={0x20ac:128,0x201a:130,0x192:131,0x201e:132,0x2026:133,0x2020:134,0x2021:135,0x2c6:136,0x2030:137,0x160:138,0x2039:139,0x152:140,0x17d:142,0x2018:145,0x2019:146,0x201c:147,0x201d:148,0x2022:149,0x2013:150,0x2014:151,0x2dc:152,0x2122:153,0x161:154,0x203a:155,0x153:156,0x17e:158,0x178:159};
 const escape=(value:string)=>Array.from(value.replace(/[\r\n\t]/g," ")).map(c=>{
-  const code=c.codePointAt(0)!;
+  const unicode=c.codePointAt(0)!;
+  const code=winAnsi[unicode] ?? unicode;
   if(c==="\\" || c==="(" || c===")") return "\\"+c;
   if(code>=32 && code<=126) return c;
-  if(code>=160 && code<=255) return "\\"+code.toString(8).padStart(3,"0");
+  if(code>=128 && code<=255) return "\\"+code.toString(8).padStart(3,"0");
   return `[U+${code.toString(16).toUpperCase()}]`;
 }).join("");
-function width(text:string,size:number) {return Array.from(text).reduce((total,c)=>total+(" ilI.,:;!'|".includes(c)?0.28:"MW@%mw".includes(c)?0.9:/[A-Z]/.test(c)?0.7:0.57),0)*size;}
+function width(text:string,size:number) {
+  const encoded=escape(text).replace(/\\([0-7]{3})/g,(_,octal:string)=>String.fromCharCode(parseInt(octal,8))).replace(/\\([\\()])/g,"$1");
+  // Use the wider regular/bold measurement because billing names use bold.
+  return Math.max(...metrics.slice(0,2).map(font=>Array.from(encoded).reduce((total,c)=>total+(font.widths[c.charCodeAt(0)] ?? 1000),0)))*size/1000;
+}
 function wrap(value:string,maxWidth:number,size:number):string[] {
   const text=String(value).replace(/[\r\n\t]/g," ");const lines:string[]=[];let line="";
   for(const word of text.split(" ")) {
@@ -112,7 +120,6 @@ export function premiumInvoicePdf(invoice:Invoice):Buffer {
   if(invoice.notes){section("NOTES");paragraph(invoice.notes,42,528,8,"F1",muted);}
   footer();streams.push(operations);
   const objects:Buffer[]=[Buffer.from("<< /Type /Catalog /Pages 2 0 R >>"),Buffer.alloc(0)];
-  const metrics: {name:string;widths:number[];bbox:number[];ascent:number;descent:number}[]=JSON.parse(readFileSync(join(process.cwd(),"public/assets/invoice/font-metrics.json"),"utf8"));
   const fontIds:number[]=[];
   for(const metric of metrics){
     const fontId=objects.length+1, descriptorId=fontId+1,fileId=fontId+2; fontIds.push(fontId);
