@@ -142,7 +142,10 @@ function initializeDemoForm() {
         clearDemoMessage();
     });
 
-    form.addEventListener("submit", (event) => {
+    let pendingSubmission = null;
+    let submitting = false;
+    form.addEventListener("submit", async (event) => {
+        if (submitting) { event.preventDefault(); return; }
         event.preventDefault();
         clearDemoMessage();
 
@@ -156,10 +159,42 @@ function initializeDemoForm() {
             return;
         }
 
-        showDemoMessage(
-            "Your details pass the form checks. This is a preview: no demo request has been sent or saved. You can explore the workspace preview using the link below.",
-            "information"
-        );
+        const values = Object.fromEntries(new FormData(form).entries());
+        values.consent = consent?.checked === true;
+        const signature = JSON.stringify(values);
+        if (!pendingSubmission || pendingSubmission.signature !== signature) {
+            pendingSubmission = { signature, requestId: crypto.randomUUID() };
+        }
+        const button = getDemoElement("demoSubmitButton");
+        submitting = true;
+        if (button) button.disabled = true;
+        form.setAttribute("aria-busy", "true");
+        showDemoMessage("Saving your demo request…", "information");
+        try {
+            const response = await fetch("/api/demo-requests", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ ...values, requestId: pendingSubmission.requestId }),
+                signal: AbortSignal.timeout(25000)
+            });
+            const result = await response.json();
+            if (!response.ok || !result.requestId) {
+                throw new Error(result.error || "Your request could not be saved. Please try again.");
+            }
+            showDemoMessage(`${result.message} Reference: ${result.requestId}`, "information");
+            form.reset();
+            pendingSubmission = null;
+            const counter = getDemoElement("demoCharacterCount");
+            if (counter) counter.textContent = "0";
+        } catch (error) {
+            showDemoMessage(error.name === "TimeoutError"
+                ? "We could not confirm your request. Please retry without changing the form details."
+                : error.message || "We could not confirm your request. Please try again.", "error");
+        } finally {
+            submitting = false;
+            if (button) button.disabled = false;
+            form.removeAttribute("aria-busy");
+        }
     });
 }
 
