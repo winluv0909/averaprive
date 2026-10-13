@@ -71,7 +71,7 @@ begin
   return saved_id;
 end; $$;
 
-revoke all on function public.ap_save_editorial_post(uuid,text,text,text,text,text,text,text[],text,text,text,text,text,text,text,text,text,timestamptz) from public;
-grant execute on function public.ap_save_editorial_post(uuid,text,text,text,text,text,text,text[],text,text,text,text,text,text,text,text,text,timestamptz) to authenticated;
+revoke all on function public.ap_save_editorial_post(uuid,text,text,text,text,text,text,text[],text,text,text,text,text,text,text,text,timestamptz) from public;
+grant execute on function public.ap_save_editorial_post(uuid,text,text,text,text,text,text,text[],text,text,text,text,text,text,text,text,timestamptz) to authenticated;
 
 commit;
