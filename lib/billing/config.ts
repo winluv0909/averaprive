@@ -1,7 +1,8 @@
 export const billingSeller = {
   name: process.env.BILLING_SELLER_NAME || "Avera Privé",
-  address: process.env.BILLING_SELLER_ADDRESS || "Philippines",
-  email: process.env.BILLING_SUPPORT_EMAIL || "billing@agencyprive.com",
+  address: process.env.BILLING_SELLER_ADDRESS || "",
+  country: "Philippines",
+  email: process.env.BILLING_SUPPORT_EMAIL || "averaprivemain@gmail.com",
   taxId: process.env.BILLING_SELLER_TAX_ID || "",
 };
 
