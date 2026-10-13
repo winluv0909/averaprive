@@ -88,10 +88,26 @@ document.addEventListener('DOMContentLoaded', async () => {
  function entries(id,items,empty,kind){const published=array(items).filter(x=>x?.status==='published' && (kind!=='result' || (x.metric && x.timeframe && x.evidenceStatus==='reviewed')));if(!published.length)return notice(id,empty);
  published.forEach(item=>{const card=add(byId(id),'article','profile-entry-card','');if(kind==='portfolio' && url(item.imageUrl)){const img=document.createElement('img');img.src=url(item.imageUrl);img.alt=str(item.imageAlt || item.title);img.loading='lazy';card.append(img);}add(card,'h3','',item.title);add(card,'p','',item.summary || item.description);if(kind==='result'){add(card,'strong','',item.metric);add(card,'small','', 'Timeframe: '+item.timeframe+' · Evidence reviewed');}});}
  entries('portfolioGrid',agency.portfolio,'No portfolio work published.','portfolio');entries('caseStudyGrid',agency.caseStudies,'No case studies published.','case');entries('resultsGrid',agency.results,'No substantiated results published.','result');
- const reviews=array(agency.reviews).filter(x=>x?.status==='published' && Number(x.rating)>=1 && Number(x.rating)<=5);
- const externalSummary=agency.externalRatingStatus==='active'?`${Number(agency.externalRating).toFixed(1)} simulated external rating from ${Number(agency.externalReviewCount||0)} fictional demo records.`:agency.externalRatingStatus==='unavailable'?'Simulated external rating is unavailable.':'No simulated external profile found.';
- set('reviewSummary',demo?`${externalSummary} This is not a live Trustpilot score or an Avera Privé review rating.`:reviews.length?reviews.length+' published review'+(reviews.length===1?'':'s'):'No published reviews yet.');
- reviews.forEach(review=>{const card=add(byId('reviewsGrid'),'article','profile-entry-card','');add(card,'strong','',Number(review.rating).toFixed(1)+' / 5');add(card,'p','',review.text);if(review.responseStatus==='published' && review.agencyResponse)add(card,'p','','Agency response: '+review.agencyResponse);});
+ set('reviewSummary','Loading published reviews…');
+ async function loadPublicReviews(){
+   try{
+     const response=await fetch('/api/public-agency-reviews?slug='+encodeURIComponent(agency.slug || agency.id),{cache:'no-store',signal:AbortSignal.timeout(10000)});
+     if(!response.ok)throw new Error('Reviews unavailable');
+     const result=await response.json();
+     if(!Array.isArray(result.reviews) || !Number.isInteger(result.totalReviews) || result.totalReviews<0)throw new Error('Invalid review response');
+     const reviews=result.reviews.filter(item=>item?.status==='published' && Number(item.rating)>=1 && Number(item.rating)<=5);
+     byId('reviewsGrid').replaceChildren();
+     set('reviewSummary',result.totalReviews===0?'No published reviews yet.':result.totalReviews>reviews.length?'Showing the latest '+reviews.length+' of '+result.totalReviews+' published reviews.':result.totalReviews+' published review'+(result.totalReviews===1?'':'s'));
+     reviews.forEach(review=>{
+       const card=add(byId('reviewsGrid'),'article','profile-entry-card','');
+       add(card,'strong','',Number(review.rating).toFixed(1)+' / 5');
+       add(card,'p','',review.text);
+       if(review.responseStatus==='published' && review.agencyResponse)add(card,'p','','Agency response: '+review.agencyResponse);
+     });
+   }catch{
+     set('reviewSummary','Published reviews are temporarily unavailable. Refresh this page to try again.');
+   }
+ }
  const socials=byId('profileSocials');for(const [label,target] of Object.entries(agency.socials || {})){const safe=url(target);if(!safe)continue;const link=add(socials,'a','',label);link.href=safe;link.target='_blank';link.rel='noopener noreferrer';}if(!socials.children.length)notice('profileSocials','No social links published.');
  const related=approvedAgencyProfiles.filter(x=>x!==agency && x.status==='approved' && x.published===true && x.category===agency.category).slice(0,3);if(!related.length)notice('relatedAgencyGrid','No related agencies published yet.');
  related.forEach(item=>{const card=add(byId('relatedAgencyGrid'),'article','related-agency-card','');add(card,'h3','',item.name);add(card,'p','',item.positioningStatement || item.location || '');const link=add(card,'a','','View profile →');link.href='agency-profile.html?id='+encodeURIComponent(item.id);});
@@ -140,4 +156,5 @@ document.addEventListener('DOMContentLoaded', async () => {
    else if(!event.shiftKey && (document.activeElement===last || !controls.includes(document.activeElement))){event.preventDefault();first.focus();}
  },true);
  byId('agencyContactForm').addEventListener('submit',async event=>{event.preventDefault();const form=event.currentTarget;const button=form.querySelector('button[type="submit"]');if(button.disabled)return;if(!form.checkValidity() || byId('contactMessage').value.trim().length<20){set('contactFormMessage','Complete every field, provide at least 20 characters, and accept the consent statement.');form.reportValidity();return;}button.disabled=true;button.textContent='Sending…';set('contactFormMessage','');try{const response=await fetch('/api/marketplace/inquiry',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({agencyId:agency.agencyId,sessionId:marketplaceSession(),name:byId('contactName').value,email:byId('contactEmail').value,message:byId('contactMessage').value,website:byId('contactWebsite').value,consent:byId('contactConsent').checked,source:eventSource(agency)})});const result=await response.json();if(!response.ok)throw new Error(result.error||'Inquiry could not be sent.');form.reset();set('contactFormMessage','Inquiry received securely. The agency can now review your request.');button.textContent='Inquiry sent';}catch(error){set('contactFormMessage',error.message||'Inquiry could not be sent. Please try again.');button.disabled=false;button.textContent='Send inquiry';}});
+ void loadPublicReviews();
 });
