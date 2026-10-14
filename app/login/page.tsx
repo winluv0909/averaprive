@@ -184,14 +184,14 @@ export default async function LoginPage({
                     ? "Create a secure password"
                     : "Enter your password"
                 }
-                minLength={8}
+                minLength={creatingAccount ? 12 : undefined}
                 autoComplete="new-password"
                 data-lpignore="true"
                 data-1p-ignore
                 required
               />
 
-              <small>Minimum of 8 characters.</small>
+              {creatingAccount && <small>Minimum of 12 characters.</small>}
             </label>
 
             <button

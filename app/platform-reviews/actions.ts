@@ -74,8 +74,8 @@ export async function reviewSignUp(form: FormData) {
   const email = String(form.get("email") ?? "").trim();
   const password = String(form.get("password") ?? "");
 
-  if (!email || password.length < 8) {
-    authError("Enter your email and a password with at least 8 characters.");
+  if (!email || password.length < 12) {
+    authError("Enter your email and a password with at least 12 characters.");
   }
 
   const { data, error } = await supabase.auth.signUp({

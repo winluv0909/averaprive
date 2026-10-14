@@ -211,13 +211,13 @@ export default async function WriteReview({
                       name="password"
                       autoComplete="new-password"
                       required
-                      minLength={8}
+                      minLength={12}
                       maxLength={128}
                     />
                   </label>
 
                   <p>
-                    Use a password with at least 8 characters.
+                    Use a password with at least 12 characters.
                     Confirm your email before reviewing.
                   </p>
 

@@ -362,7 +362,7 @@ export default function RegistrationWizard({
                 onChange={(event) =>
                   set("password", event.target.value)
                 }
-                minLength={8}
+                minLength={12}
                 autoComplete="new-password"
                 required
               />

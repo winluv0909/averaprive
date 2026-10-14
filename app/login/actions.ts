@@ -199,7 +199,7 @@ export async function signUp(formData: FormData) {
 
   if (
     !email ||
-    password.length < 8 ||
+    password.length < 12 ||
     firstName.length < 1 ||
     lastName.length < 1 ||
     agencyName.length < 2 ||
@@ -212,7 +212,7 @@ export async function signUp(formData: FormData) {
   ) {
     redirect(
       `/agency/register?error=${encodeURIComponent(
-        "Complete every required field and use a password with at least 8 characters.",
+        "Complete every required field and use a password with at least 12 characters.",
       )}`,
     );
   }

@@ -124,7 +124,7 @@ export default async function ClaimPage({
                 <input
                   name="password"
                   type="password"
-                  minLength={8}
+                  minLength={12}
                   required
                   autoComplete="new-password"
                 />
