@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase/server";
+
 import { createAdminClient } from "@/lib/supabase/admin";
 
 export const runtime = "nodejs";
@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
   const slug = request.nextUrl.searchParams.get("slug") || "";
   if (!/^[a-z0-9_-]{1,80}$/i.test(slug)) return reply({ error: "Invalid agency profile." }, 400);
   try {
-    const publicClient = await createClient();
+    const publicClient = createAdminClient();
     const { data: agency, error: agencyError } = await publicClient.from("ap_public_agencies")
       .select("id,demo_profile").eq("slug", slug).maybeSingle();
     if (agencyError) return reply({ error: "Reviews are temporarily unavailable." }, 503);

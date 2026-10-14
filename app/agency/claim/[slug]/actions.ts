@@ -1,4 +1,5 @@
 "use server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth/authorization";
@@ -6,7 +7,7 @@ import { readProfileSnapshot } from "@/lib/agencies/claim-profile";
 
 export async function requestClaim(slug: string, form: FormData) {
   const { supabase } = await requireUser();
-  const { data: agency } = await supabase
+  const { data: agency } = await createAdminClient()
     .from("ap_public_agencies")
     .select("id,demo_profile")
     .eq("slug", slug)

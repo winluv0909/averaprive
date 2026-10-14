@@ -1,5 +1,6 @@
+import { createAdminClient } from "@/lib/supabase/admin";
 import { NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase/server";
+
 import { loadPlatformReviews } from "@/lib/reviews/platform";
 
 export const dynamic = "force-dynamic";
@@ -7,7 +8,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   try {
     const data = await loadPlatformReviews(
-      await createClient(),
+      createAdminClient(),
       1,
       2,
     );

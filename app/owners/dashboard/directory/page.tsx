@@ -1,3 +1,4 @@
+import { createAdminClient } from "@/lib/supabase/admin";
 import { OwnerOperationsShell } from "@/app/dashboard/_components/portal-shells";
 import "./directory.css";
 import Link from "next/link";
@@ -17,7 +18,7 @@ export default async function DirectoryPage({
     { data: agencies, error: agencyError },
     { data: claims, error: claimError },
   ] = await Promise.all([
-    supabase.from("ap_public_agencies").select(claimProfileColumns),
+    createAdminClient().from("ap_public_agencies").select(claimProfileColumns),
     supabase
       .from("ap_agency_claims")
       .select("id,agency_id,claimant_user_id,evidence,created_at,representative_name,representative_role,business_contact,profile_confirmed,requested_corrections,profile_snapshot")

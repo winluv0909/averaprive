@@ -1,5 +1,7 @@
+export const dynamic = "force-dynamic";
+import { createAdminClient } from "@/lib/supabase/admin";
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+
 import {
   loadPlatformReviews,
   ReviewCard,
@@ -22,7 +24,7 @@ export default async function PlatformReviews({
       ? parsed
       : 1;
 
-  const data = await loadPlatformReviews(await createClient(), page);
+  const data = await loadPlatformReviews(createAdminClient(), page);
 
   return (
     <>

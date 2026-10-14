@@ -1,3 +1,4 @@
+import { createAdminClient } from "@/lib/supabase/admin";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
@@ -19,7 +20,7 @@ export default async function ClaimPage({
   const { slug } = await params;
   const query = await searchParams;
   const supabase = await createClient();
-  const { data: agency } = await supabase
+  const { data: agency } = await createAdminClient()
     .from("ap_public_agencies")
     .select(claimProfileColumns)
     .eq("slug", slug)
