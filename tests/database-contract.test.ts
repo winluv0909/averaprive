@@ -38,7 +38,6 @@ describe("database contract", () => {
     expect(demoMigration).toContain("Demonstration profiles cannot request verification");
     expect(demoMigration).toContain("published and accepting_inquiries and not demo_profile");
     expect(demoMigration).toContain("published and not demo_profile");
-    expect(demoMigration.match(/'d0000000-0000-4000-8000-0000000000\d\d'/g)).toHaveLength(15);
   });
 
   it("does not attach Trustpilot identities to fictional agencies", () => {
@@ -48,18 +47,25 @@ describe("database contract", () => {
     expect(demoMigrations.toLowerCase()).not.toContain("trustpilot.com/review/");
   });
 
-  it("ships exactly 20 disclosed fictional OFM profiles", () => {
-    const demoMigrations = ["202610030015_ofm_demo_agencies.sql", "202610030016_demo_external_ratings.sql"]
-      .map((file) => readFileSync(join(migrationDirectory, file), "utf8"))
-      .join("\n");
-    const ids = new Set(demoMigrations.match(/d0000000-0000-4000-8000-0000000000\d\d/g));
-    expect(ids.size).toBe(20);
-  });
+  it("does not seed fictional agencies or ratings in production", () => {
+  const demoMigrations = [
+    "202610030015_ofm_demo_agencies.sql",
+    "202610030016_demo_external_ratings.sql",
+  ]
+    .map((file) => readFileSync(join(migrationDirectory, file), "utf8"))
+    .join("\n");
+
+  expect(demoMigrations).not.toMatch(
+    /d0000000-0000-4000-8000-0000000000\d\d/i,
+  );
+  expect(demoMigrations).not.toMatch(
+    /insert\s+into\s+public\.(?:ap_agencies|ap_external_ratings)\b/i,
+  );
+});
 
   it("keeps simulated external ratings distinguishable from live ratings", () => {
     const ratings = readFileSync(join(migrationDirectory, "202610030016_demo_external_ratings.sql"), "utf8");
     expect(ratings).toContain("rating_status in ('active','unavailable','no_profile')");
     expect(ratings).toMatch(/check\s*\(not is_demo or profile_url is null\)/);
-    expect(ratings.match(/'trustpilot'/g)?.length).toBeGreaterThanOrEqual(20);
   });
 });
