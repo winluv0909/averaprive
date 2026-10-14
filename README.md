@@ -1,69 +1,62 @@
 # Avera Privé
 
-Avera Privé is one unified Next.js application with three clearly separated experiences:
+One Next.js application deployed through one Vercel project.
 
-| Side | Purpose | Primary route |
-|---|---|---|
-| Public website | Discovery, directory, comparison, rankings, editorial, pricing, trust information | `/` |
-| Agency workspace | Registration, profiles, team access, submissions, verification, reviews, leads, analytics, billing, support | `/agency/login` |
-| Owner operations | Moderation, verification, review integrity, disputes, fraud, placements, subscriptions, editorial, analytics, audit, support | `/owners/login` |
-
-It deploys as **one Vercel project and one domain**. Authentication and authorization determine which private workspace a signed-in user may access.
+| Experience | Entry route |
+|---|---|
+| Public website | `/` |
+| Agency workspace | `/agency/login` |
+| Owner operations | `/owners/login` |
 
 ## Requirements
 
-- Node.js 20.9+
-- npm 10+
-- A new Supabase project
-- A Vercel project for production deployment
+- Use Node.js 24 for consistency with the verified local environment.
+- Install dependencies using npm and the committed package-lock.json.
+- Use the existing Supabase and Vercel projects for ongoing deployment.
 
 ## Local setup
 
-```bash
-npm ci
-cp .env.example .env.local
-npm run dev
-```
+Run `npm ci`. For a new checkout, copy `.env.example` to `.env.local`
+and populate the required values. Preserve an existing `.env.local`.
 
-Fill `.env.local` before signing in. Open `http://localhost:3000`.
+Run `npm run dev` and open http://localhost:3000.
 
-Do not copy `.next`, `node_modules`, `.git`, `.vscode`, `.vercel`, or an old `.env.local` from another project. Install dependencies from `package-lock.json` and enter environment values locally.
+Never commit secrets or expose the Supabase service-role key in browser code.
 
 ## Database
 
-The database is a clean, ordered migration set. Follow [docs/DATABASE-SETUP.md](docs/DATABASE-SETUP.md). Every SQL file has a descriptive filename and must be applied once in filename order.
+See docs/DATABASE-SETUP.md and docs/DATABASE-MIGRATION-ORDER.md.
 
-Core controls include:
+Existing databases must receive only reviewed, unapplied migrations.
+Do not recreate the database or replay the entire migration chain.
 
-- Separate agency publication and independent verification decisions.
-- Evidence-gated review publication and anti-fraud investigations.
-- Reports, disputes, decision history, and immutable staff audit events.
-- Clearly labeled sponsored placements that do not modify objective trust status.
-- Role-based agency teams and email-bound invitation acceptance.
-- Support tickets, conversation history, internal staff notes, priority, assignment, SLA fields, and audit events.
-- Editorial CMS for articles, interviews, reports, graphics, spotlights, and case studies.
-- Subscription entitlements, inquiry operations, and privacy-aware marketplace analytics.
+The production migration chain no longer inserts fictional agencies or
+simulated external ratings. Demo safeguards remain in the schema.
+Removing seed inserts does not delete records in an existing database.
 
 ## Verification
 
-```bash
-npm run verify
-```
+Run `npm run verify` for typecheck, lint, tests, and production build.
+Run `npm audit` for all dependencies and `npm audit --omit=dev`
+for production dependencies.
 
-This runs TypeScript, ESLint, unit/database-contract tests, and a production build.
+Browser acceptance tests are separate: `npm run test:e2e`.
 
 ## Deployment
 
-1. Push this project to a private GitHub repository.
-2. Import that repository into Vercel.
-3. Add the values from `.env.example` to Vercel.
-4. Add the production origin and `/auth/callback` to Supabase Auth URL configuration.
-5. Follow [docs/LAUNCH-CHECKLIST.md](docs/LAUNCH-CHECKLIST.md).
+Push reviewed changes to the connected repository and confirm the matching
+Vercel deployment is Ready. Configure environment values for the intended
+deployment environment; use `.env.example` as a reference, not as proof
+that production configuration is complete.
 
-## Important launch boundaries
+## Billing and launch
 
-- The included subscription workflow does not process live cards until Stripe checkout, customer portal, and signed webhooks are connected.
-- Trustpilot is third-party platform feedback, not Avera Privé verification. Follow [docs/TRUSTPILOT-SETUP.md](docs/TRUSTPILOT-SETUP.md).
-- Real agencies must not be seeded with scraped or unsupported ratings. Publish only sourced, reviewed records and store provenance in `ap_agency_sources`.
-- Legal policies and production security configuration require final review before public launch.
-- The 20 included OFM demo profiles are fictional, cannot receive trust signals or leads, and can be hidden with `NEXT_PUBLIC_SHOW_DEMO_AGENCIES=false`. Any displayed external score is explicitly simulated and is not live Trustpilot data.
+The current billing work uses PayPal and crypto payment workflows.
+Live payment activation, provider settings, monitoring, invoice delivery,
+and recovery behavior require separate production confirmation.
+
+Trustpilot feedback is independent of Avera Privé verification.
+Publish only sourced and reviewed agency information.
+
+See docs/LAUNCH-CHECKLIST.md and docs/RELEASE-READINESS.md.
+A successful deployment does not by itself establish public-launch readiness.

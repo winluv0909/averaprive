@@ -1,24 +1,49 @@
 # Avera Privé release readiness
 
-## Code status
+## Confirmed on 2026-10-14
 
-This package is deployment-ready application code for one Vercel project containing the public website, agency workspace, and owner operations workspace. The production build, TypeScript check, ESLint, unit tests, database-contract tests, local-asset validation, and navigation-link validation pass in the delivery environment.
+The operator reported deployment completed after the dependency and
+database-contract test updates.
 
-The public layout uses a consistent responsive vertical rhythm: approximately 80–88px between major desktop sections and 58–64px on mobile, with separate hero/header clearance. Agency and owner workspaces use compact 34–44px page padding and responsive side navigation.
+Local validation:
+- 215 tests passed across 24 test files.
+- Typecheck passed.
+- Production build passed.
+- ESLint completed with 0 errors and 4 warnings:
+  three image-element warnings and one unused-variable warning.
+- npm audit --omit=dev reported 0 vulnerabilities.
 
-## Required before official public launch
+These are dated results, not a guarantee about later changes or newly
+published advisories. Record the deployed commit with future release checks.
 
-1. Create a clean Supabase project and apply all 17 queries in `DATABASE-QUERIES.md` in order.
-2. Create the first `super_admin`; configure Supabase Site URL, redirect URLs, SMTP, email templates, and CAPTCHA.
-3. Configure every Vercel environment variable from `.env.example`. Never expose the service-role key in browser code.
-4. Replace the generic Trustpilot destination only after the official Avera Privé business profile is active. Trustpilot is independent of Avera Privé verification.
-5. Replace placeholder support contact details and add official social-profile destinations when those accounts are active.
-6. Obtain qualified legal review of `public/legal.html`, then add the registered entity, jurisdiction, contact details, retention schedule, service providers, payment terms, and consent implementation.
-7. Connect Stripe Checkout, customer portal, and signed webhooks before accepting live payments. Current subscription records and entitlements do not process cards by themselves.
-8. Configure production monitoring, backups, rate limiting, incident contacts, and data-retention operations.
-9. Decide whether demo agencies should remain visible. Set `NEXT_PUBLIC_SHOW_DEMO_AGENCIES=false` to hide all fictional profiles in production.
-10. Complete final acceptance tests with separate agency-owner, moderator, verification-reviewer, support, finance, and super-admin accounts.
+## Unresolved dependency findings
 
-## Demo-data boundary
+The full audit reported 5 high findings in one dependency chain:
+eslint-config-next -> @next/eslint-plugin-next -> fast-glob ->
+micromatch -> braces.
 
-The 20 included agencies are fictional OFM demonstrations. They are disclosed as samples, cannot accept inquiries or obtain verification, are excluded from sponsorship and production analytics, and contain no fabricated Trustpilot profile URLs. Simulated external scores exist only to test rating, unavailable, and no-profile interface states.
+Root advisory: GHSA-vfj7-8cjw-p6xm.
+No patched braces version was listed when reviewed on 2026-10-14.
+The development-tool findings remain unresolved.
+
+Do not force-downgrade eslint-config-next to version 14 while the application
+uses Next.js 16 solely to clear the audit. Review a compatible upstream fix
+when available. A production-only clean audit does not remove build-tool risk.
+
+## Production data boundary
+
+Fictional agency and rating inserts were removed from the migration chain.
+Schema safeguards remain. Tests check that the two historical demo
+migrations do not reintroduce those inserts.
+
+This does not establish whether old demo records remain in a deployed database.
+
+## Remaining launch work
+
+Use LAUNCH-CHECKLIST.md to track pages and popups, billing/PDF settings,
+database security, operator and policy details, email, live payments,
+final acceptance checks, and domain configuration.
+
+Successful automated checks and Vercel deployment do not confirm these
+operational tasks are complete. Existing database application status
+must be verified separately.
