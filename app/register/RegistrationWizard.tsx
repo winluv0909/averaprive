@@ -5,6 +5,9 @@ import {
   completeSocialSignUp,
   signUp,
 } from "@/app/login/actions";
+import EmailVerification from "./EmailVerification";
+import CountrySelect from "./CountrySelect";
+import LanguageSelect from "./LanguageSelect";
 
 const serviceOptions = [
   "Full-Service OFM",
@@ -55,6 +58,8 @@ export default function RegistrationWizard({
 }: RegistrationWizardProps) {
   const [step, setStep] = useState(0);
   const explicitSubmission = useRef(false);
+  const [verifiedEmail, setVerifiedEmail] = useState("");
+  const [verificationError, setVerificationError] = useState("");
 
   const submitRegistration = async (formData: FormData) => {
     if (!explicitSubmission.current || step !== steps.length - 1) {
@@ -63,7 +68,16 @@ export default function RegistrationWizard({
     }
 
     explicitSubmission.current = false;
+    if (
+  !verifiedEmail ||
+  verifiedEmail !== String(formData.get("email") ?? "").trim().toLowerCase()
+) {
+  setVerificationError("Verify your owner email in Step 04 before submitting.");
+  setStep(3);
+  return;
+}
 
+setVerificationError("");
     const registrationAction = socialAccount
       ? completeSocialSignUp
       : signUp;
@@ -136,6 +150,11 @@ export default function RegistrationWizard({
         }
       }}
     >
+      {verificationError && (
+  <p className="access-alert error" role="alert">
+    {verificationError}
+  </p>
+)}
       {error && (
         <p className="access-alert error" role="alert">
           {error}
@@ -256,18 +275,15 @@ export default function RegistrationWizard({
         </label>
 
         <div className="registration-grid">
-          <label>
-            <span>COUNTRY</span>
-
-            <input
-              name="country"
-              value={values.country ?? ""}
-              onChange={(event) =>
-                set("country", event.target.value)
-              }
-              required
-            />
-          </label>
+          <div>
+  <span className="wizard-field-title">COUNTRY</span>
+  <CountrySelect
+    name="country"
+    label="Agency country"
+    value={values.country ?? ""}
+    onChange={(value) => set("country", value)}
+  />
+</div>
 
           <label>
             <span>CITY</span>
@@ -352,21 +368,70 @@ export default function RegistrationWizard({
               </p>
             </div>
           ) : (
-            <label>
-              <span>CREATE PASSWORD</span>
+            <>
+  <label>
+    <span>CREATE PASSWORD</span>
 
-              <input
-                name="password"
-                type="password"
-                value={values.password ?? ""}
-                onChange={(event) =>
-                  set("password", event.target.value)
-                }
-                minLength={12}
-                autoComplete="new-password"
-                required
-              />
-            </label>
+    <input
+      name="password"
+      type="password"
+      value={values.password ?? ""}
+      onChange={(event) => {
+        const password = event.target.value;
+        set("password", password);
+
+        const confirmation =
+          event.currentTarget.form?.elements.namedItem("confirmPassword");
+
+        if (confirmation instanceof HTMLInputElement) {
+          confirmation.setCustomValidity(
+            confirmation.value && confirmation.value !== password
+              ? "Passwords must match."
+              : "",
+          );
+        }
+      }}
+      minLength={12}
+      maxLength={128}
+      pattern="(?=.*[A-Za-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9\s]).{12,128}"
+      title="Use at least 12 characters, including an uppercase letter, a number, and a symbol."
+      autoComplete="new-password"
+      aria-describedby="registration-password-guide"
+      required
+    />
+
+    <small id="registration-password-guide">
+      Use 12–128 characters, including letters, at least one uppercase
+      letter, one number, and one symbol, such as ! @ # or %.
+    </small>
+  </label>
+
+  <label>
+    <span>CONFIRM PASSWORD</span>
+
+    <input
+      name="confirmPassword"
+      type="password"
+      value={values.confirmPassword ?? ""}
+      onChange={(event) => {
+        const confirmation = event.target.value;
+        set("confirmPassword", confirmation);
+
+        event.currentTarget.setCustomValidity(
+          confirmation !== (values.password ?? "")
+            ? "Passwords must match."
+            : "",
+        );
+      }}
+      minLength={12}
+      maxLength={128}
+      autoComplete="new-password"
+      required
+    />
+
+    <small>Enter the same password again.</small>
+  </label>
+</>
           )}
         </div>
 
@@ -546,20 +611,13 @@ export default function RegistrationWizard({
           </label>
         </div>
 
-        <label>
-          <span>
-            LANGUAGES <b>COMMA-SEPARATED</b>
-          </span>
-
-          <input
-            name="languages"
-            value={values.languages ?? ""}
-            onChange={(event) =>
-              set("languages", event.target.value)
-            }
-            placeholder="English, Spanish"
-          />
-        </label>
+        <div>
+  <span className="wizard-field-title">LANGUAGES</span>
+  <LanguageSelect
+    value={values.languages ?? ""}
+    onChange={(value) => set("languages", value)}
+  />
+</div>
       </section>
 
       <section
@@ -639,9 +697,26 @@ export default function RegistrationWizard({
             />
           </label>
         </div>
-
+        <EmailVerification
+  email={values.email ?? ""}
+  onVerified={setVerifiedEmail}
+/>
         <div className="verification-readiness">
-          <span>◆</span>
+  <span aria-hidden="true">
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z" />
+      <path d="m8.5 12 2.5 2.5 4.5-5" />
+    </svg>
+  </span>
 
           <div>
             <b>Independent verification information</b>
@@ -681,22 +756,15 @@ export default function RegistrationWizard({
             />
           </label>
 
-          <label>
-            <span>REGISTRATION COUNTRY</span>
-
-            <input
-              name="registrationCountry"
-              value={
-                values.registrationCountry ??
-                values.country ??
-                ""
-              }
-              onChange={(event) =>
-                set("registrationCountry", event.target.value)
-              }
-              required
-            />
-          </label>
+          <div>
+  <span className="wizard-field-title">REGISTRATION COUNTRY</span>
+  <CountrySelect
+    name="registrationCountry"
+    label="Business registration country"
+    value={values.registrationCountry || values.country || ""}
+    onChange={(value) => set("registrationCountry", value)}
+  />
+</div>
         </div>
 
         <div className="registration-grid">

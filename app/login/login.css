@@ -1312,3 +1312,199 @@
   text-align: left;
   overflow-wrap: break-word;
 }
+.registration-country-select {
+  position: relative;
+  margin: 17px 0;
+}
+
+.registration-country-select summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 12px 15px;
+  border: 1px solid #cfc7ba;
+  background: #fff;
+  color: #171715;
+  cursor: pointer;
+  list-style: none;
+  font: 400 14px/1.5 Arial, sans-serif;
+}
+
+.registration-country-select summary::-webkit-details-marker {
+  display: none;
+}
+
+.registration-country-select summary > span:last-child {
+  margin-left: auto;
+}
+
+.registration-country-select summary:focus-visible,
+.registration-country-options button:focus-visible {
+  outline: 2px solid #a98a51;
+  outline-offset: 2px;
+}
+
+.registration-country-menu {
+  position: relative;
+  padding: 12px;
+  border: 1px solid #cfc7ba;
+  border-top: 0;
+  background: #fff;
+}
+
+.registration-country-options {
+  max-height: 280px;
+  margin-top: 10px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.registration-country-options button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px;
+  border: 0;
+  background: #fff;
+  color: #171715;
+  text-align: left;
+  cursor: pointer;
+  font: 400 14px/1.5 Arial, sans-serif;
+}
+
+.registration-country-options button:hover,
+.registration-country-options button[aria-pressed="true"] {
+  background: #f1eadf;
+}
+
+.registration-email-check {
+  margin: 24px 0;
+  padding: 20px;
+  border: 1px solid #cfc7ba;
+  background: #faf7f1;
+  font: 400 14px/1.6 Arial, sans-serif;
+}
+
+.registration-code-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.registration-code-actions button {
+  min-height: 44px;
+  padding: 12px 18px;
+  border: 1px solid #171715;
+  background: #171715;
+  color: #fff;
+  cursor: pointer;
+}
+
+.registration-code-actions button:disabled {
+  opacity: .55;
+  cursor: default;
+}
+.registration-language-select {
+  margin: 17px 0;
+}
+
+.registration-language-select summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 54px;
+  padding: 12px 15px;
+  border: 1px solid #cfc7ba;
+  background: #fff;
+  cursor: pointer;
+  list-style: none;
+  font: 400 14px/1.5 Arial, sans-serif;
+}
+
+.registration-language-select summary::-webkit-details-marker {
+  display: none;
+}
+
+.registration-language-select summary:focus-visible {
+  outline: 2px solid #a98a51;
+  outline-offset: 2px;
+}
+
+.registration-language-menu {
+  padding: 12px;
+  border: 1px solid #cfc7ba;
+  border-top: 0;
+  background: #fff;
+}
+
+.registration-language-options {
+  max-height: 260px;
+  margin-top: 10px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.registration-wizard .registration-language-options label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  margin: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.registration-wizard .registration-language-options label > span {
+  margin: 0;
+  color: #171715;
+  font: 400 14px/1.5 Arial, sans-serif;
+  letter-spacing: normal;
+}
+
+.registration-language-options input[type="checkbox"] {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  margin: 0;
+  padding: 0;
+  accent-color: #a98a51;
+}
+
+.registration-language-selection {
+  color: #68635b;
+  font: 400 13px/1.6 Arial, sans-serif;
+}
+.apple-access-form {
+  width: 100%;
+  margin: 12px 0;
+}
+
+.apple-access-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 20px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
+  font: 600 16px/1.4 Arial, sans-serif;
+  cursor: pointer;
+}
+
+.apple-access-button svg {
+  flex-shrink: 0;
+}
+
+.apple-access-button:focus-visible {
+  outline: 2px solid #a98a51;
+  outline-offset: 4px;
+}

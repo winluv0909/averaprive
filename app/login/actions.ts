@@ -7,6 +7,32 @@ import { getAgencyPortalAccessError } from "@/lib/auth/authorization";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 import { isPlatformRole, needsPasswordChange, platformHome } from "@/lib/auth/platform-access";
+import { requireVerifiedRegistrationEmail } from "@/lib/auth/registration-email";
+import { countries } from "country-flag-icons";
+
+const countryDisplayNames = new Intl.DisplayNames(["en"], {
+  type: "region",
+});
+
+const allowedRegistrationCountries = new Set(
+  countries
+    .filter(
+  (code) => /^[A-Z]{2}$/.test(code) && !["EU", "UN"].includes(code),
+)
+    .map((code) => countryDisplayNames.of(code) || code),
+);
+
+function registrationCountriesValid(formData: FormData) {
+  const country = String(formData.get("country") ?? "").trim();
+  const registrationCountry = String(
+    formData.get("registrationCountry") ?? "",
+  ).trim();
+
+  return (
+    allowedRegistrationCountries.has(country) &&
+    allowedRegistrationCountries.has(registrationCountry)
+  );
+}
 
 type SocialProvider = "google" | "apple";
 
@@ -164,6 +190,23 @@ export async function signIn(formData: FormData) {
 export async function signUp(formData: FormData) {
   const email = String(formData.get("email") ?? "").trim();
   const password = String(formData.get("password") ?? "");
+  const confirmPassword = String(formData.get("confirmPassword") ?? "");
+
+if (
+  password.length < 12 ||
+  password.length > 128 ||
+  !/[A-Za-z]/.test(password) ||
+  !/[A-Z]/.test(password) ||
+  !/[0-9]/.test(password) ||
+  !/[^A-Za-z0-9\s]/.test(password) ||
+  password !== confirmPassword
+) {
+  redirect(
+    `/agency/register?error=${encodeURIComponent(
+      "Passwords must match and contain 12–128 characters, including an uppercase letter, a number, and a symbol.",
+    )}`,
+  );
+}
   const firstName = String(formData.get("firstName") ?? "").trim();
   const lastName = String(formData.get("lastName") ?? "").trim();
   const agencyName = String(formData.get("agencyName") ?? "").trim();
@@ -197,8 +240,9 @@ export async function signUp(formData: FormData) {
     formData.get("registrationNumber") ?? "",
   ).trim();
 
-  if (
-    !email ||
+    if (
+  !registrationCountriesValid(formData) ||
+  !email ||
     password.length < 12 ||
     firstName.length < 1 ||
     lastName.length < 1 ||
@@ -216,7 +260,20 @@ export async function signUp(formData: FormData) {
       )}`,
     );
   }
+  let emailVerificationError = "";
 
+try {
+  await requireVerifiedRegistrationEmail(email);
+} catch {
+  emailVerificationError =
+    "Verify your owner email in Step 04 before submitting registration.";
+}
+
+if (emailVerificationError) {
+  redirect(
+    `/agency/register?error=${encodeURIComponent(emailVerificationError)}`,
+  );
+}
   const siteUrl = (
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
   ).replace(/\/$/, "");
@@ -366,7 +423,8 @@ export async function completeSocialSignUp(formData: FormData) {
   ).trim();
 
   if (
-    firstName.length < 1 ||
+  !registrationCountriesValid(formData) ||
+  firstName.length < 1 ||
     lastName.length < 1 ||
     agencyName.length < 2 ||
     services.length < 1 ||
@@ -382,7 +440,21 @@ export async function completeSocialSignUp(formData: FormData) {
       )}`,
     );
   }
+  let emailVerificationError = "";
 
+try {
+  if (!user.email) throw new Error("Owner email is missing.");
+  await requireVerifiedRegistrationEmail(user.email);
+} catch {
+  emailVerificationError =
+    "Verify your connected account email in Step 04 before submitting registration.";
+}
+
+if (emailVerificationError) {
+  redirect(
+    `/agency/register?oauth=1&error=${encodeURIComponent(emailVerificationError)}`,
+  );
+}
   const onboardingProfile = {
     agencyName,
     country: String(formData.get("country") ?? "").trim(),

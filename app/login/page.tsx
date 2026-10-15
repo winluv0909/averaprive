@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { signIn, signUp, signInWithSocial } from "./actions";
+import AppleSignIn from "./AppleSignIn";
 
 export const metadata = {
   title: "Sign in",
@@ -251,7 +252,7 @@ export default async function LoginPage({
               <span>Continue with Google</span>
             </button>
           </form>
-
+          <AppleSignIn intent={creatingAccount ? "register" : "login"} />
           <div className="access-switch">
             {creatingAccount ? (
               <p>

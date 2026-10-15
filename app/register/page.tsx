@@ -2,6 +2,7 @@ import Link from "next/link";
 import RegistrationWizard from "./RegistrationWizard";
 import { signInWithSocial } from "@/app/login/actions";
 import { createClient } from "@/lib/supabase/server";
+import AppleSignIn from "@/app/login/AppleSignIn";
 
 export const metadata = {
   title: "Register your agency",
@@ -201,7 +202,7 @@ export default async function RegisterPage({
     </button>
   </form>
 </div>
-
+            <AppleSignIn intent="register" />
               <div className="access-divider">
                 <span>OR REGISTER WITH EMAIL</span>
               </div>
