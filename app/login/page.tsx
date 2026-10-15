@@ -345,7 +345,9 @@ export default async function LoginPage({
                   .access-page .access-message h1 {
           font-size: clamp(44px, 5.5vw, 96px);
           line-height: 1.15;
-          letter-spacing: -0.025em;
+          letter-spacing: 0.01em;
+font-variant-ligatures: none;
+font-kerning: normal;
           height: auto;
           overflow: visible;
         }
