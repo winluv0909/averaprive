@@ -342,6 +342,17 @@ export default async function LoginPage({
         .access-page .access-google-button > svg {
           flex-shrink: 0;
         }
+                  .access-page .access-message h1 {
+          font-size: clamp(44px, 5.5vw, 96px);
+          line-height: 1.15;
+          letter-spacing: -0.025em;
+          height: auto;
+          overflow: visible;
+        }
+
+        .access-page .access-message h1 em {
+          line-height: inherit;
+        }
       `}</style>
     </div>
   );
