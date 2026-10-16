@@ -6,6 +6,8 @@ import {
   signUp,
 } from "@/app/login/actions";
 import EmailVerification from "./EmailVerification";
+import RegistrationNumber from "./RegistrationNumber";
+import "./registration-number.css";
 import CountrySelect from "./CountrySelect";
 import LanguageSelect from "./LanguageSelect";
 
@@ -116,6 +118,13 @@ setVerificationError("");
 
   const move = (direction: number) => {
     explicitSubmission.current = false;
+    if (direction > 0 && step === 3) {
+      if (!verifiedEmail || verifiedEmail !== (values.email ?? "").trim().toLowerCase() || !values.registrationNumber) {
+        setVerificationError("Verify your owner email and Avera Privé registration number before continuing to review.");
+        return;
+      }
+      setVerificationError("");
+    }
 
     setStep((current) =>
       Math.max(0, Math.min(steps.length - 1, current + direction)),
@@ -741,25 +750,31 @@ setVerificationError("");
           />
         </label>
 
+        <RegistrationNumber
+          email={values.email ?? ""}
+          emailVerified={Boolean(verifiedEmail) && verifiedEmail === (values.email ?? "").trim().toLowerCase()}
+          onVerified={(number) => set("registrationNumber", number)}
+        />
+
         <div className="registration-grid">
           <label>
-            <span>REGISTRATION NUMBER</span>
+            <span>OFFICIAL BUSINESS REGISTRATION NUMBER <b>OPTIONAL</b></span>
 
             <input
-              name="registrationNumber"
-              value={values.registrationNumber ?? ""}
+              name="businessRegistrationNumber"
+              value={values.businessRegistrationNumber ?? ""}
               onChange={(event) =>
-                set("registrationNumber", event.target.value)
+                set("businessRegistrationNumber", event.target.value)
               }
-              required
+              placeholder="From your official business records, if applicable"
             />
           </label>
 
           <div>
-  <span className="wizard-field-title">REGISTRATION COUNTRY</span>
+  <span className="wizard-field-title">COMPANY COUNTRY</span>
   <CountrySelect
     name="registrationCountry"
-    label="Business registration country"
+    label="Company country"
     value={values.registrationCountry || values.country || ""}
     onChange={(value) => set("registrationCountry", value)}
   />
@@ -984,8 +999,13 @@ setVerificationError("");
           </div>
 
           <div>
-            <dt>Registration number</dt>
-            <dd>{values.registrationNumber || "Not provided"}</dd>
+            <dt>Avera Privé registration number</dt>
+            <dd>{values.registrationNumber || "Not verified"}</dd>
+          </div>
+
+          <div>
+            <dt>Official business registration number</dt>
+            <dd>{values.businessRegistrationNumber || "Not provided"}</dd>
           </div>
 
           <div>

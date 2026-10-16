@@ -131,9 +131,9 @@ export default function EmailVerification({ email, onVerified }: Props) {
                 : "Get verification code"}
         </button>
 
-        {sent && !verified && (
+        {sent && (
           <button type="button" disabled={busy} onClick={sendCode}>
-            Resend code
+            {verified ? "Send a fresh email code" : "Resend code"}
           </button>
         )}
       </div>

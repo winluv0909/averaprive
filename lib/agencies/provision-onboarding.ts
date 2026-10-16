@@ -1,7 +1,10 @@
+import "server-only";
+import { createAdminClient } from "@/lib/supabase/admin";
 import type { SupabaseClient, User } from "@supabase/supabase-js";
 import { createSlug } from "./slug";
 
 type OnboardingProfile = {
+  registrationReservationId?: string; registrationNumber?: string;
   agencyName?: string; country?: string; city?: string; websiteUrl?: string; logoUrl?: string;
   services?: string[]; creatorNiches?: string[]; regionsServed?: string[]; agencySize?: string;
   foundedYear?: number | null; languages?: string[]; positioning?: string; about?: string;
@@ -45,6 +48,22 @@ export async function provisionOnboardingAgency(supabase: SupabaseClient, user: 
   if (!owner) throw new Error("Agency owner access is required to complete registration.");
   if (!["draft", "submitted", "approved", "published", "changes_requested"].includes(agency.publication_status)) {
     throw new Error("This agency registration cannot be resumed in its current state. Contact support for assistance.");
+  }
+
+  if (profile.registrationReservationId || profile.registrationNumber) {
+    // Never trust editable metadata as proof of ownership or number validity.
+    const { data: authenticated, error: authenticationError } = await supabase.auth.getUser();
+    if (authenticationError || authenticated.user?.id !== user.id || !authenticated.user.email || !authenticated.user.email_confirmed_at) {
+      throw new Error("Sign in again to complete your agency registration.");
+    }
+    const { error: numberError } = await createAdminClient().rpc("ap_bind_registration_number", {
+      reservation_id: profile.registrationReservationId,
+      supplied_number: profile.registrationNumber,
+      target_user: authenticated.user.id,
+      target_agency: agencyId,
+      target_owner_email: authenticated.user.email,
+    });
+    if (numberError) throw new Error("Your registration number could not be assigned. Contact support to resume registration.");
   }
 
   // Submitted or approved profiles must not be overwritten by stale signup data.

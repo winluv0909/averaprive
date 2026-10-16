@@ -1,0 +1,66 @@
+.registration-main .registration-number-card {
+  margin: 0 0 24px;
+  padding: 18px;
+  border: 1px solid #d8d0c1;
+  border-radius: 8px;
+  background: #faf7f1;
+}
+.registration-main .registration-number-card > label { margin: 0; }
+.registration-main .registration-number-description {
+  margin: 8px 0 14px;
+  color: #726c61;
+  font: 400 13px/1.65 Inter, Arial, sans-serif;
+}
+.registration-main .registration-number-controls {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.registration-main .registration-number-controls > input {
+  flex: 1 1 250px;
+  width: 0;
+  min-width: 0;
+  font-size: 14px;
+  letter-spacing: .015em;
+}
+.registration-main .registration-number-controls > button {
+  flex: 0 1 auto;
+  min-height: 48px;
+  padding: 12px 15px;
+  border: 1px solid #292720;
+  border-radius: 6px;
+  background: #292720;
+  color: #fff;
+  font: 600 12px/1.5 Inter, Arial, sans-serif;
+  cursor: pointer;
+}
+.registration-main .registration-number-controls > button:disabled {
+  opacity: .65;
+  cursor: default;
+}
+.registration-main .registration-number-resend {
+  min-height: 44px;
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+  color: #765c30;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  font: 600 12px/1.5 Inter, Arial, sans-serif;
+}
+.registration-main .registration-number-status { margin: 8px 0 0; font: 400 13px/1.6 Inter, Arial, sans-serif; }
+.registration-main .registration-wizard input[data-number-verified="true"] {
+  border-color: #27834a;
+  background: #f4fbf6;
+  box-shadow: 0 0 0 2px rgb(39 131 74 / 14%);
+}
+.registration-main .registration-number-controls > button:focus-visible,
+.registration-main .registration-number-resend:focus-visible {
+  outline: 2px solid #8b6e3e;
+  outline-offset: 3px;
+}
+@media (max-width: 560px) {
+  .registration-main .registration-number-controls > button { width: 100%; }
+}

@@ -7,6 +7,7 @@ import { getAgencyPortalAccessError } from "@/lib/auth/authorization";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 import { isPlatformRole, needsPasswordChange, platformHome } from "@/lib/auth/platform-access";
+import { requireVerifiedAgencyRegistrationNumber } from "@/lib/auth/agency-registration-number";
 import { requireVerifiedRegistrationEmail } from "@/lib/auth/registration-email";
 import { countries } from "country-flag-icons";
 
@@ -239,6 +240,9 @@ if (
   const registrationNumber = String(
     formData.get("registrationNumber") ?? "",
   ).trim();
+  const businessRegistrationNumber = String(formData.get("businessRegistrationNumber") ?? "").trim();
+  let registrationReservationId = "";
+  let issuedRegistrationNumber = "";
 
     if (
   !registrationCountriesValid(formData) ||
@@ -264,9 +268,12 @@ if (
 
 try {
   await requireVerifiedRegistrationEmail(email);
+  const registration = await requireVerifiedAgencyRegistrationNumber(email, registrationNumber);
+  registrationReservationId = registration.id;
+  issuedRegistrationNumber = registration.registration_number;
 } catch {
   emailVerificationError =
-    "Verify your owner email in Step 04 before submitting registration.";
+    "Verify your owner email and Avera Privé registration number in Step 04 before submitting registration.";
 }
 
 if (emailVerificationError) {
@@ -290,6 +297,8 @@ if (emailVerificationError) {
         agency_name: agencyName,
         requested_plan: plan,
         onboarding_profile: {
+          registrationReservationId,
+          registrationNumber: issuedRegistrationNumber,
           agencyName,
           country: String(formData.get("country") ?? "").trim(),
           city: String(formData.get("city") ?? "").trim(),
@@ -307,7 +316,7 @@ if (emailVerificationError) {
           linkedin: String(formData.get("linkedin") ?? "").trim(),
           verification: {
             legalCompanyName,
-            registrationNumber,
+            registrationNumber: businessRegistrationNumber,
             registrationCountry: String(
               formData.get("registrationCountry") ?? "",
             ).trim(),
@@ -421,6 +430,9 @@ export async function completeSocialSignUp(formData: FormData) {
   const registrationNumber = String(
     formData.get("registrationNumber") ?? "",
   ).trim();
+  const businessRegistrationNumber = String(formData.get("businessRegistrationNumber") ?? "").trim();
+  let registrationReservationId = "";
+  let issuedRegistrationNumber = "";
 
   if (
   !registrationCountriesValid(formData) ||
@@ -445,9 +457,12 @@ export async function completeSocialSignUp(formData: FormData) {
 try {
   if (!user.email) throw new Error("Owner email is missing.");
   await requireVerifiedRegistrationEmail(user.email);
+  const registration = await requireVerifiedAgencyRegistrationNumber(user.email, registrationNumber);
+  registrationReservationId = registration.id;
+  issuedRegistrationNumber = registration.registration_number;
 } catch {
   emailVerificationError =
-    "Verify your connected account email in Step 04 before submitting registration.";
+    "Verify your connected account email and Avera Privé registration number in Step 04 before submitting registration.";
 }
 
 if (emailVerificationError) {
@@ -456,6 +471,8 @@ if (emailVerificationError) {
   );
 }
   const onboardingProfile = {
+    registrationReservationId,
+    registrationNumber: issuedRegistrationNumber,
     agencyName,
     country: String(formData.get("country") ?? "").trim(),
     city: String(formData.get("city") ?? "").trim(),
@@ -473,7 +490,7 @@ if (emailVerificationError) {
     linkedin: String(formData.get("linkedin") ?? "").trim(),
     verification: {
       legalCompanyName,
-      registrationNumber,
+      registrationNumber: businessRegistrationNumber,
       registrationCountry: String(
         formData.get("registrationCountry") ?? "",
       ).trim(),
