@@ -336,6 +336,19 @@ if (emailVerificationError) {
     },
   });
 
+  const accountAlreadyRegistered =
+    error?.code === "user_already_exists" ||
+    error?.code === "email_exists" ||
+    (!error && !data.session && Array.isArray(data.user?.identities) && data.user.identities.length === 0);
+
+  if (accountAlreadyRegistered) {
+    redirect(
+      `/agency/login?error=${encodeURIComponent(
+        "Your account is already registered. Please sign in using your existing account. If you registered with Google, choose Continue with Google.",
+      )}`,
+    );
+  }
+
   if (error) {
     redirect(
       `/agency/register?error=${encodeURIComponent(error.message)}`,
