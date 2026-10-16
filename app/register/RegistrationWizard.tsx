@@ -331,7 +331,7 @@ setVerificationError("");
           </small>
         </label>
 
-        <div className="registration-grid">
+        <div className="registration-account-fields">
           <label>
             <span>OWNER EMAIL</span>
 
@@ -368,7 +368,7 @@ setVerificationError("");
               </p>
             </div>
           ) : (
-            <>
+            <div className="registration-grid registration-password-grid">
   <label>
     <span>CREATE PASSWORD</span>
 
@@ -400,10 +400,6 @@ setVerificationError("");
       required
     />
 
-    <small id="registration-password-guide">
-      Use 12–128 characters, including letters, at least one uppercase
-      letter, one number, and one symbol, such as ! @ # or %.
-    </small>
   </label>
 
   <label>
@@ -429,9 +425,12 @@ setVerificationError("");
       required
     />
 
-    <small>Enter the same password again.</small>
   </label>
-</>
+  <p id="registration-password-guide" className="registration-password-guide">
+    Use 12–128 characters with at least one uppercase letter, one number,
+    and one symbol (for example, ! @ # or %). Both passwords must match.
+  </p>
+</div>
           )}
         </div>
 
@@ -1071,6 +1070,10 @@ setVerificationError("");
         ) : (
           <span />
         )}
+
+        <span className="wizard-step-count" aria-live="polite">
+          Step {step + 1} of {steps.length}
+        </span>
 
         {step < steps.length - 1 ? (
           <button
