@@ -1832,3 +1832,16 @@
   .access-page:has(.registration-main) .access-kicker { margin-bottom: 14px !important; }
   .access-page:has(.registration-main) .registration-benefits { display: none; }
 }
+/* Green feedback for valid registration passwords. */
+.registration-main .registration-wizard input[name="password"]:valid,
+.registration-main .registration-wizard input[name="confirmPassword"]:valid {
+  border-color: #27834a;
+  background: #f4fbf6;
+  box-shadow: 0 0 0 2px rgb(39 131 74 / 14%);
+}
+
+.registration-main .registration-wizard input[name="password"]:valid:focus,
+.registration-main .registration-wizard input[name="confirmPassword"]:valid:focus {
+  border-color: #1e703d;
+  box-shadow: 0 0 0 3px rgb(39 131 74 / 20%);
+}
