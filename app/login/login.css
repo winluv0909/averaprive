@@ -1845,3 +1845,64 @@
   border-color: #1e703d;
   box-shadow: 0 0 0 3px rgb(39 131 74 / 20%);
 }
+/* Align the business-number and country boxes. */
+.registration-main .registration-grid:has(
+  input[name="businessRegistrationNumber"]
+) {
+  grid-template-rows: auto auto;
+  row-gap: 9px;
+  margin-bottom: 22px;
+}
+
+.registration-main .registration-grid:has(
+  input[name="businessRegistrationNumber"]
+) > label,
+.registration-main .registration-grid:has(
+  input[name="businessRegistrationNumber"]
+) > div {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.registration-main .registration-grid:has(
+  input[name="businessRegistrationNumber"]
+) > label {
+  grid-column: 1;
+}
+
+.registration-main .registration-grid:has(
+  input[name="businessRegistrationNumber"]
+) > div {
+  grid-column: 2;
+}
+
+.registration-main .registration-grid:has(
+  input[name="businessRegistrationNumber"]
+) > label > span,
+.registration-main .registration-grid:has(
+  input[name="businessRegistrationNumber"]
+) .wizard-field-title {
+  margin-bottom: 0;
+}
+
+@media (max-width: 560px) {
+  .registration-main .registration-grid:has(
+    input[name="businessRegistrationNumber"]
+  ) {
+    row-gap: 22px;
+  }
+
+  .registration-main .registration-grid:has(
+    input[name="businessRegistrationNumber"]
+  ) > label,
+  .registration-main .registration-grid:has(
+    input[name="businessRegistrationNumber"]
+  ) > div {
+    grid-column: 1;
+    grid-row: auto;
+    grid-template-rows: auto auto;
+    row-gap: 9px;
+  }
+}
