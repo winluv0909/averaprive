@@ -49,10 +49,15 @@ Stop at the first error. Do not rerun the entire chain to resolve an error.
 40. `20261016082225_agency_registration_numbers.sql`
 41. `20261025090249_protect_subscription_trials_and_decisions.sql`
 42. `20261025090252_restrict_agency_profile_update_columns.sql`
+43. `20261025103742_require_registration_number_for_submission.sql`
 
-Inventory count: 42. Updated 25 October 2026.
+Inventory count: 43. Updated 25 October 2026.
 
-The final two entries are AP Fix 01 and AP Fix 02 from the Step 01 update.
+Entries 41 and 42 are AP Fix 01 and AP Fix 02 from the Step 01 update.
 They replace subscription functions and restrict agency-column UPDATE grants;
 they do not update existing agency or subscription records.
 See STEP-01-READ-ME.md for titled SQL Editor steps and verification.
+
+Entry 43 is AP Fix 03 from Step 03. It requires a verified, bound platform
+registration number before submission, while preserving reviewed curated claims.
+It changes no existing records. See STEP-03-READ-ME.md.

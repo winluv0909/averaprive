@@ -70,6 +70,11 @@ beforeEach(async () => {
   await db.query(`insert into public.ap_agencies(id,name,slug,country,services,about)
     values($1,'Fixture agency','fixture-agency','Philippines',array['Management'],repeat('x',80))`, [agency]);
   await db.query("insert into public.ap_agency_memberships(agency_id,user_id,role) values($1,$2,'owner')", [agency, owner]);
+  // Profile submission now requires a verified number bound to its active owner.
+  await db.query(`insert into public.ap_agency_registration_numbers
+    (id,email,proof_hash,registration_number,delivery_status,verified_at,agency_id,owner_user_id,bound_at)
+    values(gen_random_uuid(),$1,repeat('a',64),'AP-2026-0123456789ABCDEF0123','sent',now(),$2,$3,now())`,
+    [`${owner}@example.com`, agency, owner]);
   await asUser(owner);
 });
 afterAll(async () => { await db.close(); });
