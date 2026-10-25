@@ -206,6 +206,7 @@ export default async function LoginPage({
               <span>→</span>
             </button>
           </form>
+          <p><Link href="/forgot-password">Forgot your password?</Link></p>
 
           <div
             className="access-google-divider"

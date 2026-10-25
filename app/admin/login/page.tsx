@@ -53,6 +53,7 @@ export default async function AdminLoginPage({ searchParams }: { searchParams: P
           <label><span>PASSWORD</span><input name="password" type="password" placeholder="Enter your password" minLength={8} autoComplete="current-password" data-lpignore="true" data-1p-ignore required /></label>
           <button className="access-submit" formAction={signIn}>ENTER OWNER PORTAL<span>→</span></button>
         </form>
+          <p><Link href="/forgot-password">Forgot your password?</Link></p>
         <div className="access-switch"><p>Managing an agency profile? <Link href="/agency/login">Use agency sign in</Link></p></div>
         <div className="access-security"><span>◆</span><p><b>Role-protected access</b>Authentication alone does not grant entry; the owner role is checked on every protected page.</p></div>
       </div>

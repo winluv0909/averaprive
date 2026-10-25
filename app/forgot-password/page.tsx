@@ -1,0 +1,8 @@
+import {requestReset} from "./actions";
+import RecoveryShell from "./RecoveryShell";
+import "./recovery.css";
+export const metadata={title:"Recover your password",robots:{index:false,follow:false}};
+export default async function Page({searchParams}:{searchParams:Promise<Record<string,string|undefined>>}){
+ const p=await searchParams;
+ return <RecoveryShell><div className="recovery-symbol" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg></div><p className="recovery-kicker">ACCOUNT RECOVERY</p><h1>{p.sent?"Check your inbox.":<>Let’s get you<br/>back in.</>}</h1><p className="recovery-intro">{p.sent?"If your email address is eligible, we’ll send you a link to reset your password.":"Enter your account email and we’ll send you a secure link to reset your password."}</p>{p.error&&<p className="recovery-alert" role="alert">{p.error}</p>}{p.sent?<div className="recovery-notice" role="status"><strong>Your next step</strong><p>Check your inbox and spam folder. Open the latest recovery email in this browser. If it hasn’t arrived, wait a few minutes before trying again.</p><a href="/forgot-password">Try another email →</a></div>:<form action={requestReset}><label htmlFor="recovery-email">EMAIL ADDRESS</label><input id="recovery-email" type="email" name="email" placeholder="you@company.com" autoComplete="email" required maxLength={254}/><button>Send recovery link <span>→</span></button><p className="recovery-form-note">For agency owners, invited team members, and platform staff.</p></form>}</RecoveryShell>;
+}
