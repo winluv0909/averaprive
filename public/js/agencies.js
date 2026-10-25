@@ -27,19 +27,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     let page = 1;
     const pageSize = 6;
     const params = new URLSearchParams(location.search);
-    for (const [key, id] of [['search','agencySearch'],['location','locationFilter'],['category','categoryFilter'],['service','serviceFilter'],['niche','nicheFilter']]) {
-        const field = fields[id];
-        if (field && [...(field.options || [])].some(option => option.value === params.get(key))) field.value = params.get(key);
-        if (id === 'agencySearch' && field) field.value = params.get(key) || '';
-    }
+    const filterData = window.AveraDirectoryFilters;
+    fields.agencySearch.value = params.get('search') || '';
     const getSize = () => document.querySelector('input[name="agencySize"]:checked')?.value || '';
     const normalize = value => String(value ?? '').toLocaleLowerCase().trim();
     const list = value => Array.isArray(value) ? value : [];
-    const matches = (values, selected) => !selected || list(values).some(value => normalize(value) === normalize(selected));
     const years = agency => Number(agency.yearsInBusiness ?? agency.years) || 0;
     const reviewCount = agency => Number(agency.reviewCount ?? agency.reviews) || 0;
     const rating = agency => reviewCount(agency) ? Number(agency.rating) || 0 : -1;
-    const approvedAt = agency => Date.parse(agency.approvedAt || '') || 0;
     const compareName = (a,b) => String(a.name).localeCompare(String(b.name));
     const hasFilter = () => Boolean(fields.agencySearch?.value.trim() || fields.categoryFilter?.value || fields.locationFilter?.value || fields.serviceFilter?.value || fields.nicheFilter?.value || fields.verifiedFilter?.checked || fields.featuredFilter?.checked || fields.reviewsFilter?.checked || fields.contactFilter?.checked || getSize() || Number(fields.experienceFilter?.value));
     function render() {
@@ -47,22 +42,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         const results = agencies.filter(agency => agency.status === 'approved' && agency.published === true).filter(agency => {
             const searchable = [agency.name,agency.description,agency.location,agency.country,agency.region,agency.category,...list(agency.services),...list(agency.niches)].map(normalize).join(' ');
             return (!search || searchable.includes(search)) &&
-                (!fields.categoryFilter?.value || normalize(agency.category) === normalize(fields.categoryFilter.value)) &&
-                (!fields.locationFilter?.value || [agency.country,agency.region,agency.location].some(value => normalize(value) === normalize(fields.locationFilter.value))) &&
-                matches(agency.services, fields.serviceFilter?.value) &&
-                matches(agency.niches, fields.nicheFilter?.value) &&
+                filterData.matches(agency, 'category', fields.categoryFilter?.value) &&
+                filterData.matches(agency, 'location', fields.locationFilter?.value) &&
+                filterData.matches(agency, 'services', fields.serviceFilter?.value) &&
+                filterData.matches(agency, 'niches', fields.nicheFilter?.value) &&
                 (!fields.verifiedFilter?.checked || agency.verificationStatus === 'verified') &&
                 (!fields.featuredFilter?.checked || agency.sponsored === true) &&
                 (!fields.reviewsFilter?.checked || reviewCount(agency) > 0) &&
                 (!fields.contactFilter?.checked || agency.acceptingInquiries === true) &&
-                (!getSize() || normalize(agency.size) === normalize(getSize())) &&
+                filterData.matches(agency, 'size', getSize()) &&
                 years(agency) >= Number(fields.experienceFilter?.value || 0);
         });
         const sort = fields.sortFilter?.value || 'name';
         results.sort((a,b) => {
             if (sort === 'rating') return rating(b)-rating(a) || reviewCount(b)-reviewCount(a) || compareName(a,b);
             if (sort === 'experience') return years(b)-years(a) || compareName(a,b);
-            if (sort === 'newest') return approvedAt(b)-approvedAt(a) || compareName(a,b);
+            if (sort === 'newest') return filterData.newestFirst(a,b);
             return compareName(a,b);
         });
         count.textContent = String(results.length);
@@ -128,7 +123,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!response.ok) throw new Error('Agency data unavailable');
         const data = await response.json();
         if (!Array.isArray(data)) throw new Error('Invalid agency data');
-        agencies = data.filter(a => a && a.status === 'approved' && a.published === true && /^[a-z0-9_-]{1,80}$/i.test(String(a.slug || '')))
+        agencies = data.filter(a => a && a.status === 'approved' && a.published === true && a.demoProfile !== true && /^[a-z0-9_-]{1,80}$/i.test(String(a.slug || '')))
             .map(a => ({...a,id:a.slug,verificationStatus:a.verified === true ? 'verified' : 'unverified',
                 description:a.about || a.positioning || '',reviews:a.reviewCount,location:a.location || a.country}));
     } catch (error) {
@@ -136,6 +131,33 @@ document.addEventListener('DOMContentLoaded', async () => {
         empty.querySelector('h2').textContent = 'Directory unavailable';
         empty.querySelector('p').textContent = 'We could not load approved agency information. Please try again later.';
         grid.hidden = true;empty.hidden = false;return;
+    }
+    // Build choices from the same published records being filtered, including custom services
+    // and historical size ranges. Do not guess how an old headcount range maps to a new one.
+    for (const [id, field, queryKey, label] of [
+        ['locationFilter','location','location','Worldwide'],
+        ['categoryFilter','category','category','All categories'],
+        ['serviceFilter','services','service','All services'],
+        ['nicheFilter','niches','niche','All niches'],
+    ]) {
+        const select = fields[id];
+        const choices = filterData.options(agencies, field);
+        select.replaceChildren(new Option(label, ''), ...choices.map(choice => new Option(choice.label, choice.value)));
+        const requested = params.get(queryKey);
+        const matching = choices.find(choice => filterData.matches({[field]: [requested]}, field, choice.value));
+        // Location uses separate country/region fields in the helper.
+        const selected = field === 'location' ? choices.find(choice => choice.value === filterData.normalize(requested)) : matching;
+        if (selected) select.value = selected.value;
+    }
+    const sizes = document.getElementById('agencySizeChoices');
+    sizes.replaceChildren();
+    for (const choice of [{ value: '', label: 'All sizes' }, ...filterData.options(agencies, 'size')]) {
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'radio'; input.name = 'agencySize'; input.value = choice.value; input.checked = choice.value === '';
+        input.defaultChecked = input.checked;
+        input.addEventListener('change', () => { page = 1; render(); });
+        label.append(input, node('span', '', choice.label)); sizes.append(label);
     }
     render();
 });

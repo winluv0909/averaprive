@@ -225,22 +225,12 @@
                             Country / region
                         </label>
 
-                        <select id="locationFilter">
-                            <option value="">Worldwide</option>
-                            <option value="Australia">Australia</option>
-                            <option value="Canada">Canada</option>
-                            <option value="France">France</option>
-                            <option value="Germany">Germany</option>
-                            <option value="Philippines">Philippines</option>
-                            <option value="Singapore">Singapore</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="United States">United States</option>
-                        </select>
+                        <select id="locationFilter"><option value="">Worldwide</option></select>
                     </div>
 
                     <div class="directory-search-field">
                         <label for="categoryFilter">Category</label>
-                        <select id="categoryFilter"><option value="">All categories</option><option>Creator management</option><option>Talent</option><option>Marketing</option><option>Production</option><option>PR</option></select>
+                        <select id="categoryFilter"><option value="">All categories</option></select>
                     </div>
 
                     <div class="directory-search-field">
@@ -248,27 +238,7 @@
                             Service
                         </label>
 
-                        <select id="serviceFilter">
-                            <option value="">All services</option>
-                            <option value="Creator Management">
-                                Creator Management
-                            </option>
-                            <option value="Talent Management">
-                                Talent Management
-                            </option>
-                            <option value="Influencer Marketing">
-                                Influencer Marketing
-                            </option>
-                            <option value="Social Media">
-                                Social Media
-                            </option>
-                            <option value="Content Strategy">
-                                Content Strategy
-                            </option>
-                            <option value="Brand Partnerships">
-                                Brand Partnerships
-                            </option>
-                        </select>
+                        <select id="serviceFilter"><option value="">All services</option></select>
                     </div>
 
                     <button
@@ -307,7 +277,7 @@
                     <fieldset class="filter-group">
                         <legend>Creator niche</legend>
                         <label for="nicheFilter" class="filter-select-label">Area of expertise</label>
-                        <select id="nicheFilter"><option value="">All niches</option><option>Fashion</option><option>Fitness</option><option>Gaming</option><option>Lifestyle</option><option>Beauty</option><option>Adult creators</option></select>
+                        <select id="nicheFilter"><option value="">All niches</option></select>
                     </fieldset>
 
                     <fieldset class="filter-group">
@@ -336,52 +306,9 @@
 
                     <fieldset class="filter-group">
                         <legend>Agency size</legend>
-
-                        <label>
-                            <input
-                                type="radio"
-                                name="agencySize"
-                                value=""
-                                checked
-                            >
-                            <span>All sizes</span>
-                        </label>
-
-                        <label>
-                            <input
-                                type="radio"
-                                name="agencySize"
-                                value="Boutique"
-                            >
-                            <span>Solo / Boutique</span>
-                        </label>
-
-                        <label>
-                            <input
-                                type="radio"
-                                name="agencySize"
-                                value="2–10"
-                            >
-                            <span>2–10</span>
-                        </label>
-
-                        <label>
-                            <input
-                                type="radio"
-                                name="agencySize"
-                                value="11–50"
-                            >
-                            <span>11–50</span>
-                        </label>
-
-                        <label>
-                            <input
-                                type="radio"
-                                name="agencySize"
-                                value="51+"
-                            >
-                            <span>51+</span>
-                        </label>
+                        <div id="agencySizeChoices">
+                            <label><input type="radio" name="agencySize" value="" checked><span>All sizes</span></label>
+                        </div>
                     </fieldset>
 
                     <fieldset class="filter-group">
@@ -428,7 +355,7 @@
                                 <option value="name">Agency name (A–Z)</option>
                                 <option value="rating">Highest rated (reviewed first)</option>
                                 <option value="experience">Most experienced</option>
-                                <option value="newest">Recently approved</option>
+                                <option value="newest">Recently published</option>
                             </select>
                         </label>
 
@@ -584,6 +511,7 @@
     ></div>
 
     <script src="js/main.js"></script>
-    <script src="js/agencies.js"></script>
+    <script src="js/directory-filters.js?v=20261025"></script>
+    <script src="js/agencies.js?v=20261025"></script>
 </body>
 </html>
