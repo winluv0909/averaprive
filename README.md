@@ -60,3 +60,36 @@ Publish only sourced and reviewed agency information.
 
 See docs/LAUNCH-CHECKLIST.md and docs/RELEASE-READINESS.md.
 A successful deployment does not by itself establish public-launch readiness.
+## Browser checks (Step 06)
+
+Run `npx playwright install chromium` once after installing dependencies, then
+`npm run test:e2e`. Playwright starts its own isolated local server on port 3106.
+The current suite contains 16 desktop/mobile cases. It uses sample directory
+responses and submits no account or payment forms. This suite is separate from
+`npm run verify` and is not automatically run by GitHub without a CI workflow.
+Passing these checks is not full acceptance testing of real login or payments.
+
+## Password recovery (Step 05)
+
+Agency and owner/staff login link to `/forgot-password`. The email callback is
+`/auth/recovery`; the new password form is `/reset-password`. Add the HTTPS
+recovery callback to Supabase Authentication's permitted redirect URLs.
+The default email template uses PKCE: request and open the link in the same
+browser profile. Custom token-hash templates are supported by the callback.
+Never reuse recovery links or share their tokens. Owner recovery was manually
+confirmed; agency/staff recovery and production SMTP need separate validation.
+Supabase's built-in email sender is limited; invoice delivery via Resend does
+not configure Supabase Auth SMTP.
+
+## Search-engine configuration (Step 07)
+
+`app/robots.ts` and `app/sitemap.ts` are the discovery-file sources. Remove the
+obsolete `public/robots.txt` and `public/sitemap.xml` copies during Step 07
+installation. `NEXT_PUBLIC_SITE_URL` should be the intended HTTPS public origin;
+the generated files default to https://averaprive.vercel.app if it is invalid.
+Update this setting and the reviews-page canonical link when changing domains.
+Preview deployments advertise no crawling and receive noindex headers.
+Account/API routes receive noindex headers; login and permissions protect data.
+Crawl directives and noindex headers do not guarantee removal of old search
+results, immediate indexing or rankings. Inspect the deployed discovery files
+and use Search Console after choosing the official domain.

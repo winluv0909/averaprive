@@ -15,14 +15,16 @@ for(const portal of ['owners','agency'])test(`${portal} login links to recovery`
  await page.getByRole('link',{name:'Forgot your password?'}).click();
  await expect(page).toHaveURL(/\/forgot-password$/);
 });
-test('unauthenticated password reset cannot show the password form',async({page})=>{
- await page.goto('/reset-password');await expect(page).toHaveURL(/\/forgot-password\?error=/);
- await expect(page.getByRole('alert')).toContainText('Open your recovery link first');
- await expect(page.locator('input[name="password"]')).toHaveCount(0);
+test('unauthenticated password reset cannot show the password form', async ({page}) => {
+  await page.goto('/reset-password');
+  await expect(page).toHaveURL(/\/forgot-password\?error=/);
+  await expect(page.locator('.recovery-alert[role="alert"]'))
+    .toContainText('Open your recovery link first');
+  await expect(page.locator('input[name="password"]')).toHaveCount(0);
 });
 test('invalid recovery links return an understandable error',async({page})=>{
  await page.goto('/auth/recovery');await expect(page).toHaveURL(/\/forgot-password\?error=/);
- await expect(page.getByRole('alert')).toContainText('invalid or expired');
+ await expect(page.locator('.recovery-alert[role="alert"]')).toContainText('invalid or expired');
 });
 for(const portal of ['owners','agency'])test(`${portal} dashboard requires login`,async({page})=>{
  await page.goto(`/${portal}/dashboard`);await expect(page).toHaveURL(new RegExp(`/${portal}/login\\?next=`));

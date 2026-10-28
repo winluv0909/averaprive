@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { privateIndexHeaders, previewDeployment } from "./lib/seo/settings";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
@@ -12,7 +13,7 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
-    return [{
+    return [...privateIndexHeaders(), ...(previewDeployment() ? [{source:"/:path*",headers:[{key:"X-Robots-Tag",value:"noindex, nofollow"}]}] : []), {
       source: "/:path*",
       headers: [
         { key: "X-Content-Type-Options", value: "nosniff" },
