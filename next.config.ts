@@ -3,6 +3,7 @@ import { privateIndexHeaders, previewDeployment } from "./lib/seo/settings";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  ...(process.env.AP_BROWSER_TEST === "true" ? {distDir:".next-e2e",typescript:{tsconfigPath:"tsconfig.e2e.json"}} : {}),
   async redirects() {
     return [
       { source: "/index.html", destination: "/", permanent: true },

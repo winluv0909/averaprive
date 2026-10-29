@@ -2,14 +2,14 @@
 let agencies = [];
 
 function marketplaceSession() {
-    let value = sessionStorage.getItem('ap_marketplace_session');
-    if (!value) { value = crypto.randomUUID().replaceAll('-', '_'); sessionStorage.setItem('ap_marketplace_session', value); }
+    let value; try { value = sessionStorage.getItem('ap_marketplace_session'); } catch { return crypto.randomUUID().replaceAll('-', '_'); }
+    if (!value) { value = crypto.randomUUID().replaceAll('-', '_'); try { sessionStorage.setItem('ap_marketplace_session', value); } catch { /* Per-request ID if storage is unavailable. */ } }
     return value;
 }
 
 function recordMarketplaceEvent(agency, eventType) {
-    if (!agency?.agencyId || agency.demoProfile === true) return;
-    fetch('/api/marketplace/event', {method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({agencyId:agency.agencyId,eventType,sessionId:marketplaceSession(),page:location.pathname,source:agency.sponsored===true?'sponsored':'organic',analyticsConsent:false})}).catch(()=>{});
+    if (!agency?.agencyId || agency.demoProfile === true || !window.apPrivacy?.analyticsAllowed()) return;
+    fetch('/api/marketplace/event', {method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({agencyId:agency.agencyId,eventType,sessionId:marketplaceSession(),page:location.pathname,source:agency.sponsored===true?'sponsored':'organic',analyticsConsent:true})}).catch(()=>{});
 }
 
 document.addEventListener('DOMContentLoaded', async () => {

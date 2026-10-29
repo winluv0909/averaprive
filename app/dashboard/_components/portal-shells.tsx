@@ -13,6 +13,7 @@ type OwnerSection =
   | "placements"
   | "analytics"
   | "inquiries"
+  | "payments"
   | "subscriptions"
   | "editorial"
   | "audit"

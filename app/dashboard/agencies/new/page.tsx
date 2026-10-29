@@ -14,7 +14,7 @@ export default async function NewAgencyPage({ searchParams }: { searchParams: Pr
         <div className="workflow-form-head"><span>01</span><div><h2>Agency identity</h2><p>Use the name clients and creators recognize publicly.</p></div></div>
         {params.error && <p className="workflow-alert" role="alert">{params.error}</p>}
         <label><span>LEGAL OR TRADING NAME <b>REQUIRED</b></span><input name="name" required minLength={2} placeholder="Example: Northstar Talent Management" /><small>You can update this later before moderation.</small></label>
-        <label><span>PREFERRED PROFILE URL</span><div className="workflow-slug"><i>agencyprive.com/agencies/</i><input name="slug" placeholder="northstar-talent" pattern="[a-z0-9]+(?:-[a-z0-9]+)*" /></div><small>Lowercase letters, numbers, and hyphens only. Leave blank to generate it automatically.</small></label>
+        <label><span>PREFERRED PROFILE URL</span><div className="workflow-slug"><i>/agency-profile.html?id=</i><input name="slug" placeholder="northstar-talent" pattern="[a-z0-9]+(?:-[a-z0-9]+)*" /></div><small>Lowercase letters, numbers, and hyphens only. Leave blank to generate it automatically.</small></label>
         <div className="workflow-private-note"><span>◆</span><div><b>Your draft stays private</b><p>Creating this profile does not publish it or grant verification. You control when it is ready for moderation.</p></div></div>
         <div className="workflow-actions"><Link href="/agency/dashboard">CANCEL</Link><button>CREATE PRIVATE DRAFT <span>→</span></button></div>
       </form>

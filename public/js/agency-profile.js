@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', async () => {
  const url = x => { try { const parsed = new URL(x); return ['https:','http:'].includes(parsed.protocol) ? parsed.href : ''; } catch { return ''; } };
  const add = (parent, tag, cls, text) => { const el=document.createElement(tag);el.className=cls;el.textContent=str(text);parent.append(el);return el; };
  const notice = (id,msg) => add(byId(id),'p','profile-no-data',msg);
- const marketplaceSession = () => { let value=sessionStorage.getItem('ap_marketplace_session');if(!value){value=crypto.randomUUID().replaceAll('-','_');sessionStorage.setItem('ap_marketplace_session',value);}return value; };
+ const marketplaceSession = () => { try { let value=sessionStorage.getItem('ap_marketplace_session');if(!value){value=crypto.randomUUID().replaceAll('-','_');sessionStorage.setItem('ap_marketplace_session',value);}return value; } catch { return crypto.randomUUID().replaceAll('-','_'); } };
  const eventSource = agency => agency?.sponsored===true?'sponsored':'organic';
- const recordEvent = (agency,eventType) => { if(!agency?.agencyId || agency.demoProfile===true)return;fetch('/api/marketplace/event',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({agencyId:agency.agencyId,eventType,sessionId:marketplaceSession(),page:location.pathname,source:eventSource(agency),analyticsConsent:false})}).catch(()=>{}); };
+ const recordEvent = (agency,eventType) => { if(!agency?.agencyId || agency.demoProfile===true || !window.apPrivacy?.analyticsAllowed())return;fetch('/api/marketplace/event',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({agencyId:agency.agencyId,eventType,sessionId:marketplaceSession(),page:location.pathname,source:eventSource(agency),analyticsConsent:true})}).catch(()=>{}); };
  try {
   const response = await fetch('/api/public-agencies', {cache:'no-store'});
   if (!response.ok) throw new Error('Agency data unavailable');

@@ -93,3 +93,8 @@ Account/API routes receive noindex headers; login and permissions protect data.
 Crawl directives and noindex headers do not guarantee removal of old search
 results, immediate indexing or rankings. Inspect the deployed discovery files
 and use Search Console after choosing the official domain.
+
+
+## Consolidated launch review (Step 09)
+
+Start with `STEP-09-READ-ME.md`. The consolidated source patch includes one SQL update, read-only verification/inventory, an owner/staff operating guide, email/domain instructions and `docs/FINAL-ACCEPTANCE.md`. The temporary crypto policy is refund and retry. Browser tests now build/run an isolated `.next-e2e` production server with dummy auth configuration and include 44 checks. `node scripts/check-public-assets.mjs` checks local public assets; `node --env-file=.env.local scripts/check-launch-config.mjs` prints configuration-presence results without values. Never commit or upload an environment file. Final operator/legal details and live email/payment/domain acceptance remain external sign-off items. See `docs/CONSOLIDATED-LAUNCH-REPORT.md` for current evidence and live Security Advisor findings.

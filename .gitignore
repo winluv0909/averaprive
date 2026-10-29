@@ -23,3 +23,8 @@ coverage
 *.tsbuildinfo
 /Install-*.ps1
 /Avera-Prive-*.ps1
+
+# Local QA render output
+/tmp/
+
+/.next-e2e/

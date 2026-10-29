@@ -1,3 +1,4 @@
+import "./payment-review.css";
 import {walletOptions} from "@/lib/billing/wallet/config";
 import Link from "next/link";
 import {redirect} from "next/navigation";
@@ -44,7 +45,7 @@ export default async function PaymentsPage({searchParams}: {searchParams?:Promis
   ]);
   if(error || depositError || refundError) throw new Error("Payment records unavailable. Apply the payment database updates, including Step 08, first.");
   const openDeposits=deposits?.filter(deposit=>!refunds?.some(item=>item.network===deposit.network&&item.deposit_txid===deposit.txid));
-  return <OwnerOperationsShell active="subscriptions" email={user.email}><main className="owner-main"><h1>Payment review</h1><p>Live PayPal plans activate only after a verified completed capture. Sandbox payments do not change live access. Review notes do not approve a payment.</p><Link href="/owners/dashboard/subscriptions">Back to subscriptions</Link>
+  return <OwnerOperationsShell active="payments" email={user.email}><main className="owner-main payment-review"><h1>Payment review</h1><p>Live PayPal plans activate only after a verified completed capture. Sandbox payments do not change live access. Review notes do not approve a payment.</p><Link href="/owners/dashboard/subscriptions">Back to subscriptions</Link>
     {query?.refund==="error"&&<p role="alert">Refund record was not saved. Check owner access, finalized deposit evidence, payer ownership, invoice status and the full refund amount. A deposit linked to another invoice cannot be used.</p>}
     {query?.refund==="opened"&&<p role="status">Refund case opened. The old invoice is cancelled and void. Arrange the refund outside the website.</p>}
     {query?.refund==="recorded"&&<p role="status">Outgoing refund details recorded. Confirm receipt with the customer before asking them to create a new invoice.</p>}

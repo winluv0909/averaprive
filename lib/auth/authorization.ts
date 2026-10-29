@@ -69,9 +69,8 @@ export async function requireStaffRole(allowed: StaffRole[], options: { allowPas
     .select("role")
     .eq("user_id", user.id);
 
-  const role = data
-    ?.map((item) => item.role as StaffRole)
-    .find((item) => allowed.includes(item));
+  const assigned = new Set(data?.map(item => item.role as StaffRole));
+  const role = allowed.find(item => assigned.has(item));
 
   if (error || !role) redirect("/forbidden?portal=owner");
 

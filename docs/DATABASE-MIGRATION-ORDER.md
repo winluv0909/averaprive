@@ -61,3 +61,11 @@ See STEP-01-READ-ME.md for titled SQL Editor steps and verification.
 Entry 43 is AP Fix 03 from Step 03. It requires a verified, bound platform
 registration number before submission, while preserving reviewed curated claims.
 It changes no existing records. See STEP-03-READ-ME.md.
+
+
+## Consolidated review update, 29 October 2026
+
+44. `20261029063618_crypto_refund_retry.sql` — installed manually in Step 08.
+45. `20261029072018_launch_consent_and_legacy_payment_access.sql` — Step 09 consent and retired client payment APIs.
+
+Current source inventory: 45 SQL migrations. The live migration ledger has only two recorded versions because many updates were executed through SQL Editor. A missing ledger entry does not mean the schema update is absent. Do not replay the folder or run `db push` blindly. Verify schema and reconcile migration history with a backup and a separate staging project before adopting CLI-managed production deployment. Step 09 installation applies only its own supplied SQL; do not rerun Step 08 or earlier updates.

@@ -9,6 +9,7 @@ export async function POST(request: Request) {
   if (!["directory_impression", "profile_view", "contact_open", "website_click"].includes(String(body.eventType ?? ""))) {
     return NextResponse.json({ error: "Invalid event." }, { status: 400 });
   }
+  if(body.analyticsConsent!==true) return new NextResponse(null,{status:204});
   const supabase = await createClient();
   const { error } = await supabase.rpc("ap_record_marketplace_event", {
     target_agency: String(body.agencyId ?? ""),

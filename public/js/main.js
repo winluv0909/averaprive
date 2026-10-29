@@ -782,3 +782,28 @@ function initializeCurrentYear() {
     currentYear.textContent =
         new Date().getFullYear();
 }
+
+/* Optional first-party analytics: off until the visitor chooses to allow it. */
+(() => {
+  const key='ap_privacy_v1';
+  const read=()=>{try{return localStorage.getItem(key);}catch{return null;}};
+  let choice=read();
+  let panel;
+  window.apPrivacy={analyticsAllowed:()=>choice==='analytics',open:()=>{if(panel){panel.hidden=false;panel.querySelector('button')?.focus();}}};
+  const set=value=>{
+    choice=value;
+    try{localStorage.setItem(key,value);if(value!=='analytics')sessionStorage.removeItem('ap_marketplace_session');}catch{/* Storage restrictions do not prevent using the site. */}
+    panel.hidden=true;
+    window.dispatchEvent(new Event('ap:privacychange'));
+  };
+  document.addEventListener('DOMContentLoaded',()=>{
+    panel=document.createElement('aside');panel.className='ap-privacy-choices';panel.setAttribute('aria-label','Privacy choices');panel.hidden=Boolean(choice);
+    const title=document.createElement('h2');title.textContent='Your privacy choices';
+    const text=document.createElement('p');text.textContent='Essential account and security storage supports the service. Optional directory analytics stay off unless you allow them. You can change this choice through Cookie Settings.';
+    const actions=document.createElement('div');
+    for(const [label,value] of [['Essential only','essential'],['Allow directory analytics','analytics']]){const button=document.createElement('button');button.type='button';button.textContent=label;button.addEventListener('click',()=>set(value));actions.append(button);}
+    const link=document.createElement('a');link.href='/legal.html#cookies';link.textContent='Privacy information';actions.append(link);panel.append(title,text,actions);document.body.append(panel);
+    document.querySelectorAll('a[href$="legal.html#cookies"]').forEach(link=>{if(panel.contains(link))return;link.addEventListener('click',event=>{event.preventDefault();window.apPrivacy.open();});});
+    if(location.pathname.endsWith('/legal.html')&&location.hash==='#cookies')panel.hidden=false;
+  });
+})();

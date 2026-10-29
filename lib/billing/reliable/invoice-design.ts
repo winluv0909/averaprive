@@ -2,6 +2,7 @@ import "server-only";
 import {readFileSync} from "node:fs";
 import {join} from "node:path";
 import QRCode from "qrcode";
+import {invoiceState} from "./invoice-state";
 import type {Invoice} from "./invoice";
 const ink=[0.09,0.09,0.085],gold=[0.65,0.51,0.29],muted=[0.43,0.42,0.39],ivory=[0.974,0.967,0.947],white=[1,1,1];
 type FontMetric = {name:string;widths:number[];bbox:number[];ascent:number;descent:number};
@@ -33,6 +34,7 @@ const date=(value:unknown)=>{const d=new Date(String(value));return Number.isNaN
 const money=(value:unknown)=>Number(value||0).toFixed(2);
 export function premiumInvoicePdf(invoice:Invoice):Buffer {
   const c=invoice.customer_snapshot,p=invoice.payment_snapshot,s=invoice.seller_snapshot;
+  const state=invoiceState(invoice.status,p);
   const sandbox=p.provider==="paypal" && p.environment==="sandbox";
   const sample=/sample/i.test(invoice.invoice_number)||sandbox,paid=invoice.status==="paid";
   let logo:Buffer|null=null;try {logo=readFileSync(join(process.cwd(),"public/assets/invoice/monogram.jpg"));} catch { /* Wordmark stays readable if an asset is missing. */ }
@@ -46,7 +48,9 @@ export function premiumInvoicePdf(invoice:Invoice):Buffer {
   function header() {
     rect(0,0,612,112,[0,0,0]);rect(0,112,612,3,gold);
     if(logo) operations.push("q 34 682 94 94 re W n 144 0 0 144 10 656 cm /Logo Do Q");
-    text(String(s.name||"Avera Privé"),logo?142:42,63,25,"F3",white);
+    const sellerName=String(s.name||"Avera Privé");
+    const sellerSize=Math.max(10,Math.min(25,25*270/Math.max(1,width(sellerName,25))));
+    text(wrap(sellerName,270,sellerSize)[0],logo?142:42,63,sellerSize,"F3",white);
     text("AGENCY SERVICES & SUBSCRIPTIONS",logo?142:42,85,7.5,"F2",[0.75,0.65,0.45]);
     text("INVOICE",435,55,27,"F3",white);
     rect(435,72,135,23,[0.19,0.17,0.12]);text(sandbox?"SANDBOX TEST":sample?"SAMPLE / "+invoice.status.toUpperCase():(p.provider === "paypal" && ["refunded","reversed","partially_refunded"].includes(String(p.status)) ? String(p.status).replaceAll("_"," ").toUpperCase() : invoice.status.toUpperCase()),447,87,8,"F2",[0.86,0.73,0.47]);
@@ -79,16 +83,18 @@ export function premiumInvoicePdf(invoice:Invoice):Buffer {
     paragraph(String(item.description),54,337,10);y+=8;ensure(2);line(42,y,528,[0.87,0.85,0.80]);y+=15;
   }
   ensure(106);const totalY=y;
-  text(sandbox?"Sandbox test payment":p.status==="refunded"?"Payment refunded":p.status==="reversed"?"Payment reversed":p.status==="partially_refunded"?"Partial refund recorded":paid?"Payment confirmed":"Payment is not yet confirmed",42,totalY+18,11,"F2");
-  text(paid?`Paid ${date(invoice.paid_at)}`:"Subscription activates after verification.",42,totalY+38,8,"F1",muted);
+  text(sandbox?"Sandbox test payment":p.status==="refunded"?"Payment refunded":p.status==="reversed"?"Payment reversed":p.status==="partially_refunded"?"Partial refund recorded":state.label,42,totalY+18,11,"F2");
+  for(const [i,part] of wrap(paid?`Paid ${date(invoice.paid_at)}`:state.note,230,8).entries()) text(part,42,totalY+38+i*11,8,"F1",muted);
   const address=String(p.receiving_address||"");
-  if(!paid && address && !sample){const qr=QRCode.create(address,{errorCorrectionLevel:"M"}),unit=54/(qr.modules.size+8);
+  if(state.canShowPaymentQr && address && !sample){const qr=QRCode.create(address,{errorCorrectionLevel:"M"}),unit=54/(qr.modules.size+8);
     for(let row=0;row<qr.modules.size;row++)for(let col=0;col<qr.modules.size;col++)if(qr.modules.get(row,col))rect(281+(col+4)*unit,totalY+12+(row+4)*unit,unit,unit,ink);
     text("Address QR",280,totalY+82,7,"F1",muted);
   }
   rect(351,totalY-2,219,98,ivory);text("Subtotal",365,totalY+17,9,"F1",muted);text(money(invoice.subtotal),505,totalY+17,9);
   text("Tax",365,totalY+36,9,"F1",muted);text(money(invoice.tax_amount),505,totalY+36,9);line(365,totalY+47,191,[0.82,0.78,0.70]);
-  text("TOTAL",365,totalY+75,9,"F2",gold);text(`${invoice.currency} ${money(invoice.total_amount)}`,435,totalY+76,17,"F2");y+=104;
+  text("TOTAL",365,totalY+75,9,"F2",gold);const totalText=`${invoice.currency} ${money(invoice.total_amount)}`;
+  const totalSize=Math.min(17,17*138/Math.max(1,width(totalText,17)));
+  text(totalText,556-width(totalText,totalSize),totalY+76,totalSize,"F2");y+=104;
   section("PAYMENT DETAILS");
   if (p.provider === "paypal") {
     paragraph(`PayPal / ${p.environment === "sandbox" ? "SANDBOX TEST ONLY" : "Live payment"}`,42,528,11,"F2");
@@ -100,7 +106,7 @@ export function premiumInvoicePdf(invoice:Invoice):Buffer {
     paragraph(`Payment state: ${p.status || "Not confirmed"}`);
     if(sandbox) paragraph("No real money received. Live subscription unchanged.");
   } else {
-  paragraph(`${p.asset==="BTC"?"Wrapped BTC":p.asset||"Crypto"} / ${p.network||""} / Exact amount: ${p.expected_crypto_amount||p.amount||"Not recorded"}`,42,528,11,"F2");
+  paragraph(`${p.asset==="BTC"?(p.network==="BITCOIN"?"BTC (native Bitcoin)":"Wrapped BTC"):p.asset||"Crypto"} / ${p.network||""} / Exact amount: ${p.expected_crypto_amount||p.amount||"Not recorded"}`,42,528,11,"F2");
   paragraph(`Receiving provider: ${p.wallet_generation==="trust_wallet_v1"?"Trust Wallet":p.receiving_provider==="binance"?"Binance":"Blockchain wallet"}`);
   if(p.matching_adjustment!==undefined) paragraph(`Matching adjustment (included): ${p.matching_adjustment} ${p.asset}`);
   paragraph(`Receiving address: ${p.receiving_address||p.destination||"Not recorded"}`);
@@ -112,12 +118,17 @@ export function premiumInvoicePdf(invoice:Invoice):Buffer {
   if(p.expires_at) paragraph(`Payment expiry: ${date(p.expires_at)}`);
   if(p.receiving_provider==="binance") paragraph(`Binance deposit credit: ${p.custodian_credit?"Verified":"Awaiting verified credit"}`);
   }
+  if(state.refund) {
+    section("REFUND RECORD");paragraph(state.label,42,528,10,"F2");paragraph(state.note);
+    if(state.recorded){paragraph(`Outgoing refund TXID: ${p.refund_txid||"Not recorded"}`);paragraph(`Refund amount: ${p.refund_amount||"Not recorded"} ${p.asset||""}`);}
+  }
   if(from.length>9 || to.length>9) {
+    ensure(104);
     section("BILLING INFORMATION - CONTINUED");
     if(from.length>9){paragraph("Billed from - continued",42,528,9,"F2");from.slice(9).forEach(v=>paragraph(v));}
     if(to.length>9){paragraph("Billed to - continued",42,528,9,"F2");to.slice(9).forEach(v=>paragraph(v));}
   }
-  if(invoice.notes){section("NOTES");paragraph(invoice.notes,42,528,8,"F1",muted);}
+  if(invoice.notes){section(state.stopped?"HISTORICAL NOTES - DO NOT USE AS PAYMENT INSTRUCTIONS":"NOTES");paragraph(invoice.notes,42,528,8,"F1",muted);}
   footer();streams.push(operations);
   const objects:Buffer[]=[Buffer.from("<< /Type /Catalog /Pages 2 0 R >>"),Buffer.alloc(0)];
   const fontIds:number[]=[];

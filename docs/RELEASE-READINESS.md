@@ -1,3 +1,7 @@
+# Current review
+
+The consolidated review dated 29 October 2026 is in [CONSOLIDATED-LAUNCH-REPORT.md](CONSOLIDATED-LAUNCH-REPORT.md). The dated results below are historical. The latest lockfile audit reported zero known findings in both full and production scopes; do not treat the old unresolved-count section as current.
+
 # Avera Privé release readiness
 
 ## Confirmed on 2026-10-14
