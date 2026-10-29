@@ -788,6 +788,7 @@ function initializeCurrentYear() {
   const key='ap_privacy_v1';
   const read=()=>{try{return localStorage.getItem(key);}catch{return null;}};
   let choice=read();
+  if(!['essential','analytics'].includes(choice))choice=null;
   let panel;
   window.apPrivacy={analyticsAllowed:()=>choice==='analytics',open:()=>{if(panel){panel.hidden=false;panel.querySelector('button')?.focus();}}};
   const set=value=>{

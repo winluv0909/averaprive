@@ -35,3 +35,16 @@ test('profile inquiry dialog is keyboard usable without sending a request',async
  await expect(page.getByRole('dialog',{name:'Contact this agency'})).toBeHidden();
  await expect(open).toBeFocused();
 });
+
+test('privacy choices are visible immediately without scrolling',async({page})=>{
+ await page.goto('/');
+ const panel=page.locator('aside[aria-label="Privacy choices"]');
+ await expect(panel).toBeInViewport();
+ await expect(page.getByRole('button',{name:'Essential only',exact:true})).toBeInViewport();
+ await expect(page.getByRole('button',{name:'Allow directory analytics',exact:true})).toBeInViewport();
+ expect(await page.evaluate(()=>window.scrollY)).toBe(0);
+ await page.getByRole('button',{name:'Essential only',exact:true}).click();
+ await page.reload();await expect(panel).toBeHidden();
+ await page.locator('a[href$="legal.html#cookies"]').first().click();
+ await expect(panel).toBeInViewport();
+});

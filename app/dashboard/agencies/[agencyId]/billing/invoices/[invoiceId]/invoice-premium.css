@@ -1,82 +1,82 @@
 /* Scoped invoice and payment styles. Other dashboard pages keep their styling. */
-.agency-shell .ap-invoice-page,.agency-shell .ap-payment-page{box-sizing:border-box;max-width:1160px;width:100%;margin:0 auto;padding:40px 32px 60px;color:#28271f}
-.agency-shell .ap-invoice-page *,.agency-shell .ap-payment-page *{box-sizing:border-box}
-.agency-shell .ap-billing-eyebrow{margin:0 0 10px;font:600 10px/1.5 Arial,sans-serif;letter-spacing:1.8px;color:#8c754b}
-.agency-shell .ap-invoice-toolbar{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:24px}
-.agency-shell .ap-invoice-toolbar h1{margin:0;font:400 clamp(28px,3vw,38px)/1.2 Georgia,serif;letter-spacing:0;color:#26251e}
-.agency-shell .ap-invoice-toolbar nav{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
-.agency-shell .ap-invoice-page a,.agency-shell .ap-payment-page a{text-decoration:none}
-.agency-shell .ap-billing-link{color:#6b624f;font:500 13px/1.5 Arial,sans-serif}
-.agency-shell .ap-billing-primary,.agency-shell .ap-billing-outline{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:44px;padding:12px 19px;border:1px solid #ab8848;border-radius:7px;background:#ab8848;color:#fff;font:600 12px/1.4 Arial,sans-serif;cursor:pointer;text-align:center}
-.agency-shell .ap-billing-outline{background:#fff;color:#6f5b36;border-color:#dfd6c5}
-.agency-shell .ap-billing-primary:hover{background:#92743c;border-color:#92743c}
-.agency-shell .ap-billing-outline:hover{background:#f6f2ea}
-.agency-shell .ap-invoice-page a:focus-visible,.agency-shell .ap-payment-page a:focus-visible,.agency-shell .ap-payment-page button:focus-visible,.agency-shell .ap-invoice-references summary:focus-visible{outline:3px solid #a3834b;outline-offset:4px}
-.agency-shell .ap-billing-test{display:flex;align-items:center;gap:16px;padding:15px 20px;background:#f3eee3;border:1px solid #e2d5b8;border-radius:8px;margin-bottom:20px;font:400 12px/1.6 Arial,sans-serif;color:#6e5b35}
-.agency-shell .ap-billing-test b{white-space:nowrap;font-size:12px}
-.agency-shell .ap-invoice-paper{overflow:hidden;background:#fff;border:1px solid #e5dfd3;border-radius:12px;box-shadow:0 18px 55px #342b1710}
-.agency-shell .ap-invoice-masthead{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#151711;color:#fff;border-bottom:3px solid #b59150;padding:32px 38px;margin:0}
-.agency-shell .ap-invoice-brand{display:flex;align-items:center;gap:18px;min-width:0}
-.agency-shell .ap-invoice-brand img{width:72px;height:72px;object-fit:contain;border-radius:50%;flex-shrink:0}
-.agency-shell .ap-invoice-brand strong{display:block;font:400 29px/1.2 Georgia,serif;color:#fff;overflow-wrap:anywhere}
-.agency-shell .ap-invoice-brand span{display:block;margin-top:8px;font:600 8px/1.6 Arial,sans-serif;letter-spacing:1.7px;color:#c8ad7a}
-.agency-shell .ap-invoice-title{text-align:right;flex-shrink:0}
-.agency-shell .ap-invoice-title>span{display:block;font:400 30px/1.2 Georgia,serif;letter-spacing:1px}
-.agency-shell .ap-invoice-badge{display:inline-flex;margin-top:12px;padding:7px 12px;border:1px solid #8a724c;border-radius:4px;color:#dbc392;font:600 9px/1.3 Arial,sans-serif;letter-spacing:1px;text-transform:uppercase}
-.agency-shell .ap-invoice-badge.is-paid{color:#d8e7cb;border-color:#759361}
-.agency-shell .ap-invoice-meta{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:20px;padding:25px 38px;border-bottom:1px solid #ede8df}
-.agency-shell .ap-invoice-meta span{display:block;margin-bottom:7px;font:400 10px/1.5 Arial,sans-serif;color:#8b8578}
-.agency-shell .ap-invoice-meta strong{font:600 12px/1.6 Arial,sans-serif;overflow-wrap:anywhere}
-.agency-shell .ap-invoice-parties{display:grid;grid-template-columns:1fr 1fr;gap:42px;margin:30px 38px;padding:24px;background:#f8f6f1;border-radius:6px}
-.agency-shell .ap-invoice-parties h2,.agency-shell .ap-invoice-notes h2{margin:0 0 12px;font:600 9px/1.5 Arial,sans-serif;text-transform:uppercase;letter-spacing:1.4px;color:#957947}
-.agency-shell .ap-invoice-parties strong{font:600 14px/1.6 Arial,sans-serif;overflow-wrap:anywhere}
-.agency-shell .ap-invoice-parties p{margin:5px 0;font:400 12px/1.65 Arial,sans-serif;color:#666253;overflow-wrap:anywhere;white-space:pre-line}
-.agency-shell .ap-invoice-items{margin:0 38px;overflow-x:auto}
-.agency-shell .ap-invoice-items table{width:100%;border-collapse:collapse;font:400 12px/1.7 Arial,sans-serif}
-.agency-shell .ap-invoice-items th{padding:12px 14px;background:#22251d;color:#fff;text-align:left;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
-.agency-shell .ap-invoice-items th:nth-child(2),.agency-shell .ap-invoice-items td:nth-child(2){width:60px;text-align:center}
-.agency-shell .ap-invoice-items th:last-child,.agency-shell .ap-invoice-items td:last-child{width:145px;text-align:right;white-space:nowrap}
-.agency-shell .ap-invoice-items td{padding:20px 14px;vertical-align:top;border-bottom:1px solid #eae5dc}
-.agency-shell .ap-invoice-items td strong{font-weight:500;overflow-wrap:anywhere}
-.agency-shell .ap-invoice-items td span{display:block;margin-top:5px;font-size:10px;color:#928a7a}
-.agency-shell .ap-invoice-items td:last-child{font-weight:600}
-.agency-shell .ap-invoice-settlement{display:grid;grid-template-columns:1fr minmax(260px,330px);gap:40px;align-items:start;padding:30px 38px}
-.agency-shell .ap-invoice-payment{padding-top:7px}
-.agency-shell .ap-invoice-payment>strong{display:block;margin-top:8px;font:400 23px/1.3 Georgia,serif}
-.agency-shell .ap-invoice-payment p{margin:8px 0;font:400 11px/1.7 Arial,sans-serif;color:#746e60}
-.agency-shell .ap-invoice-payment .ap-invoice-renewal{margin-top:18px;color:#8c8474;max-width:320px}
-.agency-shell .ap-invoice-totals{margin:0;padding:20px 24px;background:#f8f6f1;border-radius:6px}
-.agency-shell .ap-invoice-totals>div{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:12px;font:400 12px/1.6 Arial,sans-serif}
-.agency-shell .ap-invoice-totals dt{color:#817966}
-.agency-shell .ap-invoice-totals dd{margin:0;text-align:right;font-weight:500;white-space:nowrap}
-.agency-shell .ap-invoice-totals .ap-invoice-grand-total{border-top:1px solid #dcd2bf;padding-top:17px;margin:17px 0 0}
-.agency-shell .ap-invoice-grand-total dt{font-weight:600;color:#977941;text-transform:uppercase;font-size:10px;letter-spacing:1px}
-.agency-shell .ap-invoice-grand-total dd{font-size:24px;font-weight:600;line-height:1.3}
-.agency-shell .ap-invoice-references{margin:0 38px 25px;border-top:1px solid #ebe5d9;border-bottom:1px solid #ebe5d9;padding:16px 0}
-.agency-shell .ap-invoice-references summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer;font:500 11px/1.6 Arial,sans-serif;color:#7c6a47;list-style:none}
-.agency-shell .ap-invoice-references summary::-webkit-details-marker{display:none}
-.agency-shell .ap-invoice-references summary span{font-size:18px}
-.agency-shell .ap-invoice-references dl{margin:20px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:18px 30px}
-.agency-shell .ap-invoice-references dt{font:600 9px/1.5 Arial,sans-serif;text-transform:uppercase;color:#96846a;letter-spacing:1px}
-.agency-shell .ap-invoice-references dd{margin:6px 0 0;font:400 11px/1.7 Arial,sans-serif;overflow-wrap:anywhere;color:#696453}
-.agency-shell .ap-invoice-notes{margin:0 38px 28px;max-width:700px}
-.agency-shell .ap-invoice-notes p{margin:0;font:400 11px/1.8 Arial,sans-serif;color:#928873;overflow-wrap:anywhere}
-.agency-shell .ap-invoice-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 38px;border-top:1px solid #ede7dc;background:#fcfbf8;color:#9b8c73}
-.agency-shell .ap-invoice-footer span{font:600 9px/1.6 Arial,sans-serif;letter-spacing:2px}
-.agency-shell .ap-invoice-footer p{margin:0;font:400 10px/1.6 Arial,sans-serif}
-.agency-shell .ap-payment-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px}
-.agency-shell .ap-payment-card{padding:30px;background:#fff;border:1px solid #e6dfd1;border-radius:12px;box-shadow:0 12px 30px #342b1707;min-width:0}
-.agency-shell .ap-payment-state{display:inline-block;padding:7px 12px;background:#f4efe4;border:1px solid #e6d9bc;border-radius:25px;font:500 10px/1.5 Arial,sans-serif;color:#93753e;margin-bottom:22px}
-.agency-shell .ap-payment-card h2{margin:0 0 14px;font:400 24px/1.3 Georgia,serif}
-.agency-shell .ap-payment-plan{font:400 12px/1.6 Arial,sans-serif;color:#827761;margin:0 0 12px}
-.agency-shell .ap-payment-amount{display:block;margin-bottom:20px;font:400 43px/1.2 Georgia,serif;color:#292a21}
-.agency-shell .ap-payment-card p{font:400 12px/1.8 Arial,sans-serif;color:#827968;margin:10px 0}
-.agency-shell .ap-payment-card form{margin:20px 0 12px}
-.agency-shell .ap-payment-card .ap-payment-caption{font-size:10px;color:#9a907c;margin-top:24px;padding-top:18px;border-top:1px solid #eee7da}
-.agency-shell .ap-payment-card dl{margin:24px 0}
-.agency-shell .ap-payment-card dl>div{padding:13px 0;border-bottom:1px solid #eee7da}
-.agency-shell .ap-payment-card dt{font:600 9px/1.5 Arial,sans-serif;letter-spacing:1px;color:#a08c69;text-transform:uppercase}
-.agency-shell .ap-payment-card dd{margin:7px 0 0;font:400 11px/1.7 Arial,sans-serif;color:#70695a;overflow-wrap:anywhere}
-.agency-shell .ap-payment-alert{padding:14px 18px;margin-bottom:20px;border:1px solid #e8c9bd;border-radius:8px;background:#fcf4ef;color:#8b523e;font:400 12px/1.7 Arial,sans-serif}
-@media(max-width:1100px){.agency-shell .ap-invoice-toolbar{align-items:flex-start;flex-direction:column}.agency-shell .ap-invoice-settlement{gap:24px;grid-template-columns:1fr minmax(230px,300px)}}
-@media(max-width:700px){.agency-shell .ap-invoice-page,.agency-shell .ap-payment-page{padding:24px 16px 40px}.agency-shell .ap-invoice-toolbar nav{gap:9px}.agency-shell .ap-billing-test{align-items:flex-start;flex-direction:column;gap:5px}.agency-shell .ap-invoice-masthead{padding:24px 20px;align-items:flex-start;flex-direction:column}.agency-shell .ap-invoice-title{text-align:left}.agency-shell .ap-invoice-title>span{font-size:24px}.agency-shell .ap-invoice-brand strong{font-size:25px}.agency-shell .ap-invoice-brand img{width:58px;height:58px}.agency-shell .ap-invoice-meta{padding:20px;grid-template-columns:1fr 1fr}.agency-shell .ap-invoice-meta>div:first-child{grid-column:1/-1}.agency-shell .ap-invoice-parties{margin:20px;padding:20px;gap:24px;grid-template-columns:1fr}.agency-shell .ap-invoice-items{margin:0 20px}.agency-shell .ap-invoice-items th,.agency-shell .ap-invoice-items td{padding-left:8px;padding-right:8px}.agency-shell .ap-invoice-items th:last-child,.agency-shell .ap-invoice-items td:last-child{width:95px}.agency-shell .ap-invoice-settlement{padding:24px 20px;grid-template-columns:1fr}.agency-shell .ap-invoice-references{margin:0 20px 20px}.agency-shell .ap-invoice-references dl{grid-template-columns:1fr}.agency-shell .ap-invoice-notes{margin:0 20px 24px}.agency-shell .ap-invoice-footer{padding:18px 20px;flex-direction:column;align-items:flex-start;gap:6px}.agency-shell .ap-payment-grid{grid-template-columns:1fr}.agency-shell .ap-payment-card{padding:24px}.agency-shell .ap-payment-amount{font-size:37px}}
+:is(.agency-shell,.owner-premium) .ap-invoice-page,:is(.agency-shell,.owner-premium) .ap-payment-page{box-sizing:border-box;max-width:1160px;width:100%;margin:0 auto;padding:40px 32px 60px;color:#28271f}
+:is(.agency-shell,.owner-premium) .ap-invoice-page *,:is(.agency-shell,.owner-premium) .ap-payment-page *{box-sizing:border-box}
+:is(.agency-shell,.owner-premium) .ap-billing-eyebrow{margin:0 0 10px;font:600 10px/1.5 Arial,sans-serif;letter-spacing:1.8px;color:#8c754b}
+:is(.agency-shell,.owner-premium) .ap-invoice-toolbar{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:24px}
+:is(.agency-shell,.owner-premium) .ap-invoice-toolbar h1{margin:0;font:400 clamp(28px,3vw,38px)/1.2 Georgia,serif;letter-spacing:0;color:#26251e}
+:is(.agency-shell,.owner-premium) .ap-invoice-toolbar nav{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+:is(.agency-shell,.owner-premium) .ap-invoice-page a,:is(.agency-shell,.owner-premium) .ap-payment-page a{text-decoration:none}
+:is(.agency-shell,.owner-premium) .ap-billing-link{color:#6b624f;font:500 13px/1.5 Arial,sans-serif}
+:is(.agency-shell,.owner-premium) .ap-billing-primary,:is(.agency-shell,.owner-premium) .ap-billing-outline{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:44px;padding:12px 19px;border:1px solid #ab8848;border-radius:7px;background:#ab8848;color:#fff;font:600 12px/1.4 Arial,sans-serif;cursor:pointer;text-align:center}
+:is(.agency-shell,.owner-premium) .ap-billing-outline{background:#fff;color:#6f5b36;border-color:#dfd6c5}
+:is(.agency-shell,.owner-premium) .ap-billing-primary:hover{background:#92743c;border-color:#92743c}
+:is(.agency-shell,.owner-premium) .ap-billing-outline:hover{background:#f6f2ea}
+:is(.agency-shell,.owner-premium) .ap-invoice-page a:focus-visible,:is(.agency-shell,.owner-premium) .ap-payment-page a:focus-visible,:is(.agency-shell,.owner-premium) .ap-payment-page button:focus-visible,:is(.agency-shell,.owner-premium) .ap-invoice-references summary:focus-visible{outline:3px solid #a3834b;outline-offset:4px}
+:is(.agency-shell,.owner-premium) .ap-billing-test{display:flex;align-items:center;gap:16px;padding:15px 20px;background:#f3eee3;border:1px solid #e2d5b8;border-radius:8px;margin-bottom:20px;font:400 12px/1.6 Arial,sans-serif;color:#6e5b35}
+:is(.agency-shell,.owner-premium) .ap-billing-test b{white-space:nowrap;font-size:12px}
+:is(.agency-shell,.owner-premium) .ap-invoice-paper{overflow:hidden;background:#fff;border:1px solid #e5dfd3;border-radius:12px;box-shadow:0 18px 55px #342b1710}
+:is(.agency-shell,.owner-premium) .ap-invoice-masthead{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#151711;color:#fff;border-bottom:3px solid #b59150;padding:32px 38px;margin:0}
+:is(.agency-shell,.owner-premium) .ap-invoice-brand{display:flex;align-items:center;gap:18px;min-width:0}
+:is(.agency-shell,.owner-premium) .ap-invoice-brand img{width:72px;height:72px;object-fit:contain;border-radius:50%;flex-shrink:0}
+:is(.agency-shell,.owner-premium) .ap-invoice-brand strong{display:block;font:400 29px/1.2 Georgia,serif;color:#fff;overflow-wrap:anywhere}
+:is(.agency-shell,.owner-premium) .ap-invoice-brand span{display:block;margin-top:8px;font:600 8px/1.6 Arial,sans-serif;letter-spacing:1.7px;color:#c8ad7a}
+:is(.agency-shell,.owner-premium) .ap-invoice-title{text-align:right;flex-shrink:0}
+:is(.agency-shell,.owner-premium) .ap-invoice-title>span{display:block;font:400 30px/1.2 Georgia,serif;letter-spacing:1px}
+:is(.agency-shell,.owner-premium) .ap-invoice-badge{display:inline-flex;margin-top:12px;padding:7px 12px;border:1px solid #8a724c;border-radius:4px;color:#dbc392;font:600 9px/1.3 Arial,sans-serif;letter-spacing:1px;text-transform:uppercase}
+:is(.agency-shell,.owner-premium) .ap-invoice-badge.is-paid{color:#d8e7cb;border-color:#759361}
+:is(.agency-shell,.owner-premium) .ap-invoice-meta{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:20px;padding:25px 38px;border-bottom:1px solid #ede8df}
+:is(.agency-shell,.owner-premium) .ap-invoice-meta span{display:block;margin-bottom:7px;font:400 10px/1.5 Arial,sans-serif;color:#8b8578}
+:is(.agency-shell,.owner-premium) .ap-invoice-meta strong{font:600 12px/1.6 Arial,sans-serif;overflow-wrap:anywhere}
+:is(.agency-shell,.owner-premium) .ap-invoice-parties{display:grid;grid-template-columns:1fr 1fr;gap:42px;margin:30px 38px;padding:24px;background:#f8f6f1;border-radius:6px}
+:is(.agency-shell,.owner-premium) .ap-invoice-parties h2,:is(.agency-shell,.owner-premium) .ap-invoice-notes h2{margin:0 0 12px;font:600 9px/1.5 Arial,sans-serif;text-transform:uppercase;letter-spacing:1.4px;color:#957947}
+:is(.agency-shell,.owner-premium) .ap-invoice-parties strong{font:600 14px/1.6 Arial,sans-serif;overflow-wrap:anywhere}
+:is(.agency-shell,.owner-premium) .ap-invoice-parties p{margin:5px 0;font:400 12px/1.65 Arial,sans-serif;color:#666253;overflow-wrap:anywhere;white-space:pre-line}
+:is(.agency-shell,.owner-premium) .ap-invoice-items{margin:0 38px;overflow-x:auto}
+:is(.agency-shell,.owner-premium) .ap-invoice-items table{width:100%;border-collapse:collapse;font:400 12px/1.7 Arial,sans-serif}
+:is(.agency-shell,.owner-premium) .ap-invoice-items th{padding:12px 14px;background:#22251d;color:#fff;text-align:left;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+:is(.agency-shell,.owner-premium) .ap-invoice-items th:nth-child(2),:is(.agency-shell,.owner-premium) .ap-invoice-items td:nth-child(2){width:60px;text-align:center}
+:is(.agency-shell,.owner-premium) .ap-invoice-items th:last-child,:is(.agency-shell,.owner-premium) .ap-invoice-items td:last-child{width:145px;text-align:right;white-space:nowrap}
+:is(.agency-shell,.owner-premium) .ap-invoice-items td{padding:20px 14px;vertical-align:top;border-bottom:1px solid #eae5dc}
+:is(.agency-shell,.owner-premium) .ap-invoice-items td strong{font-weight:500;overflow-wrap:anywhere}
+:is(.agency-shell,.owner-premium) .ap-invoice-items td span{display:block;margin-top:5px;font-size:10px;color:#928a7a}
+:is(.agency-shell,.owner-premium) .ap-invoice-items td:last-child{font-weight:600}
+:is(.agency-shell,.owner-premium) .ap-invoice-settlement{display:grid;grid-template-columns:1fr minmax(260px,330px);gap:40px;align-items:start;padding:30px 38px}
+:is(.agency-shell,.owner-premium) .ap-invoice-payment{padding-top:7px}
+:is(.agency-shell,.owner-premium) .ap-invoice-payment>strong{display:block;margin-top:8px;font:400 23px/1.3 Georgia,serif}
+:is(.agency-shell,.owner-premium) .ap-invoice-payment p{margin:8px 0;font:400 11px/1.7 Arial,sans-serif;color:#746e60}
+:is(.agency-shell,.owner-premium) .ap-invoice-payment .ap-invoice-renewal{margin-top:18px;color:#8c8474;max-width:320px}
+:is(.agency-shell,.owner-premium) .ap-invoice-totals{margin:0;padding:20px 24px;background:#f8f6f1;border-radius:6px}
+:is(.agency-shell,.owner-premium) .ap-invoice-totals>div{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:12px;font:400 12px/1.6 Arial,sans-serif}
+:is(.agency-shell,.owner-premium) .ap-invoice-totals dt{color:#817966}
+:is(.agency-shell,.owner-premium) .ap-invoice-totals dd{margin:0;text-align:right;font-weight:500;white-space:nowrap}
+:is(.agency-shell,.owner-premium) .ap-invoice-totals .ap-invoice-grand-total{border-top:1px solid #dcd2bf;padding-top:17px;margin:17px 0 0}
+:is(.agency-shell,.owner-premium) .ap-invoice-grand-total dt{font-weight:600;color:#977941;text-transform:uppercase;font-size:10px;letter-spacing:1px}
+:is(.agency-shell,.owner-premium) .ap-invoice-grand-total dd{font-size:24px;font-weight:600;line-height:1.3}
+:is(.agency-shell,.owner-premium) .ap-invoice-references{margin:0 38px 25px;border-top:1px solid #ebe5d9;border-bottom:1px solid #ebe5d9;padding:16px 0}
+:is(.agency-shell,.owner-premium) .ap-invoice-references summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer;font:500 11px/1.6 Arial,sans-serif;color:#7c6a47;list-style:none}
+:is(.agency-shell,.owner-premium) .ap-invoice-references summary::-webkit-details-marker{display:none}
+:is(.agency-shell,.owner-premium) .ap-invoice-references summary span{font-size:18px}
+:is(.agency-shell,.owner-premium) .ap-invoice-references dl{margin:20px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:18px 30px}
+:is(.agency-shell,.owner-premium) .ap-invoice-references dt{font:600 9px/1.5 Arial,sans-serif;text-transform:uppercase;color:#96846a;letter-spacing:1px}
+:is(.agency-shell,.owner-premium) .ap-invoice-references dd{margin:6px 0 0;font:400 11px/1.7 Arial,sans-serif;overflow-wrap:anywhere;color:#696453}
+:is(.agency-shell,.owner-premium) .ap-invoice-notes{margin:0 38px 28px;max-width:700px}
+:is(.agency-shell,.owner-premium) .ap-invoice-notes p{margin:0;font:400 11px/1.8 Arial,sans-serif;color:#928873;overflow-wrap:anywhere}
+:is(.agency-shell,.owner-premium) .ap-invoice-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 38px;border-top:1px solid #ede7dc;background:#fcfbf8;color:#9b8c73}
+:is(.agency-shell,.owner-premium) .ap-invoice-footer span{font:600 9px/1.6 Arial,sans-serif;letter-spacing:2px}
+:is(.agency-shell,.owner-premium) .ap-invoice-footer p{margin:0;font:400 10px/1.6 Arial,sans-serif}
+:is(.agency-shell,.owner-premium) .ap-payment-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px}
+:is(.agency-shell,.owner-premium) .ap-payment-card{padding:30px;background:#fff;border:1px solid #e6dfd1;border-radius:12px;box-shadow:0 12px 30px #342b1707;min-width:0}
+:is(.agency-shell,.owner-premium) .ap-payment-state{display:inline-block;padding:7px 12px;background:#f4efe4;border:1px solid #e6d9bc;border-radius:25px;font:500 10px/1.5 Arial,sans-serif;color:#93753e;margin-bottom:22px}
+:is(.agency-shell,.owner-premium) .ap-payment-card h2{margin:0 0 14px;font:400 24px/1.3 Georgia,serif}
+:is(.agency-shell,.owner-premium) .ap-payment-plan{font:400 12px/1.6 Arial,sans-serif;color:#827761;margin:0 0 12px}
+:is(.agency-shell,.owner-premium) .ap-payment-amount{display:block;margin-bottom:20px;font:400 43px/1.2 Georgia,serif;color:#292a21}
+:is(.agency-shell,.owner-premium) .ap-payment-card p{font:400 12px/1.8 Arial,sans-serif;color:#827968;margin:10px 0}
+:is(.agency-shell,.owner-premium) .ap-payment-card form{margin:20px 0 12px}
+:is(.agency-shell,.owner-premium) .ap-payment-card .ap-payment-caption{font-size:10px;color:#9a907c;margin-top:24px;padding-top:18px;border-top:1px solid #eee7da}
+:is(.agency-shell,.owner-premium) .ap-payment-card dl{margin:24px 0}
+:is(.agency-shell,.owner-premium) .ap-payment-card dl>div{padding:13px 0;border-bottom:1px solid #eee7da}
+:is(.agency-shell,.owner-premium) .ap-payment-card dt{font:600 9px/1.5 Arial,sans-serif;letter-spacing:1px;color:#a08c69;text-transform:uppercase}
+:is(.agency-shell,.owner-premium) .ap-payment-card dd{margin:7px 0 0;font:400 11px/1.7 Arial,sans-serif;color:#70695a;overflow-wrap:anywhere}
+:is(.agency-shell,.owner-premium) .ap-payment-alert{padding:14px 18px;margin-bottom:20px;border:1px solid #e8c9bd;border-radius:8px;background:#fcf4ef;color:#8b523e;font:400 12px/1.7 Arial,sans-serif}
+@media(max-width:1100px){:is(.agency-shell,.owner-premium) .ap-invoice-toolbar{align-items:flex-start;flex-direction:column}:is(.agency-shell,.owner-premium) .ap-invoice-settlement{gap:24px;grid-template-columns:1fr minmax(230px,300px)}}
+@media(max-width:700px){:is(.agency-shell,.owner-premium) .ap-invoice-page,:is(.agency-shell,.owner-premium) .ap-payment-page{padding:24px 16px 40px}:is(.agency-shell,.owner-premium) .ap-invoice-toolbar nav{gap:9px}:is(.agency-shell,.owner-premium) .ap-billing-test{align-items:flex-start;flex-direction:column;gap:5px}:is(.agency-shell,.owner-premium) .ap-invoice-masthead{padding:24px 20px;align-items:flex-start;flex-direction:column}:is(.agency-shell,.owner-premium) .ap-invoice-title{text-align:left}:is(.agency-shell,.owner-premium) .ap-invoice-title>span{font-size:24px}:is(.agency-shell,.owner-premium) .ap-invoice-brand strong{font-size:25px}:is(.agency-shell,.owner-premium) .ap-invoice-brand img{width:58px;height:58px}:is(.agency-shell,.owner-premium) .ap-invoice-meta{padding:20px;grid-template-columns:1fr 1fr}:is(.agency-shell,.owner-premium) .ap-invoice-meta>div:first-child{grid-column:1/-1}:is(.agency-shell,.owner-premium) .ap-invoice-parties{margin:20px;padding:20px;gap:24px;grid-template-columns:1fr}:is(.agency-shell,.owner-premium) .ap-invoice-items{margin:0 20px}:is(.agency-shell,.owner-premium) .ap-invoice-items th,:is(.agency-shell,.owner-premium) .ap-invoice-items td{padding-left:8px;padding-right:8px}:is(.agency-shell,.owner-premium) .ap-invoice-items th:last-child,:is(.agency-shell,.owner-premium) .ap-invoice-items td:last-child{width:95px}:is(.agency-shell,.owner-premium) .ap-invoice-settlement{padding:24px 20px;grid-template-columns:1fr}:is(.agency-shell,.owner-premium) .ap-invoice-references{margin:0 20px 20px}:is(.agency-shell,.owner-premium) .ap-invoice-references dl{grid-template-columns:1fr}:is(.agency-shell,.owner-premium) .ap-invoice-notes{margin:0 20px 24px}:is(.agency-shell,.owner-premium) .ap-invoice-footer{padding:18px 20px;flex-direction:column;align-items:flex-start;gap:6px}:is(.agency-shell,.owner-premium) .ap-payment-grid{grid-template-columns:1fr}:is(.agency-shell,.owner-premium) .ap-payment-card{padding:24px}:is(.agency-shell,.owner-premium) .ap-payment-amount{font-size:37px}}
