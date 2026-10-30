@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const tr = document.createElement('tr');const th=node('th','','Profile');th.scope='row';tr.append(th);
     for(const agency of chosen) {
       const td=document.createElement('td');const anchor=node('a','','View agency profile ↗');
-      anchor.href=`agency-profile.html?id=${encodeURIComponent(agency.slug)}`;td.append(anchor);tr.append(td);
+      anchor.href=`/agencies/${encodeURIComponent(agency.slug)}`;td.append(anchor);tr.append(td);
     }
     tbody.append(tr);table.append(tbody);scroll.append(table);board.append(scroll);
   }

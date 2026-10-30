@@ -1,8 +1,10 @@
+import { reportOnlyCsp } from "./lib/http/csp";
 import type { NextConfig } from "next";
 import { privateIndexHeaders, previewDeployment } from "./lib/seo/settings";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  outputFileTracingIncludes: {"/agencies/*": ["./public/agency-profile.html"]},
   ...(process.env.AP_BROWSER_TEST === "true" ? {distDir:".next-e2e",typescript:{tsconfigPath:"tsconfig.e2e.json"}} : {}),
   async redirects() {
     return [
@@ -17,6 +19,8 @@ const nextConfig: NextConfig = {
     return [...privateIndexHeaders(), ...(previewDeployment() ? [{source:"/:path*",headers:[{key:"X-Robots-Tag",value:"noindex, nofollow"}]}] : []), {
       source: "/:path*",
       headers: [
+        { key: "Content-Security-Policy-Report-Only", value: reportOnlyCsp },
+        { key: "Reporting-Endpoints", value: 'csp="/api/csp-report"' },
         { key: "X-Content-Type-Options", value: "nosniff" },
         { key: "X-Frame-Options", value: "DENY" },
         { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },

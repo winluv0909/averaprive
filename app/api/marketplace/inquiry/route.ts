@@ -1,15 +1,26 @@
 import { NextResponse } from "next/server";
+import { boundedJson, RequestBodyError, requestHasSameOrigin } from "@/lib/http/bounded-json";
 import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
-  const contentLength = Number(request.headers.get("content-length") ?? 0);
-  if (contentLength > 16_384) return NextResponse.json({ error: "Inquiry is too large." }, { status: 413 });
-  const body = await request.json().catch(() => null);
+  if (!requestHasSameOrigin(request)) {
+    return NextResponse.json({ error: "Submit your inquiry from the Avera Privé website." }, {status: 403});
+  }
+  if (request.headers.get("content-type")?.split(";")[0].trim().toLowerCase() !== "application/json") {
+    return NextResponse.json({error: "Invalid request format."}, {status: 415});
+  }
+  let parsed: unknown;
+  try { parsed = await boundedJson(request, 12_000); }
+  catch (error) {
+    return NextResponse.json({error: error instanceof RequestBodyError ? error.message : "Invalid inquiry."},
+      {status: error instanceof RequestBodyError ? error.status : 400});
+  }
+  const body = parsed as Record<string, unknown> | null;
   if (!body || typeof body !== "object" || Array.isArray(body) || body.website) return NextResponse.json({ error: "Invalid inquiry." }, { status: 400 });
-  const name = String(body.name ?? "").trim();
-  const email = String(body.email ?? "").trim().toLowerCase();
-  const message = String(body.message ?? "").trim();
-  if (name.length < 2 || name.length > 100 || message.length < 20 || message.length > 3000 || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+  const name = typeof body.name === "string" ? body.name.trim() : "";
+  const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+  const message = typeof body.message === "string" ? body.message.trim() : "";
+  if (email.length > 254 || body.consent !== true || name.length < 2 || name.length > 100 || message.length < 20 || message.length > 3000 || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
     return NextResponse.json({ error: "Check the inquiry details and try again." }, { status: 400 });
   }
   const supabase = await createClient();

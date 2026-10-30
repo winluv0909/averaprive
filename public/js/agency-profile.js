@@ -24,13 +24,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   console.error('Could not load public agency profile:', error);
   return;
  }
- const key=new URLSearchParams(location.search).get('id');
+ const key=(new URLSearchParams(location.search).get('id') || (location.pathname.startsWith('/agencies/') ? decodeURIComponent(location.pathname.split('/')[2] || '') : ''));
  const agency=approvedAgencyProfiles.find(x => (str(x.id)===key || str(x.slug)===key) && x.status==='approved' && x.published===true);
  if(!agency)return;
  recordEvent(agency,'profile_view');
  byId('profileUnavailable').hidden=true;byId('profilePublished').hidden=false;
  const claimButton=byId('claimAgencyButton');if(claimButton){claimButton.href='/agency/claim/'+encodeURIComponent(agency.slug);claimButton.hidden=agency.demoProfile===true;}
  document.title=str(agency.name)+' | Avera Privé';
+ if(!document.querySelector('link[rel="canonical"]')){const canonical=document.createElement('link');canonical.rel='canonical';canonical.href=new URL('/agencies/'+encodeURIComponent(agency.slug),location.origin).href;document.head.append(canonical);}
  set('agencyName',agency.name);set('breadcrumbAgencyName',agency.name);
  set('agencyTagline',agency.positioningStatement || agency.tagline || 'Positioning statement not provided.');
  set('agencyLocation',agency.location || agency.country || 'Location not provided');
@@ -110,9 +111,9 @@ document.addEventListener('DOMContentLoaded', async () => {
  }
  const socials=byId('profileSocials');for(const [label,target] of Object.entries(agency.socials || {})){const safe=url(target);if(!safe)continue;const link=add(socials,'a','',label);link.href=safe;link.target='_blank';link.rel='noopener noreferrer';}if(!socials.children.length)notice('profileSocials','No social links published.');
  const related=approvedAgencyProfiles.filter(x=>x!==agency && x.status==='approved' && x.published===true && x.category===agency.category).slice(0,3);if(!related.length)notice('relatedAgencyGrid','No related agencies published yet.');
- related.forEach(item=>{const card=add(byId('relatedAgencyGrid'),'article','related-agency-card','');add(card,'h3','',item.name);add(card,'p','',item.positioningStatement || item.location || '');const link=add(card,'a','','View profile →');link.href='agency-profile.html?id='+encodeURIComponent(item.id);});
+ related.forEach(item=>{const card=add(byId('relatedAgencyGrid'),'article','related-agency-card','');add(card,'h3','',item.name);add(card,'p','',item.positioningStatement || item.location || '');const link=add(card,'a','','View profile →');link.href='/agencies/'+encodeURIComponent(item.slug || item.id);});
  const reportLink=byId('reportProfileButton');
- const reportUrl=new URL('agency-profile.html',location.href);
+ const reportUrl=new URL('/agency-profile.html',location.href);
  reportUrl.searchParams.set('id',agency.slug || agency.id);
  reportLink.href='mailto:averaprivemain@gmail.com?subject='+encodeURIComponent('Agency profile concern: '+agency.name)+'&body='+encodeURIComponent('Agency: '+agency.name+'\nProfile: '+reportUrl.href+'\n\nConcern:\n\nSupporting information:\n');
  const modal=byId('contactModal'),opener=byId('contactAgencyButton');

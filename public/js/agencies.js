@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if(agency.acceptingInquiries===true) article.append(node('p','agency-availability','Accepting inquiries'));
         const link=node('a','agency-card-link','View Agency Profile →');
         const key=String(agency.id || agency.slug || '');
-        if (/^[a-zA-Z0-9_-]+$/.test(key)) link.href=`agency-profile.html?id=${encodeURIComponent(key)}`;
+        if (/^[a-zA-Z0-9_-]+$/.test(key)) link.href=`/agencies/${encodeURIComponent(key)}`;
         else {link.removeAttribute('href');link.setAttribute('aria-disabled','true');}
         article.append(link);return article;
     }

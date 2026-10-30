@@ -11,7 +11,6 @@ coverage
 *.log
 .DS_Store
 
-.vercel
 
 # Local secrets and update packages
 .env*
@@ -28,3 +27,20 @@ coverage
 /tmp/
 
 /.next-e2e/
+
+# Local restore drills, dumps and private credentials
+/Avera Backups/
+/Avera-Restore-Test/
+/backups/
+*.dump
+*.backup
+*.pem
+*.key
+/archive/local-only/
+
+# Prevent accidental commits of ad-hoc root-level database exports
+/roles.sql
+/schema.sql
+/data.sql
+/storage-schema.sql
+/storage-policies.sql

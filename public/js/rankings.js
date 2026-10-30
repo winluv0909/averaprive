@@ -314,7 +314,7 @@ function createPodiumCard(agency) {
                 </span>
 
                 <a
-                    href="agency-profile.html?id=${encodeURIComponent(agency.id)}"
+                    href="/agencies/${encodeURIComponent(agency.id)}"
                     class="podium-link"
                 >
                     View Agency
@@ -406,7 +406,7 @@ function createRankingRow(agency) {
                 ${agency.rank}
             </strong>
 
-            <a href="agency-profile.html?id=${encodeURIComponent(agency.id)}">
+            <a href="/agencies/${encodeURIComponent(agency.id)}">
                 View
                 <i class="fa-solid fa-arrow-right"></i>
             </a>

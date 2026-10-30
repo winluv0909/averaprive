@@ -1,0 +1,57 @@
+[
+  {
+    "original": "STEP-01-READ-ME.md",
+    "archived": "archive/launch-history/STEP-01-READ-ME.md",
+    "sha256": "d531aaa5853ef8cde2e0cd5a5f3c1306a1532a4b91f53cd33b72169fc3e59e07"
+  },
+  {
+    "original": "STEP-02-READ-ME.md",
+    "archived": "archive/launch-history/STEP-02-READ-ME.md",
+    "sha256": "88f30e0de7c06e8beb1c8aa361e65b582694bf8b7bd9bdd3b7115b90779c6c95"
+  },
+  {
+    "original": "STEP-03-READ-ME.md",
+    "archived": "archive/launch-history/STEP-03-READ-ME.md",
+    "sha256": "06701732549c5bb6f1b16aa0ea43342be97e0c9bf46602e0a3dbe2c40dd4be93"
+  },
+  {
+    "original": "STEP-04-READ-ME.md",
+    "archived": "archive/launch-history/STEP-04-READ-ME.md",
+    "sha256": "6fca306a6c8de139fa7c90cbdf81c85a7a79aa0278d1aad9a5685ac77ae5568e"
+  },
+  {
+    "original": "STEP-05-DESIGN-READ-ME.md",
+    "archived": "archive/launch-history/STEP-05-DESIGN-READ-ME.md",
+    "sha256": "af78779b26bf3622c1c6960a6e1a4aec5630934943535750df9cbf5c6e102049"
+  },
+  {
+    "original": "STEP-05-READ-ME.md",
+    "archived": "archive/launch-history/STEP-05-READ-ME.md",
+    "sha256": "9382bd7f86bb355540c42a39a84c31d0c831c2dce056eacef25b28fc8d6d9810"
+  },
+  {
+    "original": "STEP-06-READ-ME.md",
+    "archived": "archive/launch-history/STEP-06-READ-ME.md",
+    "sha256": "5f68d72f308bda303ccd6d456f4a1f7d4275f2db47802ccb8337dffbc3906a33"
+  },
+  {
+    "original": "STEP-07-READ-ME.md",
+    "archived": "archive/launch-history/STEP-07-READ-ME.md",
+    "sha256": "91fbb881bf63fb49f08c710f20dc84d604f34ae78b7c4f50ae675f9506e1212c"
+  },
+  {
+    "original": "STEP-08-READ-ME.md",
+    "archived": "archive/launch-history/STEP-08-READ-ME.md",
+    "sha256": "09ec787344a8c49e9694b433b9cd32338f290fd833d17ca2c33006077033e038"
+  },
+  {
+    "original": "STEP-09-READ-ME.md",
+    "archived": "archive/launch-history/STEP-09-READ-ME.md",
+    "sha256": "444333581105d2799623d10f55d1b224f16d71c25cdf9e611e944db7dd24c218"
+  },
+  {
+    "original": "FULL-CHANGED-CODE.md",
+    "archived": "archive/launch-history/FULL-CHANGED-CODE.md",
+    "sha256": "8b41acd0751aedd1a2661f3673696ca85577785b7cc1bdc40536fc15fa40ca12"
+  }
+]
