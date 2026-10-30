@@ -5,7 +5,7 @@ Keep this checklist with the deployed commit. A code test, configured channel or
 | Area | Check to complete | Pass evidence |
 |---|---|---|
 | Install | Copy the consolidated patch, apply only Step 09 install SQL, inspect Step 09 verification results | Query results and commit |
-| Local validation | `npm run verify`, `npm run test:e2e`, `node scripts/check-public-assets.mjs` | Successful output; browser suite now has 44 cases |
+| Local validation | `npm run verify`, `npm run test:e2e`, `node scripts/check-public-assets.mjs` | Successful output; browser suite now has 46 cases |
 | Owner access | Owner opens Payment review and Staff accounts; signed-out visitor cannot open private pages | Expected page/redirect; no case submitted just to test |
 | Agency recovery | A real agency member requests recovery, receives the latest link, changes password and signs in to the correct agency | New password works, old password fails, records remain accessible |
 | Staff recovery | Staff repeats recovery and reaches their permitted operations; another role's private page stays forbidden | Role boundary and forced first-login password setup confirmed |
@@ -31,3 +31,10 @@ Use the latest email only. With the default PKCE email link, request and open it
 ## Sign-off record
 
 Record: release commit, deployed origin, date, owner checking, test results, SQL verification result, outstanding items and the person responsible. Do not label the whole website launch-ready while any required external item is unverified.
+
+
+## Latest no domain review
+
+See NO-DOMAIN-REVIEW.md for the 30 October 2026 evidence and remaining limits. Owner invoice webpage/PDF and first-visit cookie controls have passed live smoke checks. Staff recovery opened in the same browser, but complete password-change/sign-in acceptance and agency email onboarding still require controlled inbox sessions. The owner explicitly paused domain, SMTP, template and cross-browser recovery changes. Do not repeatedly request those changes as prerequisites for unrelated local tests.
+
+The production database was inspected read-only. New launch workflow tests replay all source migrations in an isolated database with Auth/Storage stand-ins. The archive restore is a fixture restore, not a production Supabase/Storage restore. No live synthetic reviews or agencies were published, no financial evidence deleted and no transfer initiated.

@@ -1,0 +1,18 @@
+import {beforeEach,describe,expect,it,vi} from 'vitest';
+const f=vi.hoisted(()=>({role:'super_admin',read:vi.fn()}));
+vi.mock('server-only',()=>({}));
+vi.mock('next/navigation',()=>({redirect:(p:string)=>{throw new Error('redirect:'+p)},usePathname:()=>'/owners/dashboard',notFound:()=>{throw new Error('not-found')}}));
+vi.mock('@/lib/supabase/server',()=>({createClient:async()=>({auth:{getUser:async()=>({data:{user:{id:'qa',app_metadata:{}}}})},from:(table:string)=>{if(table==='ap_staff_roles')return{select:()=>({eq:async()=>({data:[{role:f.role}],error:null})})};f.read();throw new Error('authorized-data');},rpc:()=>{f.read();throw new Error('authorized-data');}})}));
+vi.mock('@/lib/supabase/admin',()=>({createAdminClient:()=>{f.read();throw new Error('authorized-data')}}));
+import Team from '@/app/owners/dashboard/team/page';
+import Payments from '@/app/owners/dashboard/payments/page';
+import Directory from '@/app/owners/dashboard/directory/page';
+import Moderation from '@/app/owners/dashboard/moderation/page';
+import Verifications from '@/app/owners/dashboard/verifications/page';
+import Support from '@/app/owners/dashboard/support/page';
+import Reviews from '@/app/owners/dashboard/reviews/page';
+import Analytics from '@/app/owners/dashboard/analytics/page';
+import Inquiries from '@/app/owners/dashboard/inquiries/page';
+const pages=[['staff',Team,['super_admin']],['payments',Payments,['super_admin','finance']],['directory',Directory,['super_admin']],['moderation',Moderation,['super_admin','moderator']],['verification',Verifications,['super_admin','verification_reviewer']],['support',Support,['super_admin','support']],['reviews',Reviews,['super_admin','moderator']],['analytics',Analytics,['super_admin','finance']],['inquiries',Inquiries,['super_admin','support']]] as const;
+beforeEach(()=>f.read.mockClear());
+describe('real staff page authorization boundaries',()=>{for(const [name,page,allowed]of pages)for(const role of ['super_admin','moderator','verification_reviewer','support','finance'])it(`${role} ${allowed.some(r=>r===role)?'reaches':'cannot read'} ${name}`,async()=>{f.role=role;const run=()=>page({searchParams:Promise.resolve({})});if(allowed.some(r=>r===role)){await expect(run()).rejects.toThrow('authorized-data');expect(f.read).toHaveBeenCalled();}else{await expect(run()).rejects.toThrow('redirect:/forbidden');expect(f.read).not.toHaveBeenCalled();}});});

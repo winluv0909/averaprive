@@ -53,3 +53,55 @@ The future owner-approval policy for accepting individual exceptions is deferred
 Check the most recent scheduler outcome, provider result and notification state, not just the active-job toggle. If verification is unavailable, leave payment unconfirmed and investigate. Avoid repeated customer transfers. Keep the two monitor secrets distinct and private; rotate any exposed secret through the provider and deployment configuration, not in a public ticket.
 
 Record both owners' incident responsibilities. Verify your actual Supabase backup/export capability and perform a restore drill in a separate project before relying on it. Preserve payment records, private evidence and audit trails according to the operator-approved retention policy. Cleanup starts with the read-only inventory; the patch contains no deletion SQL. Do not delete an account just because it has a password-setup flag or an unpaid invoice.
+
+## Daily route and permission reference
+
+Use the current site https://averaprive.vercel.app. Owners/staff sign in at /owners/login. The nine protected areas below were exercised through their actual server-page guards with all five supported roles; this table describes page entry, not every individual action or record-level rule.
+
+| Area | Owner | Moderator | Verification reviewer | Support | Finance |
+|---|---|---|---|---|---|
+| Staff accounts /owners/dashboard/team | Yes | No | No | No | No |
+| Directory and claims /owners/dashboard/directory | Yes | No | No | No | No |
+| Moderation /owners/dashboard/moderation | Yes | Yes | No | No | No |
+| Verification /owners/dashboard/verifications | Yes | No | Yes | No | No |
+| Review queue /owners/dashboard/reviews | Yes | Yes | No | No | No |
+| Support tickets /owners/dashboard/support | Yes | No | No | Yes | No |
+| Inquiry operations /owners/dashboard/inquiries | Yes | No | No | Yes | No |
+| Payment review /owners/dashboard/payments | Yes | No | No | No | Yes |
+| Marketplace analytics /owners/dashboard/analytics | Yes | No | No | No | Yes |
+
+Refund-case opening and outgoing-refund recording remain owner-only. Finance can view invoices and download PDFs, but that permission does not grant owner-only refund controls. Multiple roles combine access; assess every assigned role before investigating an apparent extra permission.
+
+## First shift for each role
+
+Platform owners open Overview, Staff accounts and Payment review. Check incident ownership, role assignments, public publication decisions, monitor results and unresolved payment exceptions. Use the completed sandbox invoice as a display check, never as evidence of live revenue. Open the payment record, choose View invoice or Download PDF; return through Payment review.
+
+Moderators open Moderation and Review queue. Start from a submitted record, compare evidence and requested changes, and record a meaningful decision. Approval and publication are separate. Do not use owner-only Directory and claims to bypass the moderation process. Review agency responses/disputes only within the role's permitted screens.
+
+Verification reviewers open Verification. Compare submitted evidence against the requested checks and record what was verified. Ask for missing information instead of approving incomplete evidence. Private evidence must not be copied into public notes. Verification does not depend on the subscription purchased.
+
+Support staff open Support tickets, Inquiry operations and permitted demo requests. Check the correct customer/agency first, distinguish internal notes from customer-visible messages, and use a traceable status note. Internal support messages are not visible to ticket owners; unrelated accounts cannot read a ticket. Escalate payment ownership/refund decisions to an owner and provider-verification problems to finance/owners.
+
+Finance staff open Payment review and Subscriptions, plus permitted placements/analytics. Compare provider environment, merchant, currency, amount, invoice and subscription period. Review notes document investigation and do not credit a payment. Expand an order to open its invoice/PDF. Escalate unsupported assets, duplicate claims and refunds to owners.
+
+## Agency account walkthrough
+
+Agency accounts are separate from platform-staff accounts. Use /register for controlled onboarding and /agency/login afterward. Complete the email steps and request/verify the registration number with an inbox you control. Fill the draft profile and bind the verified number before submission; account creation alone does not publish the agency. A reviewed claim uses the separate claim process.
+
+In the agency workspace, owners/admins manage the profile and permitted team actions; billing members handle permitted invoices/payment pages, editors work on editable profile content and analysts use permitted analytics/lead views. Membership status must be active and agency-scoped. Platform ownership alone is not agency membership. Do not add owners to a customer's agency merely to view an invoice: use the staff invoice route.
+
+For the controlled launch test, keep the test agency unpublished. Check the number cannot be reused or forged, the review queue receives the draft, approval remains private until publication, and unrelated agency members cannot read its private records. Use isolated fixtures for public publication exercises until a real production listing is approved.
+
+## Recovery and cookies
+
+The default email recovery currently depends on the browser profile that requested it. Request and open the newest link in the same profile; after saving a new password, sign in through the correct portal and check the old password fails. A successful email request message alone does not prove delivery or reset. Cross-browser recovery, custom SMTP and domain changes remain paused by the owner. Do not promise phone-to-computer recovery until that separate acceptance test passes.
+
+On a visitor's first public-page load, Privacy choices appear at the bottom of the screen without scrolling. Essential only leaves optional directory analytics off. Allow directory analytics enables that choice; reopening Cookie Settings permits changing it later. Saved choices close the panel on later loads in that browser. Contact-form consent remains separate from analytics. Use a fresh incognito window for first-visit checks, rather than clearing a customer's cookies.
+
+## Incident handling and handover
+
+Record the incident time, affected record IDs, observed status and assigned responder. Keep secrets, recovery links, passwords, wallet seed phrases and private customer evidence out of public screenshots or Git. For suspected unauthorized access preserve audit evidence, restrict the affected account through the supported administration process, rotate compromised secrets where used and verify sessions and permissions. Existing access tokens can outlive refresh-session revocation until expiry.
+
+For a failed monitor, compare both the scheduler run and HTTP response; a queued request may not yet have been collected. Do not count zero verified payments as a failure when no eligible payment exists. If a provider is unavailable, keep payment unconfirmed and tell support what is actually known. Verify notification delivery separately from payment verification.
+
+Before a handover, list open tickets, pending moderation, genuine payment exceptions, notification failures, account setup tasks and backup status. Assign an owner and due time for unresolved work. Review docs/OWNER-DECISION-SHEET.md for outstanding launch decisions and docs/PRODUCTION-BACKUP-RUNBOOK.md for the real restore procedure.
